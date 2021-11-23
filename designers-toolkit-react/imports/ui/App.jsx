@@ -1,8 +1,8 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
-import {Route, BrowserRouter as Router } from 'react-router-dom';
+import {Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import { CurrentPlan } from './CurrentPlan';
-import Dashboard from './Dashboard';
+import {Dashboard} from './Dashboard';
 import {Introduction} from './Introduction';
 import {Methodologies} from './Methodologies';
 
@@ -15,8 +15,12 @@ export const App = () => (
     <div className="app">
       <h1>Welcome to Meteor!</h1>
     </div>
-    <Methodologies/>
-    <Route exact path="/" component={Dashboard}/>
+    <Routes>
+      <Route exact path="/" element={<Dashboard/>}/>
+      <Route exact path="/introduction" element={<Introduction/>}/>
+      <Route exact path="/currentplan" element={<CurrentPlan/>}/>
+      <Route exact path="/methodologies" element={<Methodologies/>}/>
+    </Routes>
   </Router>
 );
 
