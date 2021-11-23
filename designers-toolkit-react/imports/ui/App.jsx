@@ -1,23 +1,24 @@
 import React from 'react';
-import { Hello } from './Hello.jsx';
-import { Info } from './Info.jsx';
 import {useSelector} from 'react-redux'
-
-
+import {Route, BrowserRouter as Router } from 'react-router-dom';
+import { CurrentPlan } from './CurrentPlan';
+import Dashboard from './Dashboard';
+import {Introduction} from './Introduction';
+import {Methodologies} from './Methodologies';
 
 function selector(){
   return counter = useSelector(state => state.counter);
 }
 
 export const App = () => (
-  
-  <div>
-    <h1>Welcome to Meteor!</h1>
-    <Hello/>
-    <h1>Counter</h1>
-    <Info/>
-  </div>
-); 
+  <Router>
+    <div className="app">
+      <h1>Welcome to Meteor!</h1>
+    </div>
+    <Methodologies/>
+    <Route exact path="/" component={Dashboard}/>
+  </Router>
+);
 
 
 //export default App;
