@@ -5,6 +5,7 @@ import { CurrentPlan } from './CurrentPlan';
 import {Dashboard} from './Dashboard';
 import {Introduction} from './Introduction';
 import {Methodologies} from './Methodologies';
+import {NavBar} from './NavBar';
 
 function selector(){
   return counter = useSelector(state => state.counter);
@@ -13,7 +14,7 @@ function selector(){
 export const App = () => (
   <Router>
     <div className="app">
-      <h1>Welcome to Meteor!</h1>
+      <NavBar/>
     </div>
     <Routes>
       <Route exact path="/" element={<Dashboard/>}/>
