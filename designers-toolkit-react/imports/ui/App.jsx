@@ -1,11 +1,11 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
 import {Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import { CurrentPlan } from './CurrentPlan';
-import {Dashboard} from './Dashboard';
-import {Introduction} from './Introduction';
-import {Methodologies} from './Methodologies';
-import {NavBar} from './NavBar';
+import { CurrentPlan } from './CurrentPlan/CurrentPlan';
+import {Dashboard} from './Dashboard/Dashboard';
+import {Introduction} from './Introduction/Introduction';
+import {Methodologies} from './Methodologies/Methodologies';
+import {NavBar} from './Shared/NavBar';
 
 function selector(){
   return counter = useSelector(state => state.counter);
