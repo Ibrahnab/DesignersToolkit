@@ -2,3 +2,15 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+.navContainer{
+  background-color: #8C3EC9;
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 10px;
+}
+
+.navRow{
+  padding-bottom: 10px;
+}
+

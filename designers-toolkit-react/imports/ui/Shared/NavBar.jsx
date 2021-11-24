@@ -6,12 +6,14 @@ import Col from 'react-bootstrap/Col';
 
 
 export const NavBar = () => (
-  <Container>
-    <Row>
-      <Col><Link to="/">Dashboard</Link></Col>
-      <Col><Link to="/introduction">Introduction</Link></Col>
-      <Col><Link to="/methodologies">Methodologies</Link></Col>
-      <Col><Link to="/currentplan">Current Plan</Link></Col>
-    </Row>
-  </Container>
+  <div className='navContainer'>
+    <Container>
+      <Row className='navRow'>
+        <Col><Link to="/">Dashboard</Link></Col>
+        <Col><Link to="/introduction">Introduction</Link></Col>
+        <Col><Link to="/methodologies">Methodologies</Link></Col>
+        <Col><Link to="/currentplan">Current Plan</Link></Col>
+      </Row>
+    </Container>
+  </div>
   ); 
