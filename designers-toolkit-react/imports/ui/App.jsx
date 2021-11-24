@@ -13,17 +13,20 @@ function selector(){
 }
 
 export const App = () => (
-  <Router>
-    <div className="app">
+  <div>
+    <Router>
+      <div className="app">
       <NavBar/>
-    </div>
-    <Routes>
-      <Route exact path="/" element={<Dashboard/>}/>
-      <Route exact path="/introduction" element={<Introduction/>}/>
-      <Route exact path="/currentplan" element={<CurrentPlan/>}/>
-      <Route exact path="/methodologies" element={<Methodologies/>}/>
-    </Routes>
-  </Router>
+      </div>
+      <Routes>
+        <Route exact path="/" element={<Dashboard/>}/>
+        <Route exact path="/introduction" element={<Introduction/>}/>
+        <Route exact path="/currentplan" element={<CurrentPlan/>}/>
+        <Route exact path="/methodologies" element={<Methodologies/>}/>
+      </Routes>
+    </Router>
+  </div>
+  
 );
 
 
