@@ -12,6 +12,13 @@ function selector(){
   return counter = useSelector(state => state.counter);
 }
 
+const redPanda = {
+  src: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Endangered_Red_Panda.jpg',
+  alt: 'Logo',
+  width:  '97px'
+};
+
+
 export const App = () => (
   <div>
     <Router>
@@ -25,6 +32,12 @@ export const App = () => (
         <Route exact path="/methodologies" element={<Methodologies/>}/>
       </Routes>
     </Router>
+    <div>
+      <img 
+          src={redPanda.src}
+          alt={redPanda.alt}
+          width={redPanda.width} />
+    </div>
   </div>
   
 );
