@@ -18,3 +18,9 @@ body {
   background-image: url(./logo.png);
 }
 
+.navText{
+  color:white;
+  font-family: 'Montserrat';
+  text-decoration: none;
+  font-weight: 800;
+}
