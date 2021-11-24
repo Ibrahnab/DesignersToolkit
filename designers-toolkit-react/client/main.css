@@ -14,3 +14,7 @@ body {
   padding-bottom: 10px;
 }
 
+.logoDiv{
+  background-image: url(./logo.png);
+}
+
