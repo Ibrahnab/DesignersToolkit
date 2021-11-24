@@ -23,3 +23,13 @@ body {
   position: relative;
   align-items: center;
 }
+
+img.logoImg {
+  
+  display: block;
+  max-width:230px;
+  max-height:55px;
+  width: auto;
+  height: auto;
+}
+
