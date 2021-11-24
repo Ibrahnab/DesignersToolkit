@@ -5,17 +5,6 @@ body {
 
 .navContainer{
   background-color: #8C3EC9;
-  padding-left: 0%;
-  padding-right: 0%;
-  padding-top: 10px;
-}
-
-.navRow{
-  padding-bottom: 10px;
-}
-
-.logoDiv{
-  background-image: url(./logo.png);
 }
 
 .navText{
@@ -24,6 +13,13 @@ body {
   text-decoration: none;
   font-weight: 800;
   font-size: 24px;
-  align-content: center;
 }
 
+.col{
+  height: fit-content;
+}
+
+.row{
+  position: relative;
+  align-items: center;
+}
