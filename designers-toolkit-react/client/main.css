@@ -16,6 +16,7 @@ body {
 
 .logoDiv{
   background-image: url(./logo.png);
+  
 }
 
 .navText{
@@ -25,5 +26,14 @@ body {
   font-weight: 800;
   font-size: 24px;
   align-content: center;
+}
+
+img.logoImg {
+  
+  display: block;
+  max-width:230px;
+  max-height:55px;
+  width: auto;
+  height: auto;
 }
 
