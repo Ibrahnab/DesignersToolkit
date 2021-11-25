@@ -38,14 +38,38 @@ img.logoImg {
   font-family: 'Montserrat';
   font-weight: 800;
   text-decoration: none;
-  font-size: 40px;
-  padding-top: 400px;
+  font-size: 34px;
+  padding-top: 70px;
 }
 
 .dashboardVL{
   border-left: 3px solid black;
-  height: 200px;
+  height: 500px;
+  top: 150px;
   position:absolute;
   left: 50%;
   width: 1px;
+}
+
+.dashboardRowHeader{
+  padding-left: 7%;
+}
+
+.dashboardCardImage{
+  align-content: center;
+}
+
+.dashboardRoamPara{
+  font-size: 18px;
+  font-family: 'Montserrat';
+}
+
+.dashboardStartButton{
+  border: none;
+  background: none;
+  
+}
+
+.dashboardButtonImage:hover{
+  border: 1px black;
 }

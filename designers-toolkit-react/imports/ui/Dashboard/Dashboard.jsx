@@ -9,10 +9,10 @@ export const Dashboard = () => (
   
     <div>
       <Container>
-        <Row>
+        <Row className='dashboardRowHeader'>
           <Col><RoamMode/></Col>
           <div className = "dashboardVL"></div>
-          <Col><AccountSide/></Col>
+          <Col md ={{offset:1}}><AccountSide/></Col>
         </Row>
       </Container>
     </div>
