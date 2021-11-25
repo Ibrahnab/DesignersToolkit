@@ -59,7 +59,7 @@ img.logoImg {
   align-content: center;
 }
 
-.dashboardRoamPara{
+.dashboardStandardText{
   font-size: 18px;
   font-family: 'Montserrat';
 }
@@ -72,4 +72,8 @@ img.logoImg {
 
 .dashboardButtonImage:hover{
   border: 1px black;
+}
+
+.dashboardImageRow{
+  padding-top: 10%;
 }
