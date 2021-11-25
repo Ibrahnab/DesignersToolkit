@@ -33,3 +33,19 @@ img.logoImg {
   height: auto;
 }
 
+.dashboardHeader{
+  color: black;
+  font-family: 'Montserrat';
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 40px;
+  padding-top: 400px;
+}
+
+.dashboardVL{
+  border-left: 3px solid black;
+  height: 200px;
+  position:absolute;
+  left: 50%;
+  width: 1px;
+}
