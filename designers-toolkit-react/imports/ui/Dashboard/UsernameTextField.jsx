@@ -12,6 +12,7 @@ export const UsernameTextField = () => (
       noValidate
       autoComplete="off"
       margin="auto"
+      width="240px"
     >
       <TextField id="outlined-basic" label="Username" variant="outlined"/>
     </Box>

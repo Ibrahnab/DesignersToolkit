@@ -48,6 +48,7 @@ img.logoImg {
   height: 1px;
   align-self: center;
   margin-left: 4%;
+  margin-top: 1%;
 }
 
 .buttonFit{
@@ -82,5 +83,5 @@ img.logoImg {
 }
 
 .alignNavBarText{
-  align-content: center;
+  align-items: center;
 }

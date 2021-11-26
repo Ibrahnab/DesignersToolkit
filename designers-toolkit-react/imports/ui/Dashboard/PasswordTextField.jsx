@@ -11,6 +11,8 @@ export const PasswordTextField = () => (
       }}
       noValidate
       autoComplete="off"
+      width="240px"
+      margin="auto"
     >
       <TextField id="outlined-basic" label="Password" variant="outlined" />
     </Box>
