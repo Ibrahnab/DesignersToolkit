@@ -31,7 +31,7 @@ export const AccountSide = () => (
             </Row>
             <div className="row d-flex justify-content-center flex-nowrap">
                 <Col md='auto'>
-                <button className="buttonFit"><img src='sign_in_button.svg'/></button>
+                <button className="dashboardSignInButton"><p className="buttonText">Sign In</p></button>
                 </Col>
             </div>
             <div className="dashboardHL"></div>
@@ -42,7 +42,7 @@ export const AccountSide = () => (
             </div>
             <div className="row d-flex justify-content-center flex-nowrap">
                 <Col md='auto'>
-                    <button className="buttonFit"><img src="create_account_button.svg"/></button>
+                    <button className="dashboardCreateAccountButton"><p className="buttonText">Create New Account</p></button>
                 </Col>
             </div>
         </Container>

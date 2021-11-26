@@ -52,10 +52,7 @@ img.logoImg {
 }
 
 .buttonFit{
-  margin: 0%;
-  padding:0%;
-  border: none;
-  background: none;
+  align-items: center;
 }
 
 .dashboardStandardText{
@@ -84,4 +81,41 @@ img.logoImg {
 
 .alignNavBarText{
   align-items: center;
+}
+
+.buttonText{
+  color:white;
+  font-family: 'Montserrat';
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.buttonText.big{
+  font-size: 24px;
+}
+
+.dashboardStartButton{
+  width: 250px;
+  height: 85px;
+  background-color: #8C3EC9;
+  border-radius: 40px;
+}
+
+.dashboardSignInButton{
+  width: 151px;
+  height: 51px;
+  background-color: #EE6C4D;
+  border-radius: 40px;
+  border: none;
+}
+
+.dashboardCreateAccountButton{
+  width: 285px;
+  height: 51px;
+  background-color: #68259D;
+  border-radius: 40px;
+  border: none;
 }

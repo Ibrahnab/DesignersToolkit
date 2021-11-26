@@ -19,7 +19,7 @@ export const RoamMode = () => (
             </div>
             <div className="row d-flex justify-content-center flex-nowrap">
                 <Col md="auto">
-                    <button className='buttonFit'><img className='dashboardButtonImage' src='dashboard_roam_button.svg' onClick={myFunc}/></button>
+                    <button className='dashboardStartButton'><p className="buttonText big">Start</p></button>
                 </Col>
             </div>
             <div className="row d-flex justify-content-center flex-nowrap textTopMargin">
