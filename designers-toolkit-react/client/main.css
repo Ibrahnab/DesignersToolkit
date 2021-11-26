@@ -51,6 +51,21 @@ img.logoImg {
   width: 1px;
 }
 
+.dashboardHL{
+  border-top: 3px solid #BFBFBF;
+  width: 400px;
+  position: absolute;
+  height: 1px;
+  align-self: center;
+}
+
+.buttonFit{
+  margin: 0%;
+  padding:0%;
+  border: none;
+  background: none;
+}
+
 .dashboardRowHeader{
   padding-left: 7%;
 }
@@ -62,16 +77,12 @@ img.logoImg {
 .dashboardStandardText{
   font-size: 18px;
   font-family: 'Montserrat';
+  align-self: center;
 }
 
 .dashboardStartButton{
   border: none;
   background: none;
-  
-}
-
-.dashboardButtonImage:hover{
-  border: 1px black;
 }
 
 .dashboardImageRow{

@@ -19,7 +19,7 @@ export const RoamMode = () => (
             </Row>
             <Row>
                 <Col>
-                    <button className='dashboardStartButton'><img className='dashboardButtonImage' src='dashboard_roam_button.svg' onClick={myFunc}/></button>
+                    <button className='buttonFit'><img className='dashboardButtonImage' src='dashboard_roam_button.svg' onClick={myFunc}/></button>
                 </Col>
             </Row>
             <Row>
