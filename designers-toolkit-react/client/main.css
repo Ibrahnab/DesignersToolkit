@@ -15,17 +15,7 @@ body {
   font-size: 24px;
 }
 
-.col{
-  height: fit-content;
-}
-
-.row{
-  position: relative;
-  align-items: center;
-}
-
-img.logoImg {
-  
+img.logoImg {  
   display: block;
   max-width:230px;
   max-height:55px;
@@ -57,6 +47,7 @@ img.logoImg {
   position: absolute;
   height: 1px;
   align-self: center;
+  margin-left: 4%;
 }
 
 .buttonFit{
@@ -64,10 +55,6 @@ img.logoImg {
   padding:0%;
   border: none;
   background: none;
-}
-
-.dashboardRowHeader{
-  padding-left: 7%;
 }
 
 .dashboardCardImage{
@@ -78,6 +65,7 @@ img.logoImg {
   font-size: 18px;
   font-family: 'Montserrat';
   align-self: center;
+  text-align: center;
 }
 
 .dashboardStartButton{
@@ -85,6 +73,14 @@ img.logoImg {
   background: none;
 }
 
-.dashboardImageRow{
+.dashboardDivMargin{
   padding-top: 10%;
+}
+
+.textTopMargin{
+  padding-top: 8%;
+}
+
+.roamModeTopTextLeftPadding{
+  padding-left: 4%;
 }
