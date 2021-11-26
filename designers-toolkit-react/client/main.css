@@ -57,10 +57,6 @@ img.logoImg {
   background: none;
 }
 
-.dashboardCardImage{
-  align-content: center;
-}
-
 .dashboardStandardText{
   font-size: 18px;
   font-family: 'Montserrat';
@@ -83,4 +79,8 @@ img.logoImg {
 
 .roamModeTopTextLeftPadding{
   padding-left: 4%;
+}
+
+.alignNavBarText{
+  align-content: center;
 }
