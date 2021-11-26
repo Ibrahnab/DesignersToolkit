@@ -104,6 +104,10 @@ img.logoImg {
   border-radius: 40px;
 }
 
+.dashboardStartButton:hover{
+  background-color: #834DAE ;
+}
+
 .dashboardSignInButton{
   width: 151px;
   height: 51px;
