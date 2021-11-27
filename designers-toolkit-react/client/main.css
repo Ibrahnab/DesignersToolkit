@@ -49,3 +49,57 @@ img.logoImg {
   left: 50%;
   width: 1px;
 }
+
+.blackHeader {
+  color:black;
+  font-family: 'Montserrat';
+  font-weight: 800;
+}
+
+.purpleHeader {
+  color: #68259D;
+  font-family: 'Montserrat';
+  font-weight: 800;
+}
+
+.whiteHeader{
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: 800;
+}
+
+.p {
+  font-family: 'Montserrat';
+  color: black;
+}
+
+.sectionContainer {
+  margin-top:50px;
+  width: 70%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.sectionContainer.start{
+  margin-top:0px;
+}
+
+.sprintPlanImg{
+  max-width: auto;
+  max-height:auto;
+}
+
+.size{
+  width:600px;
+  height:300px;
+}
+
+.purpleBtn{
+  background-color:#68259D;
+  border-radius: 300px;
+  padding:20px;
+  border: none;
+  align-items: center;;
+  margin-left: auto;
+  margin-right:auto;
+}
