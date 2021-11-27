@@ -1,3 +1,42 @@
+
+import * as actionTypes from "types";
+
+export const addToSprint = (itemID) => {
+    return {
+        type: actionTypes.ADD_TO_SPRINT,
+        payload: {
+            id: itemID
+        }
+    }
+}
+
+export const removeFromSprint = (itemID) => {
+    return {
+        type: actionTypes.REMOVE_FROM_SPRINT,
+        payload: {
+            id: itemID
+        }
+    }
+}
+
+export const adjustPhase = (itemID) => {
+    return {
+        type: actionTypes.ADJUST_PHASE,
+        payload: {
+            id: itemID,
+            ph: value
+        }
+    }
+}
+
+export const loadCurrentMethod = (item) => {
+    return{ 
+        type: actionTypes.LOAD_CURRENT_METHOD,
+        payload: item,
+    }
+}
+
+
 export const increment = () => {
     return{
         type: 'INCREMENT'
