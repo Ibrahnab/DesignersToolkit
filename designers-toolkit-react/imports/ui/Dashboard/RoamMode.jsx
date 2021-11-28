@@ -2,6 +2,8 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
+
 
 export const RoamMode = () => (
   
@@ -19,7 +21,7 @@ export const RoamMode = () => (
             </div>
             <div className="row d-flex justify-content-center flex-nowrap">
                 <Col md="auto">
-                    <button onClick="dashboardStartOnClick" className='dashboardStartButton'><p className="buttonText big">Start</p></button>
+                    <button className='dashboardStartButton'><Link to="/methodologies" className="buttonText big">Start</Link></button>
                 </Col>
             </div>
             <div className="row d-flex justify-content-center flex-nowrap textTopMargin">
@@ -31,7 +33,3 @@ export const RoamMode = () => (
         </Container>
     </div>
   ); 
-
-  function dashboardStartOnClick(){
-      console.log("Clickeed")
-  }
