@@ -36,21 +36,35 @@ const INITIAL_STATE = {
 const methodReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case actionTypes.ADD_TO_SPRINT:
+            //Get the items data from the methods array
+            const method = state.methods.find(meth => meth.id === action.payload.id)
+            //Check if the item is in the sprint already
+            const inSprint = state.sprint.find(meth => meth.id === action.payload.id ? true : false)
             return {
-
+                // ...state,
+                // cart: inSprint ? state.sprint.map(meth => 
+                //     meth.id === action.payload
+                //     ? { ...meth, } )
+                ...state,
+                cart: state.sprintmap((item) => [...state.sprint , {...item}])
             }
         case actionTypes.REMOVE_FROM_SPRINT:
             return {
-
-            }
+                ...state, 
+                cart: state.sprint.filter(item => item.id !== action.payload.id)
+            };
         case actionTypes.ADJUST_PHASE:
             return {
-
+                ...state,
+                sprint: state.sprint.map(item => 
+                    item.id === action.payload.id 
+                    ? {...item, phase: action.payload.ph} : item)
             }
         case actionTypes.LOAD_CURRENT_METHOD:
             return {
-
-            }
+                ...state,
+                currentMethod: action.payload,
+            };
         default: 
             return state;
     }
