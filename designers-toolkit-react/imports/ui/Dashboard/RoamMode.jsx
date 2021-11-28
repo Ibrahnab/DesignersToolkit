@@ -19,7 +19,7 @@ export const RoamMode = () => (
             </div>
             <div className="row d-flex justify-content-center flex-nowrap">
                 <Col md="auto">
-                    <button className='dashboardStartButton'><p className="buttonText big">Start</p></button>
+                    <button onClick="dashboardStartOnClick" className='dashboardStartButton'><p className="buttonText big">Start</p></button>
                 </Col>
             </div>
             <div className="row d-flex justify-content-center flex-nowrap textTopMargin">
@@ -32,6 +32,6 @@ export const RoamMode = () => (
     </div>
   ); 
 
-  function myFunc(){
-      console.log("Clicked");
+  function dashboardStartOnClick(){
+      console.log("Clickeed")
   }
