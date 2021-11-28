@@ -1,7 +1,34 @@
 import * as actionTypes from "../actions/types"
 
 const INITIAL_STATE = {
-    methods: [], //id, title, descr, price, img
+    methods: [
+        {
+            id: "1",
+            name: "Journey Map",
+            participants: 1,
+            time: 60,
+            phase: ["define", "understand"],
+            image: "journey_map_img.svg"
+        },
+
+        {
+            id: "2",
+            name: "Usability test",
+            participants: 2,
+            time: 30,
+            phase: ["define", "prototype"],
+            image: "usability_test_img.svg"
+        },
+
+        {
+            id: "3",
+            name: "Digital prototype",
+            participants: 2,
+            time: 30,
+            phase: ["prototype"],
+            image: "digital_prototype_img.svg"
+        }
+    ], //id, title, de scr, price, img
     currentSprintMethods: [], //id, title, descr, price, img, qty
     currentMethod: null
 };
