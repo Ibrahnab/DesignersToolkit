@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col';
 export const NavBar = () => (
   <div className="navContainer">
     <Container>
-      <Row className='navRow'>
-      <Col><Link to="/" className="navText"><img className="logoImg" src='Logo.svg'/></Link></Col>
+      <Row className="alignNavBarText">
+      <Col><Link to="/"><img class="logoImg" src='Logo.svg'/></Link></Col>
       {/* <img  class="logo" src="logo.png"/> */}
         <Col><Link to="/introduction" className="navText">Introduction</Link></Col>
         <Col><Link to="/methodologies" className="navText">Methodologies</Link></Col>
