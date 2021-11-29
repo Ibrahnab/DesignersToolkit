@@ -15,15 +15,6 @@ body {
   font-size: 24px;
 }
 
-.col{
-  height: fit-content;
-}
-
-.row{
-  position: relative;
-  align-items: center;
-}
-
 img.logoImg {
   
   display: block;
