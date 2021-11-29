@@ -15,8 +15,7 @@ body {
   font-size: 24px;
 }
 
-img.logoImg {
-  
+img.logoImg {  
   display: block;
   max-width:230px;
   max-height:55px;
@@ -29,13 +28,14 @@ img.logoImg {
   font-family: 'Montserrat';
   font-weight: 800;
   text-decoration: none;
-  font-size: 40px;
-  padding-top: 400px;
+  font-size: 34px;
+  padding-top: 70px;
 }
 
 .dashboardVL{
   border-left: 3px solid black;
-  height: 200px;
+  height: 500px;
+  top: 150px;
   position:absolute;
   left: 50%;
   width: 1px;
@@ -93,4 +93,83 @@ img.logoImg {
   align-items: center;;
   margin-left: auto;
   margin-right:auto;
+}
+
+.dashboardHL{
+  border-top: 3px solid #BFBFBF;
+  width: 400px;
+  position: absolute;
+  height: 1px;
+  align-self: center;
+  margin-left: 4%;
+  margin-top: 1%;
+}
+
+.dashboardStandardText{
+  font-size: 18px;
+  font-family: 'Montserrat';
+  align-self: center;
+  text-align: center;
+}
+
+.dashboardStartButton{
+  border: none;
+  background: none;
+}
+
+.dashboardDivMargin{
+  padding-top: 10%;
+}
+
+.textTopMargin{
+  padding-top: 8%;
+}
+
+.roamModeTopTextLeftPadding{
+  padding-left: 4%;
+}
+
+.alignNavBarText{
+  align-items: center;
+}
+
+.buttonText{
+  color:white;
+  font-family: 'Montserrat';
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.buttonText.big{
+  font-size: 24px;
+}
+
+.dashboardStartButton{
+  width: 250px;
+  height: 85px;
+  background-color: #8C3EC9;
+  border-radius: 40px;
+}
+
+.dashboardStartButton:hover{
+  background-color: #834DAE ;
+}
+
+.dashboardSignInButton{
+  width: 151px;
+  height: 51px;
+  background-color: #EE6C4D;
+  border-radius: 40px;
+  border: none;
+}
+
+.dashboardCreateAccountButton{
+  width: 285px;
+  height: 51px;
+  background-color: #68259D;
+  border-radius: 40px;
+  border: none;
 }
