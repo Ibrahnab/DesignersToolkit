@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../Shared/CardData";
-import {MethodCard} from "../Shared/MethodCard";
+import MethodCard from "../Shared/MethodCard";
 import {connect} from "react-redux"
 import Row from "react-bootstrap/Row";
 

@@ -37,16 +37,16 @@ const methodReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case actionTypes.ADD_TO_SPRINT:
             //Get the items data from the methods array
-            const method = state.methods.find(meth => meth.id === action.payload.id)
+            const method = state.methods.find((meth) => meth.id === action.payload.id);
             //Check if the item is in the sprint already
-            const inSprint = state.sprint.find(meth => meth.id === action.payload.id ? true : false)
+            // const inSprint = state.sprint.find((method) => method.id === action.payload.id ? true : false)
             return {
                 // ...state,
                 // cart: inSprint ? state.sprint.map(meth => 
                 //     meth.id === action.payload
-                //     ? { ...meth, } )
+                //     ? { ...method, } )
                 ...state,
-                cart: state.sprintmap((item) => [...state.sprint , {...item}])
+                currentSprintMethods: [...state.currentSprintMethods , {...method}]
             }
         case actionTypes.REMOVE_FROM_SPRINT:
             return {

@@ -1,5 +1,5 @@
 
-import * as actionTypes from "types";
+import * as actionTypes from "./types";
 
 export const addToSprint = (itemID) => {
     return {

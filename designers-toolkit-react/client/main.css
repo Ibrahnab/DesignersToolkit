@@ -129,8 +129,13 @@ img.logoImg {
 }
 
 .cardHeader {
+  margin-top:10px;
   font-size: 13px;
   text-align:center;
+}
+
+.cardHeader.btnHead {
+  margin-top:5px;
 }
 
 .cardBtn {
@@ -139,6 +144,12 @@ img.logoImg {
   border-color:black;
   padding:3px;
   width:50%;
+  transition: 0.3s;
+}
+
+.cardBtn:hover{
+  background-color: #B8D0EB;
+  color: white;
 }
 
 .circle {

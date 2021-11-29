@@ -3,9 +3,13 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
+import {addToSprint} from "../actions/index";
+import {connect} from "react-redux";
 
-export const MethodCard = ({methodData}) => (
-    <div className="methodCard">
+const MethodCard = ({methodData, addToSprint}) => {
+
+    return (
+        <div className="methodCard">
         
         <Row className="justify-content-md-center">
             <img className="cardImg" src={methodData.image}></img>
@@ -32,9 +36,19 @@ export const MethodCard = ({methodData}) => (
             </Col>
         </Row>
         <Row className="justify-content-md-center">
-            <button className="cardBtn">
-                <h5 className="blackHeader cardHeader">Add</h5>
+            <button onClick={()=>addToSprint(methodData.id)}className="cardBtn">
+                <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button>
         </Row>
     </div>
-);
+    )
+    
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addToSprint: (id) => dispatch(addToSprint(id))
+    };
+};
+
+export default connect(null,mapDispatchToProps)(MethodCard);
