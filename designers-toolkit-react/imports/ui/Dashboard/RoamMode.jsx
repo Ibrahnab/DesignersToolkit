@@ -21,7 +21,7 @@ export const RoamMode = () => (
             </div>
             <div className="row d-flex justify-content-center flex-nowrap">
                 <Col md="auto">
-                    <button className='dashboardStartButton'><Link to="/methodologies" className="buttonText big">Start</Link></button>
+                <Link to="/methodologies" className=""><button className='dashboardStartButton buttonText big'>Start</button></Link>
                 </Col>
             </div>
             <div className="row d-flex justify-content-center flex-nowrap textTopMargin">

@@ -13,7 +13,7 @@ export const NavBar = () => (
       {/* <img  class="logo" src="logo.png"/> */}
         <Col><Link to="/introduction" className="navText">Introduction</Link></Col>
         <Col><Link to="/methodologies" className="navText">Methodologies</Link></Col>
-        <Col><Link to="/currentplan" className="navText">Current Plan</Link></Col>
+        <Col><Link to="/currentplan" className="navText">Sprint Plan</Link></Col>
       </Row>
     </Container>
   </div>

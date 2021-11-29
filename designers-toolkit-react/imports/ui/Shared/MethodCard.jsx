@@ -29,10 +29,19 @@ const MethodCard = ({methodData, addToSprint}) => {
                 <p className="blackHeader cardHeader">{methodData.time}m</p>
             </Col>
             <Col>
+                <Row>
                 <img className="cardIcon" src="tripleDiamondIcon.svg"/>
-                    {methodData.phase.map((phase) => (
-                        <div id="circle" className={`circle + ${phase}`}></div>
+                </Row>
+                <Row>
+                {methodData.phase.map((phase) => (
+
+                    <div className="col">
+                    <div id="circle" className={`circle + ${phase}`}></div>
+                    </div>
                     ))}
+                    </Row>
+
+                    
             </Col>
         </Row>
         <Row className="justify-content-md-center">
