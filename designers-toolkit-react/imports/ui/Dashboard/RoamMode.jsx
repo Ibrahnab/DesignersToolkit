@@ -14,7 +14,7 @@ export const RoamMode = () => (
                     <p className ="dashboardHeader">Use without an account</p>
                 </Col>
             </div>
-            <div className="row d-flex justify-content-center flex-nowrap dashboardDivMargin">
+            <div className="row d-flex justify-content-center flex-nowrap topPaddingTen">
                 <Col md="auto">
                     <img className ='dashboardCardImage'src='dashboard_cards_image.svg'/>
                 </Col>
@@ -24,7 +24,7 @@ export const RoamMode = () => (
                     <button className='dashboardStartButton'><Link to="/methodologies" className="buttonText big">Start</Link></button>
                 </Col>
             </div>
-            <div className="row d-flex justify-content-center flex-nowrap textTopMargin">
+            <div className="row d-flex justify-content-center flex-nowrap topPaddingEight">
                 <Col md="auto">
                 <p className='dashboardStandardText'>You can only search for and browse through methodologies in this mode. If you want to create projects and save your progress, 
                 please sign in or create a new account on the right hand side.</p>

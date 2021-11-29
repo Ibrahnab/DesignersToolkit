@@ -14,7 +14,7 @@ export const AccountSide = () => (
                     <p className ="dashboardHeader">Create or select a project</p>
                 </Col>
             </div>
-            <div className="row d-flex justify-content-center flex-nowrap dashboardDivMargin">
+            <div className="row d-flex justify-content-center flex-nowrap topPaddingTen">
                 <Col md="auto">
                     <p className ='dashboardStandardText'>You are not signed in, if you want to create projects, please sign in or create a new account</p>
                 </Col>
@@ -35,7 +35,7 @@ export const AccountSide = () => (
                 </Col>
             </div>
             <div className="dashboardHL"></div>
-            <div className="row d-flex justify-content-center flex-nowrap textTopMargin">
+            <div className="row d-flex justify-content-center flex-nowrap topPaddingEight">
                 <Col>
                     <p className="dashboardStandardText">Don’t have an account? Create a new one here</p>
                 </Col>

@@ -117,12 +117,16 @@ img.logoImg {
   background: none;
 }
 
-.dashboardDivMargin{
+.topPaddingTen{
   padding-top: 10%;
 }
 
-.textTopMargin{
+.topPaddingEight{
   padding-top: 8%;
+}
+
+.topPaddingFour{
+  padding-top: 4%;
 }
 
 .roamModeTopTextLeftPadding{
