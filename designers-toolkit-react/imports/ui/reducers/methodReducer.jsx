@@ -8,7 +8,8 @@ const INITIAL_STATE = {
             participants: 1,
             time: 60,
             phase: ["define", "understand"],
-            image: "journey_map_img.svg"
+            image: "journey_map_img.svg",
+            inSprint: false
         },
 
         {
@@ -17,7 +18,8 @@ const INITIAL_STATE = {
             participants: 2,
             time: 30,
             phase: ["define", "prototype"],
-            image: "usability_test_img.svg"
+            image: "usability_test_img.svg",
+            inSprint: false
         },
 
         {
@@ -26,7 +28,8 @@ const INITIAL_STATE = {
             participants: 2,
             time: 30,
             phase: ["prototype"],
-            image: "digital_prototype_img.svg"
+            image: "digital_prototype_img.svg",
+            inSprint: false
         }
     ], //id, title, de scr, price, img
     currentSprintMethods: [], //id, title, descr, price, img, qty

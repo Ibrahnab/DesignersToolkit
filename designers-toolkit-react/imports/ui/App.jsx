@@ -5,7 +5,7 @@ import { CurrentPlan } from './CurrentPlan/CurrentPlan';
 import {Dashboard} from './Dashboard/Dashboard';
 import {Introduction} from './Introduction/Introduction';
 import Methodologies from './Methodologies/Methodologies';
-import {NavBar} from './Shared/NavBar';
+import NavBar from './Shared/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function selector(){
