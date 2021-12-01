@@ -9,7 +9,8 @@ const INITIAL_STATE = {
             time: 60,
             phase: ["define", "understand"],
             image: "journey_map_img.svg",
-            inSprint: false
+            inSprint: false,
+            currentPhase: "none"
         },
 
         {
@@ -19,7 +20,8 @@ const INITIAL_STATE = {
             time: 30,
             phase: ["define", "prototype"],
             image: "usability_test_img.svg",
-            inSprint: false
+            inSprint: false,
+            currentPhase: "none"
         },
 
         {
@@ -29,7 +31,8 @@ const INITIAL_STATE = {
             time: 30,
             phase: ["prototype"],
             image: "digital_prototype_img.svg",
-            inSprint: false
+            inSprint: false,
+            currentPhase: "none"
         }
     ], //id, title, de scr, price, img
     currentSprintMethods: [], //id, title, descr, price, img, qty
@@ -41,6 +44,7 @@ const methodReducer = (state = INITIAL_STATE, action) => {
         case actionTypes.ADD_TO_SPRINT:
             //Get the items data from the methods array
             const method = state.methods.find((meth) => meth.id === action.payload.id);
+            state.methods.find((meth) => meth.id === action.payload.id);
             //Check if the item is in the sprint already
             // const inSprint = state.sprint.find((method) => method.id === action.payload.id ? true : false)
             return {
@@ -48,20 +52,24 @@ const methodReducer = (state = INITIAL_STATE, action) => {
                 // cart: inSprint ? state.sprint.map(meth => 
                 //     meth.id === action.payload
                 //     ? { ...method, } )
+
+
+                
                 ...state,
                 currentSprintMethods: [...state.currentSprintMethods , {...method}]
+
             }
         case actionTypes.REMOVE_FROM_SPRINT:
             return {
                 ...state, 
-                cart: state.sprint.filter(item => item.id !== action.payload.id)
+                cart: state.currentSprintMethods.filter(item => item.id !== action.payload.id)
             };
         case actionTypes.ADJUST_PHASE:
             return {
                 ...state,
-                sprint: state.sprint.map(item => 
+                methods: state.methods.map(item => 
                     item.id === action.payload.id 
-                    ? {...item, phase: action.payload.ph} : item)
+                    ? {...item, currentPhase: action.payload.ph} : item)
             }
         case actionTypes.LOAD_CURRENT_METHOD:
             return {

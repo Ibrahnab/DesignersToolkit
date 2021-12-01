@@ -3,11 +3,11 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
-import {addToSprint} from "../actions/index";
+import {addToSprint, adjustPhase} from "../actions/index";
 import {connect} from "react-redux";
 import DropDownMenu from "./DropDownMenu"
 
-const MethodCard = ({methodData, addToSprint}) => {
+const MethodCard = ({methodData, addToSprint, adjustPhase}) => {
 
     const [isActive, setIsActive] = useState(false);
     return (
@@ -66,7 +66,7 @@ const MethodCard = ({methodData, addToSprint}) => {
                     <div className="col">
                         <div className={`phaseBtn + ${phase}`}>
                             <p className="whiteHeader phase" 
-                            onClick={()=>addToSprint(methodData.id)
+                            onClick={()=>{adjustPhase(methodData.id, `${phase}`);addToSprint(methodData.id, {phase})}
                             }>{phase}</p>
                         </div>
                     </div>
@@ -80,7 +80,9 @@ const MethodCard = ({methodData, addToSprint}) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addToSprint: (id) => dispatch(addToSprint(id))
+        addToSprint: (id) => dispatch(addToSprint(id)),
+        adjustPhase: (id, ph) => dispatch(adjustPhase(id, ph))
+        //ADD THE adjust FUNCTION HERE and PARAMS
     };
 };
 

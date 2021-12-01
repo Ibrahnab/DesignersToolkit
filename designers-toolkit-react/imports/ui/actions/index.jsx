@@ -1,11 +1,12 @@
 
 import * as actionTypes from "./types";
 
-export const addToSprint = (itemID) => {
+export const addToSprint = (itemID, itemPhase) => {
     return {
         type: actionTypes.ADD_TO_SPRINT,
         payload: {
-            id: itemID
+            id: itemID,
+            phase: itemPhase
         }
     }
 }
@@ -19,7 +20,7 @@ export const removeFromSprint = (itemID) => {
     }
 }
 
-export const adjustPhase = (itemID) => {
+export const adjustPhase = (itemID, value) => {
     return {
         type: actionTypes.ADJUST_PHASE,
         payload: {
