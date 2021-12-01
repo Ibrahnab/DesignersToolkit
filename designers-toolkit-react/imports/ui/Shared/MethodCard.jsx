@@ -3,11 +3,11 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
-import {addToSprint, adjustPhase} from "../actions/index";
+import {addToSprint, adjustPhase, removeFromSprint} from "../actions/index";
 import {connect} from "react-redux";
 import DropDownMenu from "./DropDownMenu"
 
-const MethodCard = ({methodData, addToSprint, adjustPhase}) => {
+const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) => {
 
     const [isActive, setIsActive] = useState(false);
     return (
@@ -69,8 +69,17 @@ const MethodCard = ({methodData, addToSprint, adjustPhase}) => {
                             onClick={()=>{adjustPhase(methodData.id, `${phase}`);addToSprint(methodData.id, {phase})}
                             }>{phase}</p>
                         </div>
+
                     </div>
                     ))}
+                    {methodData.currentPhase !== "none" && (
+                        <div className={`phaseBtn none`}>
+                        <p className="whiteHeader phase" 
+                        onClick={()=>{adjustPhase(methodData.id, "none");removeFromSprint(methodData.id)
+                        }}>remove</p>
+                    </div>
+                    )}
+
                 </div>
             )}
     </div>
@@ -81,8 +90,8 @@ const MethodCard = ({methodData, addToSprint, adjustPhase}) => {
 const mapDispatchToProps = dispatch => {
     return {
         addToSprint: (id) => dispatch(addToSprint(id)),
-        adjustPhase: (id, ph) => dispatch(adjustPhase(id, ph))
-        //ADD THE adjust FUNCTION HERE and PARAMS
+        adjustPhase: (id, ph) => dispatch(adjustPhase(id, ph)),
+        removeFromSprint: (id) => dispatch(removeFromSprint(id))
     };
 };
 

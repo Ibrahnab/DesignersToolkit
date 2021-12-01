@@ -33,6 +33,49 @@ const INITIAL_STATE = {
             image: "digital_prototype_img.svg",
             inSprint: false,
             currentPhase: "none"
+        },
+
+        {
+            id: "4",
+            name: "User persona",
+            participants: 1,
+            time: 30,
+            phase: ["define"],
+            image: "user_persona_img.svg",
+            inSprint: false,
+            currentPhase: "none"
+        },
+
+        {
+            id: "5",
+            name: "Heuristic evaluation",
+            participants: 1,
+            time: 45,
+            phase: ["validate", "sketch"],
+            image: "heuristic_evaluation_img.svg",
+            inSprint: false,
+            currentPhase: "none"
+        },
+        {
+            id: "6",
+            name: "Dot voting",
+            participants: 1,
+            time: 10,
+            phase: ["decide"],
+            image: "dot_voting_img.svg",
+            inSprint: false,
+            currentPhase: "none"
+        },
+
+        {
+            id: "7",
+            name: "Survey",
+            participants: 1,
+            time: 30,
+            phase: ["validate"],
+            image: "survey_img.svg",
+            inSprint: false,
+            currentPhase: "none"
         }
     ], //id, title, de scr, price, img
     currentSprintMethods: [], //id, title, descr, price, img, qty
@@ -62,7 +105,7 @@ const methodReducer = (state = INITIAL_STATE, action) => {
         case actionTypes.REMOVE_FROM_SPRINT:
             return {
                 ...state, 
-                cart: state.currentSprintMethods.filter(item => item.id !== action.payload.id)
+                currentSprintMethods: state.currentSprintMethods.filter(item => item.id !== action.payload.id)
             };
         case actionTypes.ADJUST_PHASE:
             return {

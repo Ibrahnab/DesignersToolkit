@@ -175,14 +175,14 @@ img.logoImg {
 }
 
 .methodCard{
-  width: 180px;
-  height:250px;
+  width: 160px;
+  height:220px;
   background-color:rgb(255, 255, 255);
   border-radius: 5px;
   border-width: 4px;
   border-style:solid;
   border-color: rgb(0, 0, 0);
-  margin-left:20px;
+  /* margin-left:20px; */
   margin-top:20px;
   
 }
@@ -252,6 +252,10 @@ img.logoImg {
 
 .validate {
   background: #E52525;
+}
+
+.none{
+  background:rgb(194, 194, 194);
 }
 
 .dropDownMenu {
