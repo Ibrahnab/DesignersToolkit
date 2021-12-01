@@ -253,3 +253,32 @@ img.logoImg {
 .validate {
   background: #E52525;
 }
+
+.methodDescriptionPanel{
+  width: 1200dpi;
+  height: 980px;
+  background-color: white;
+  border-radius: 3px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+}
+
+.methodDescriptionImage{
+  align-items: center;
+  width: 30%;
+  height: 20%;
+}
+
+.methodDescriptionHeader{
+  text-align: center;
+  font-size: 22px;
+  font-family: "Montserrat";
+  color: #68259D;
+}
+
+.methodDescriptionBodyText{
+  font-size: 16px;
+  font-family: "Montserrat";
+  width: 60%;
+}

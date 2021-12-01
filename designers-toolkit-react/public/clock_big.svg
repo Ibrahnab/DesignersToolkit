@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g id="Group_72" data-name="Group 72" transform="translate(13933 315)">
+    <g id="Ellipse_24" data-name="Ellipse 24" transform="translate(-13933 -315)" fill="none" stroke="#000" stroke-width="5">
+      <circle cx="26" cy="26" r="26" stroke="none"/>
+      <circle cx="26" cy="26" r="23.5" fill="none"/>
+    </g>
+    <g id="Group_71" data-name="Group 71">
+      <g id="Ellipse_25" data-name="Ellipse 25" transform="translate(-13912 -294)" stroke="#000" stroke-width="1">
+        <circle cx="5" cy="5" r="5" stroke="none"/>
+        <circle cx="5" cy="5" r="4.5" fill="none"/>
+      </g>
+      <g id="Polygon_4" data-name="Polygon 4" transform="translate(-13907.847 -307.759) rotate(4)">
+        <path d="M 4.165225982666016 14.5 L 0.5854073166847229 14.5 L 2.375316619873047 3.196832895278931 L 4.165225982666016 14.5 Z" stroke="none"/>
+        <path d="M 2.375316619873047 6.393611907958984 L 1.170809507369995 14 L 3.579823732376099 14 L 2.375316619873047 6.393611907958984 M 2.375316619873047 9.5367431640625e-07 L 4.750636577606201 15 L -3.337860107421875e-06 15 L 2.375316619873047 9.5367431640625e-07 Z" stroke="none" fill="#000"/>
+      </g>
+      <g id="Polygon_5" data-name="Polygon 5" transform="translate(-13919.586 -286) rotate(-90)">
+        <path d="M 5.314737319946289 8.862140655517578 L 0.6852624416351318 8.862140655517578 L 3 1.638508439064026 L 5.314737319946289 8.862140655517578 Z" stroke="none"/>
+        <path d="M 3 3.277016162872314 L 1.370524883270264 8.362140655517578 L 4.629475116729736 8.362140655517578 L 3 3.277016162872314 M 3 9.5367431640625e-07 L 6 9.362140655517578 L 0 9.362140655517578 L 3 9.5367431640625e-07 Z" stroke="none" fill="#000"/>
+      </g>
+    </g>
+  </g>
+</svg>
