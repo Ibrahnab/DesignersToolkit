@@ -10,43 +10,64 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
 
     return (
         <div className="methodDescriptionPanel">
+            <div className="row justify-content-md-center">
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-understand"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-define"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-sketch"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-decide"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-prototype"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-validate"></div>
+                </Col>
+            </div>
         
-            <Row className="justify-content-md-center">
+            <div className="row justify-content-md-center">
                 <img className="methodDescriptionImage" src={methodDescriptionData.image}></img>
-            </Row>
+            </div>
 
-            <Row className="justify-content-md-center">
+            <div className="row justify-content-md-center">
                 <h5 className="methodDescriptionHeader">{methodDescriptionData.name}</h5>
-            </Row>
+            </div>
 
-            <Row className="justify-content-md-center">
+            <div className="row justify-content-md-center">
                 <p className="methodDescriptionBodyText">{methodDescriptionData.description}</p>
-            </Row>
+            </div>
 
-            <Row className="justify-content-md-center">
-                <Col>
+            <div className="row justify-content-md-center">
+                <div className="col">
                     <img className="cardIcon" src="participants_big.svg"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.participants}</p>
-                </Col>
-                <Col>
+                </div>
+                <div className="col">
                     <img className="cardIcon" src="clock_big.svg"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.time}m</p>
-                </Col>
-                <Col>
+                </div>
+                <div className="col">
                     <img src="triplediamond_big.svg"/>
                     {methodDescriptionData.phase.map((phase) => (
                     <div className="col">
                     <div id="circle" className={`circle + ${phase}`}></div>
                     </div>))}
-                </Col>
-            </Row>
-            <Row>
-                <Col>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                <div className="stepCircle"></div>
                 {methodDescriptionData.steps.map((step) =>(
                 <p>{step}</p>
                     ))}
-                </Col>
-            </Row>
+                </div>
+            </div>
         </div>
     )
     
