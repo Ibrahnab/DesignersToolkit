@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
 import {addToSprint} from "../actions/index";
 import {connect} from "react-redux";
+import DropDownMenu from "./DropDownMenu"
 
 const MethodCard = ({methodData, addToSprint}) => {
 
+    const [isActive, setIsActive] = useState(false);
     return (
         <div className="methodCard">
-        
+
         <Row className="justify-content-md-center">
             <img className="cardImg" src={methodData.image}></img>
         </Row>
@@ -45,10 +47,32 @@ const MethodCard = ({methodData, addToSprint}) => {
             </Col>
         </Row>
         <Row className="justify-content-md-center">
-            <button onClick={()=>addToSprint(methodData.id)}className="cardBtn">
+            {/* <button onClick={()=>{()=>addToSprint(methodData.id); 
+                (e) => setIsActive(!isActive)}}className="cardBtn">
+                <h5 className="blackHeader cardHeader btnHead">Add</h5>
+            </button> */}
+
+            <button onClick={ 
+                (e) => setIsActive(!isActive)}className="cardBtn">
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button>
+            
         </Row>
+        {isActive && (
+                <div className="dropDownMenu">
+
+                    {methodData.phase.map((phase) => (
+
+                    <div className="col">
+                        <div className={`phaseBtn + ${phase}`}>
+                            <p className="whiteHeader phase" 
+                            onClick={()=>addToSprint(methodData.id)
+                            }>{phase}</p>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            )}
     </div>
     )
     

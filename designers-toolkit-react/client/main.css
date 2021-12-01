@@ -253,3 +253,46 @@ img.logoImg {
 .validate {
   background: #E52525;
 }
+
+.dropDownMenu {
+  margin-top:5px;
+  background-color: #ffffff ;
+  display:inline-block;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius:5px;
+  padding:5px;
+  border-style:solid;
+  border-color:black;
+}
+
+.phaseBtn{
+  
+  border-radius:30px;
+  margin-bottom:none;
+  padding-left:10px;
+  padding-right:10px;
+  margin-bottom:5px;
+  font-size:0px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  cursor: pointer;
+
+}
+
+.phaseBtn:hover {
+
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+
+.whiteHeader.phase{
+  display:inline-block;
+  font-size: medium;
+  margin:0px;
+  padding:0px;
+}
