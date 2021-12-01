@@ -304,12 +304,16 @@ img.logoImg {
 }
 
 .circle.sprint{
-  width:40px;
-  height:40px;
+  width:25px;
+  height:25px;
 }
 
 .sprintCol {
   background-color: #ffffff;
   border-left: 3px solid;
   border-left-color: rgb(194, 194, 194);
+}
+
+.sprintsContainer{
+  margin-top:20px;
 }
