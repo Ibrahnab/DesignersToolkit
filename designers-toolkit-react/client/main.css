@@ -464,7 +464,31 @@ img.logoImg {
 }
 
 .diamondContainer { 
-  padding-top:100px;
+  padding-top:50px;
   padding-bottom:50px;
   align-items: center;
+}
+
+.understandTriangle.understandLock {
+  border-width: 0 110px 160px 110px;
+}
+
+.defineTriangle.defineLock {
+  border-width: 0 110px 160px 110px;
+}
+
+.sketchTriangle.sketchLock {
+  border-width: 0 110px 160px 110px;
+}
+
+.decideTriangle.decideLock {
+  border-width: 0 110px 160px 110px;
+}
+
+.prototypeTriangle.prototypeLock {
+  border-width: 0 110px 160px 110px;
+}
+
+.validateTriangle.validateLock {
+  border-width: 0 110px 160px 110px;
 }
