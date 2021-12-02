@@ -10,9 +10,13 @@ const Methodologies = ({methods}) => {
 
   const [selectedPhase, changePhase] = useState("understandLock");
 
+  function filterState(input) {
+    return input.replace('Lock', '');
+  }
+
   return (
     <div>
-      <Container className="auto">
+      <Container className="auto pageContainer">
 
         <Container className="diamondContainer justify-content-md-center">
           <Row className="diamondContainer justify-content-md-center">
@@ -58,7 +62,8 @@ const Methodologies = ({methods}) => {
           </Row>
         </Container>
 
-        <Container>
+        {/* Try to generalize this section with redux, it's too repetetive*/}
+        <Container> 
           <Row>
             <Col className="justify-content-md-center d-flex">
               {selectedPhase == "understandLock" && 
@@ -141,15 +146,33 @@ const Methodologies = ({methods}) => {
             </Col>
           </Row>
         </Container>
+
+        <Container>
+          <Row>
+            <Col>
+              <h5 className="blackHeader">Common methods used in this phase</h5>
+            </Col>
+          </Row>
+          <Row>
+          {methods.filter(meth => meth.phase.find(ph => ph === filterState(selectedPhase))).map((meth) => (
+              
+              <Col md="auto">
+                <MethodCard key={meth.id} methodData={meth} /> 
+              </Col>
+            ))}
+          
+          </Row>
+
+        </Container>
         {/*------------ Not supposed to be in the final ---------- */}
-        <Row>
+        {/* <Row>
           {methods.map((meth) => (
               <Col md="auto">
                 <MethodCard key={meth.id} methodData={meth} /> 
               </Col>
               ))
           }
-        </Row>
+        </Row> */}
       </Container>
     </div>
   );

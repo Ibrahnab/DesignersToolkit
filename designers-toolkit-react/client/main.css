@@ -492,3 +492,7 @@ img.logoImg {
 .validateTriangle.validateLock {
   border-width: 0 110px 160px 110px;
 }
+
+.pageContainer {
+  margin-bottom:200px;
+}
