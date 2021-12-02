@@ -187,6 +187,10 @@ img.logoImg {
   
 }
 
+.methodContainer{
+  padding:0px;
+}
+
 .cardImg {
   margin-top:10px;
   width:90px;
@@ -196,8 +200,8 @@ img.logoImg {
 
 .cardIcon {
   align-items: center;
-  width: 20px;
-  height:20px;
+  width: 30px;
+  height:30px;
 }
 
 .cardHeader {
@@ -215,7 +219,7 @@ img.logoImg {
   background-color:white;
   border-color:black;
   padding:3px;
-  width:50%;
+  width:70%;
   transition: 0.3s;
 }
 
@@ -230,6 +234,14 @@ img.logoImg {
   width: 10px;
   height: 10px;
   margin-left:0px;
+ 
+}
+.circleCol{
+  padding:1px;
+}
+
+.iconCol{
+  padding:0px;
 }
 
 .understand { 

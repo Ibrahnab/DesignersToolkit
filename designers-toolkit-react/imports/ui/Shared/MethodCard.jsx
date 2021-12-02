@@ -12,39 +12,43 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) =>
     const [isActive, setIsActive] = useState(false);
     return (
         <div className="methodCard">
-<Container>
+<Container className="methodContainer p-0">
         <Row className="justify-content-md-center">
+            <Col className="justify-content-md-center d-flex">
             <img className="cardImg" src={methodData.image}></img>
-        </Row>
-
-        <Row className="justify-content-md-center">
-            <h5 className="blackHeader cardHeader">{methodData.name}</h5>
+            </Col>
         </Row>
 
         <Row className="justify-content-md-center">
             <Col>
-                <img className="cardIcon" src="personIcon.svg"/>
+            <h5 className="blackHeader cardHeader">{methodData.name}</h5>
+            </Col>
+        </Row>
+
+        <Row md="auto" className="justify-content-md-center fluid">
+            <Col  md="auto" className="fluid iconCol">
+                <img className="cardIcon" src="personIcon2.svg"/>
                 <p className="blackHeader cardHeader">{methodData.participants}</p>
             </Col>
-            <Col>
-                <img className="cardIcon" src="clockIcon.svg"/>
-                <p className="blackHeader cardHeader">{methodData.time}m</p>
+            <Col  md="auto" className="fluid iconCol">
+                <img className="cardIcon" src="clockIcon2.svg"/>
+                <p className="blackHeader cardHeader fluid">{methodData.time}m</p>
             </Col>
-            <Col md ="auto">
+            <Col md ="auto" className="fluid">
                 <Row>
-                <img className="cardIcon" src="tripleDiamondIcon.svg"/>
-                </Row>
-                <div className="row justify-content-md-center">
-                {methodData.phase.map((phase) => (
-
-
-                    <Col md="auto">
-                    <div id="circle" className={`circle + ${phase}`}></div>
+                    <Col md="auto" className="iconCol fluid">
+                        <img className="cardIcon" src="tripleDiamondIcon2.svg"/>
                     </Col>
+                </Row>
+                <Row className="row justify-content-md-center">
+                {/* <div className="row justify-content-md-center"> */}
+                    {methodData.phase.map((phase) => (
+                        <Col md="auto" className="circleCol fluid p-1">
+                            <div id="circle" className={`circle + ${phase}`}></div>
+                        </Col>
                     ))}
-                    </div>
-
-                    
+                {/* </div>  */}
+                </Row>
             </Col>
         </Row>
         <Row className="justify-content-md-center">
@@ -52,11 +56,12 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) =>
                 (e) => setIsActive(!isActive)}}className="cardBtn">
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button> */}
-
+            <Col className="justify-content-md-center d-flex">
             <button onClick={ 
                 (e) => setIsActive(!isActive)}className="cardBtn">
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button>
+            </Col>
             
         </Row>
         {isActive && (

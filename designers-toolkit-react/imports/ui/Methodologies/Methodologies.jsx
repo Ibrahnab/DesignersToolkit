@@ -24,7 +24,7 @@ const Methodologies = ({methods}) => {
       <h1>Methodologies Page</h1>
       <Row>
       {methods.map((meth) => (
-        <Col>
+        <Col md="auto">
             <MethodCard key={meth.id} methodData={meth} /> 
             </Col>
          ))}
