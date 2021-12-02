@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -6,11 +6,14 @@ import methodReducer from "../reducers/methodReducer";
 import {loadCurrentMethod} from "../actions/index";
 import {connect} from "react-redux";
 
+
 const MethodDescriptionPanel = ({methodDescriptionData}) => {
+
+    const [count, setCount] = useState(0);
 
     return (
         <div className="methodDescriptionPanel">
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-md-center mt-3">
                 <Col md="auto" className="adjust-col-width">
                     <div className="triangle-understand"></div>
                 </Col>
@@ -31,43 +34,45 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                 </Col>
             </div>
         
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-md-center mt-4">
                 <img className="methodDescriptionImage" src={methodDescriptionData.image}></img>
             </div>
 
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-md-center mt-2">
                 <h5 className="methodDescriptionHeader">{methodDescriptionData.name}</h5>
             </div>
 
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-md-center mt-1">
                 <p className="methodDescriptionBodyText">{methodDescriptionData.description}</p>
             </div>
 
-            <div className="row justify-content-md-center">
-                <div className="col">
-                    <img className="cardIcon" src="participants_big.svg"/>
+            <div className="row justify-content-md-center mt-3">
+                <Col md="auto" className="">
+                    <img src="participants_big.svg"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.participants}</p>
-                </div>
-                <div className="col">
-                    <img className="cardIcon" src="clock_big.svg"/>
+                </Col>
+                <Col md="auto" className="method-icons-left-margin">
+                    <img src="clock_big.svg"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.time}m</p>
-                </div>
-                <div className="col">
+                </Col>
+                <Col md="auto" className="method-icons-left-margin mt-2">
                     <img src="triplediamond_big.svg"/>
-                    {methodDescriptionData.phase.map((phase) => (
-                    <div className="col">
-                    <div id="circle" className={`circle + ${phase}`}></div>
-                    </div>))}
-                </div>
+                    <div className="row justify-content-md-center">
+                        {methodDescriptionData.phase.map((phase) => (
+                                <Col md="auto" className="mt-3">
+                                    <div className={`method-circle + ${phase}`}></div>
+                                </Col>
+
+                        ))}
+                    </div>
+                </Col>
             </div>
-            <div className="row">
-                <div className="col">
-                <div className="stepCircle"></div>
-                {methodDescriptionData.steps.map((step) =>(
-                <p>{step}</p>
+            {methodDescriptionData.steps.map((step) =>(
+                <div className="row">
+                        <div className="stepCircle"><p>{count}</p></div> 
+                        <p className="method-step-text">{step}</p>
+                </div>
                     ))}
-                </div>
-            </div>
         </div>
     )
     

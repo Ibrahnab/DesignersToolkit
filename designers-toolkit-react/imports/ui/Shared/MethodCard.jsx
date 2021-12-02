@@ -39,7 +39,7 @@ const MethodCard = ({methodData, addToSprint}) => {
                     <div id="circle" className={`circle + ${phase}`}></div>
                     </div>
                     ))}
-                    </Row>
+                </Row>
 
                     
             </Col>
