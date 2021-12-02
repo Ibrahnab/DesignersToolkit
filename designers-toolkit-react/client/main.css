@@ -272,8 +272,6 @@ img.logoImg {
 
 .methodDescriptionImage{
   align-items: center;
-  width: 30%;
-  height: 20%;
 }
 
 .methodDescriptionHeader{
@@ -286,7 +284,8 @@ img.logoImg {
 .methodDescriptionBodyText{
   font-size: 16px;
   font-family: "Montserrat";
-  width: 60%;
+  text-align: center;
+  margin: 0px !important;
 }
 
 .stepCircle{
@@ -295,8 +294,8 @@ img.logoImg {
   border-radius: 50%;
   border: 3px solid gold;
   border-width: 3px;
-  margin-left: 20%;
-  margin-top: 3%;
+  margin: 0px !important;
+  margin-left: 0px !important;
 }
 
 .triangle-understand {
@@ -354,10 +353,8 @@ img.logoImg {
 .method-step-text{
   font-size: 16px;
   font-family: "Montserrat";
-  padding-top: 1%;
-  margin-top: 3%;
-  margin-left: 1%;
   width: fit-content;
+  padding-top: 2%;
 }
 
 .method-icons-left-margin{
@@ -365,6 +362,6 @@ img.logoImg {
 }
 
 .col-fit-content{
-  width: fit-content;
+  width: fit-content !important;
 }
 

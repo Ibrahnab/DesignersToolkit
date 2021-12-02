@@ -24,9 +24,9 @@ const Methodologies = ({methods, methodDescriptions}) => {
     <Container>
       <div>
         <Row>
-          {methodDescriptions.map((md) => (
-              <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
-          ))}
+            {methodDescriptions.map((md) => (
+                <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+            ))}
         </Row> 
       </div>
     </Container>

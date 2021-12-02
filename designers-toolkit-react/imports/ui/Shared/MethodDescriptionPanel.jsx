@@ -35,19 +35,25 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
             </div>
         
             <div className="row justify-content-md-center mt-4">
-                <img className="methodDescriptionImage" src={methodDescriptionData.image}></img>
+                <Col md="auto">
+                    <img className="methodDescriptionImage" src={methodDescriptionData.image}></img>
+                </Col>
             </div>
 
             <div className="row justify-content-md-center mt-2">
-                <h5 className="methodDescriptionHeader">{methodDescriptionData.name}</h5>
+                <Col md="auto">
+                    <h5 className="methodDescriptionHeader">{methodDescriptionData.name}</h5>
+                </Col>
             </div>
 
             <div className="row justify-content-md-center mt-1">
-                <p className="methodDescriptionBodyText">{methodDescriptionData.description}</p>
+                <div className="col-sm-6">
+                    <p className="methodDescriptionBodyText">{methodDescriptionData.description}</p>
+                </div>
             </div>
 
             <div className="row justify-content-md-center mt-3">
-                <Col md="auto" className="">
+                <Col md="auto">
                     <img src="participants_big.svg"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.participants}</p>
                 </Col>
@@ -67,12 +73,18 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                     </div>
                 </Col>
             </div>
+            <div className="row">
             {methodDescriptionData.steps.map((step) =>(
-                <div className="row">
+                <div className="row justify-content-center">
+                    <div className="col-sm-1 ml-3">
                         <div className="stepCircle"><p>{count}</p></div> 
+                    </div>
+                    <div className="col-sm-6 md-2">
                         <p className="method-step-text">{step}</p>
+                    </div>
                 </div>
                     ))}
+            </div>
         </div>
     )
     
