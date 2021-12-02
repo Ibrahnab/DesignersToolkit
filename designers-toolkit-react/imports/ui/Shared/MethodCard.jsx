@@ -12,7 +12,7 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) =>
     const [isActive, setIsActive] = useState(false);
     return (
         <div className="methodCard">
-
+<Container>
         <Row className="justify-content-md-center">
             <img className="cardImg" src={methodData.image}></img>
         </Row>
@@ -30,18 +30,19 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) =>
                 <img className="cardIcon" src="clockIcon.svg"/>
                 <p className="blackHeader cardHeader">{methodData.time}m</p>
             </Col>
-            <Col>
+            <Col md ="auto">
                 <Row>
                 <img className="cardIcon" src="tripleDiamondIcon.svg"/>
                 </Row>
-                <Row>
+                <div className="row justify-content-md-center">
                 {methodData.phase.map((phase) => (
 
-                    <div className="col">
+
+                    <Col md="auto">
                     <div id="circle" className={`circle + ${phase}`}></div>
-                    </div>
+                    </Col>
                     ))}
-                    </Row>
+                    </div>
 
                     
             </Col>
@@ -82,7 +83,9 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) =>
 
                 </div>
             )}
+             </Container>
     </div>
+   
     )
     
 };

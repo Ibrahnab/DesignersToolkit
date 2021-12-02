@@ -175,8 +175,8 @@ img.logoImg {
 }
 
 .methodCard{
-  width: 160px;
-  height:220px;
+  width: 180px;
+  height:260px;
   background-color:rgb(255, 255, 255);
   border-radius: 5px;
   border-width: 4px;
@@ -189,13 +189,15 @@ img.logoImg {
 
 .cardImg {
   margin-top:10px;
-  width:60%;
-  height:40%;
+  width:90px;
+  height:90px;
   align-items: center;
 }
 
 .cardIcon {
   align-items: center;
+  width: 20px;
+  height:20px;
 }
 
 .cardHeader {

@@ -12,20 +12,24 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
     <div>
       
       <Container>
-        <Row><img className="tinyTripleDiamond" src="tinyTripleDiamond.svg"></img></Row>
+        <Row><Col>
+        <img className="tinyTripleDiamond" src="tinyTripleDiamond.svg"></img></Col></Row>
         <Row className="sprintsContainer">
           <Col className="sprintCol">
-            <div className="circle sprint understand"></div>
-            <h5 className="blackHeader">Understand</h5>
-
+            <Row>
+              <Col><div className="circle sprint understand"></div></Col>
+              <Col><h5 className="blackHeader">Understand</h5></Col>
+            </Row>
             {currentSprintMethods.filter(meth => meth.currentPhase === "understand").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
           </Col>
           <Col className="sprintCol">
 
-            <div className="circle sprint define"></div>
-            <h5 className="blackHeader">Define</h5>
+          <Row>
+              <Col><div className="circle sprint define"></div></Col>
+              <Col><h5 className="blackHeader">Define</h5></Col>
+            </Row>
 
             {currentSprintMethods.filter(meth => meth.currentPhase === "define").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
@@ -33,8 +37,10 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
 
           </Col>
           <Col className="sprintCol">
-            <div className="circle sprint sketch"></div>
-            <h5 className="blackHeader">Sketch</h5>
+          <Row>
+              <Col><div className="circle sprint sketch"></div></Col>
+              <Col><h5 className="blackHeader">Sketch</h5></Col>
+            </Row>
 
             {currentSprintMethods.filter(meth => meth.currentPhase === "sketch").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
@@ -43,8 +49,10 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
           </Col>
           <Col className="sprintCol">
 
-            <div className="circle sprint decide"></div>
-            <h5 className="blackHeader">Decide</h5>
+          <Row>
+              <Col><div className="circle sprint decide"></div></Col>
+              <Col><h5 className="blackHeader">Decide</h5></Col>
+            </Row>
 
             {currentSprintMethods.filter(meth => meth.currentPhase === "decide").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
@@ -53,8 +61,10 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
           </Col>
 
           <Col className="sprintCol">
-            <div className="circle sprint prototype"></div>
-            <h5 className="blackHeader">Prototype</h5>
+          <Row>
+              <Col><div className="circle sprint prototype justify-content-md-center"></div></Col>
+              <Col><h5 className="blackHeader">Prototype</h5></Col>
+            </Row>
 
             {currentSprintMethods.filter(meth => meth.currentPhase === "prototype").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
@@ -62,9 +72,9 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
           
           </Col>
           <Col className="sprintCol">
-            <Row>
-            <div className="circle sprint validate"></div>
-            <h5 className="blackHeader">Validate</h5>
+          <Row>
+              <Col><div className="circle sprint validate"></div></Col>
+              <Col><h5 className="blackHeader">Validate</h5></Col>
             </Row>
             {currentSprintMethods.filter(meth => meth.currentPhase === "validate").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
