@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import data from "../Shared/CardData";
 import MethodCard from "../Shared/MethodCard";
+import MethodDescriptionPanel from "../Shared/MethodDescriptionPanel";
 import {connect} from "react-redux"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-const Methodologies = ({methods}) => {
+const Methodologies = ({methods, methodDescriptions}) => {
 
   const [selectedPhase, changePhase] = useState("understandLock");
 
@@ -164,22 +165,28 @@ const Methodologies = ({methods}) => {
           </Row>
 
         </Container>
-        {/*------------ Not supposed to be in the final ---------- */}
-        {/* <Row>
-          {methods.map((meth) => (
-              <Col md="auto">
-                <MethodCard key={meth.id} methodData={meth} /> 
-              </Col>
-              ))
-          }
-        </Row> */}
       </Container>
-    </div>
-  );
-};
+      <div className="row">
+          {methods.map((meth) => (
+            <div className="col">
+              <MethodCard key={meth.id} methodData={meth} /> 
+            </div>
+          ))}
+      </div>
+      <div className="row">
+         {methodDescriptions.map((md) => (
+           <div className="col">
+            <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+            </div>
+        ))}
+      </div>
+
+    </div>)};
+
 
   const mapStateToProps = (state) => {
     return {
+      methodDescriptions: state.methodReducer.methodDescriptions,
       methods: state.methodReducer.methods,
     };
   };

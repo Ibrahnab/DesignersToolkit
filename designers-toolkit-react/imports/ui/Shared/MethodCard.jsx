@@ -47,8 +47,8 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint}) =>
                             <div id="circle" className={`circle + ${phase}`}></div>
                         </Col>
                     ))}
-                {/* </div>  */}
                 </Row>
+                    
             </Col>
         </Row>
         <Row className="justify-content-md-center">

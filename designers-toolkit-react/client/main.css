@@ -251,6 +251,13 @@ img.logoImg {
   padding:0px;
 }
 
+.method-circle{
+  background: lightblue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
 .understand { 
   background: #ABBF4A;
 }
@@ -541,3 +548,123 @@ img.logoImg {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+.methodDescriptionPanel{
+  width: 1200dpi;
+  background-color: white;
+  border-radius: 3px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+}
+
+.methodDescriptionImage{
+  align-items: center;
+}
+
+.methodDescriptionHeader{
+  text-align: center;
+  font-size: 24px;
+  font-family: "Montserrat";
+  color: #68259D;
+}
+
+.methodDescriptionBodyText{
+  font-size: 16px;
+  font-family: "Montserrat";
+  text-align: center;
+  margin: 0px !important;
+}
+
+.stepCircle{
+  width:69px;
+  height:69px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  border-width: 3px;
+  margin: 0px !important;
+  margin-left: 0px !important;
+}
+
+.triangle-understand {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-right: 50px solid #ABBF4A;
+  border-bottom: 40px solid transparent;
+}
+
+.triangle-smaller-understand{
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-right: 40px solid black;
+  border-bottom: 30px solid transparent;
+  margin-top: 50% !important;
+}
+
+.triangle-define{
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-left: 50px solid #85953A;
+  border-bottom: 40px solid transparent;
+}
+
+.triangle-sketch{
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-right: 50px solid #3076DF;
+  border-bottom: 40px solid transparent;
+}
+
+.triangle-decide{
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-left: 50px solid #8C3A9D;
+  border-bottom: 40px solid transparent;
+}
+
+.triangle-prototype{
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-right: 50px solid #FF5F5F;
+  border-bottom: 40px solid transparent;
+}
+
+.triangle-validate{
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-left: 50px solid #E52525;
+  border-bottom: 40px solid transparent;
+}
+
+.adjust-col-width{
+  padding: 0;
+}
+
+.method-step-text{
+  font-size: 16px;
+  font-family: "Montserrat";
+  width: fit-content;
+  padding-top: 2%;
+}
+
+.method-icons-left-margin{
+  margin-left: 8%;
+}
+
+.col-fit-content{
+  width: fit-content !important;
+}
+
+.step-number-text{
+  font-family: "Montserrat";
+  font-size: 18px;
+  text-align: center;
+  margin-top: 25%;
+}
+
