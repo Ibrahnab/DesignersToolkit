@@ -73,22 +73,32 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                     </div>
                 </Col>
             </div>
-            <div className="row">
-            {methodDescriptionData.steps.map((step) =>(
-                <div className="row justify-content-center">
-                    <div className="col-sm-1 ml-3">
-                        <div className="stepCircle"><p>{count}</p></div> 
-                    </div>
-                    <div className="col-sm-6 md-2">
-                        <p className="method-step-text">{step}</p>
-                    </div>
+            <div className="row justify-content-md-center">
+                <div className="col-sm-1 ml-3">
+                    {methodDescriptionData.stepsNbr.map((nbr) =>(
+                            <div className="col mt-1">
+                                <div className="stepCircle"><p className="step-number-text">{nbr}</p></div> 
+                            </div>
+                            ))}
                 </div>
-                    ))}
+                <div className="col-sm-6 md-2">
+                    {methodDescriptionData.steps.map((step) =>(
+                        <div className="col mt-2">
+                            <p className="method-step-text">{step}</p>
+                        </div>
+                        ))}
+                </div>
             </div>
         </div>
     )
     
 };
+
+/*{methodDescriptionData.stepsNrb.map((nbr) =>(
+                        <div className="col-sm-1 ml-3">
+                            <div className="stepCircle"><p>{nbr}</p></div> 
+                        </div>
+                    ))}*/
 
 const mapDispatchToProps = dispatch => {
     return {
