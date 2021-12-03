@@ -3,12 +3,12 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "@restart/ui/esm/Button";
-
+import { Link } from "react-router-dom";
 
 
 export const Introduction = () => (
   
-  <Container>
+  <Container className="pageContainer">
     
     <div className="sectionContainer start">
       <img src="introMethods.svg"/>
@@ -66,17 +66,26 @@ export const Introduction = () => (
       by removing them from a phase if you don’t want it there anymore
       </p>
     </div>
+    <Row>
+      <Col><div className="sectionContainer">
+      <img className="sprintPlanImg size"src="planImg.svg"/>
+    </div></Col>
+    </Row>
     
     <div className="sectionContainer">
-      <img className="sprintPlanImg size"src="planImg.svg"/>
-    </div>
-
-    <div className="sectionContainer">
+    <Row className="justify-content-md-center">
+      <Col md="auto" className="">
+     
       {/* <h1 className="purpleBtn">lmao</h1> */}
+      <Link to="/methodologies" className="">
+
       <Button className="purpleBtn">
         <h5 className="whiteHeader">Begin exploring</h5>
       </Button>
-
+      </Link>
+      </Col>
+    </Row>
     </div>
+    
 </Container>
   ); 
