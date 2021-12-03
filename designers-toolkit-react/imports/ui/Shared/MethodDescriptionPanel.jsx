@@ -9,13 +9,17 @@ import {connect} from "react-redux";
 
 const MethodDescriptionPanel = ({methodDescriptionData}) => {
 
-    const [count, setCount] = useState(0);
-
     return (
         <div className="methodDescriptionPanel">
             <div className="row justify-content-md-center mt-3">
                 <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-understand"></div>
+                    <div className="triangle-understand">
+                        <div classNmae="row ">
+                            <div className="col">
+                                <div className="triangle-smaller-understand"/>
+                            </div>
+                        </div>
+                    </div>
                 </Col>
                 <Col md="auto" className="adjust-col-width">
                     <div className="triangle-define"></div>
@@ -74,16 +78,16 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                 </Col>
             </div>
             <div className="row justify-content-md-center">
-                <div className="col-sm-1 ml-3">
+                <div className="col-sm-1 ml-3 mt-4">
                     {methodDescriptionData.stepsNbr.map((nbr) =>(
-                            <div className="col mt-1">
+                            <div className="col mt-4">
                                 <div className="stepCircle"><p className="step-number-text">{nbr}</p></div> 
                             </div>
                             ))}
                 </div>
                 <div className="col-sm-6 md-2">
                     {methodDescriptionData.steps.map((step) =>(
-                        <div className="col mt-2">
+                        <div className="col mt-5">
                             <p className="method-step-text">{step}</p>
                         </div>
                         ))}

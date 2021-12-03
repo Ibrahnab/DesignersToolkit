@@ -306,6 +306,15 @@ img.logoImg {
   border-bottom: 40px solid transparent;
 }
 
+.triangle-smaller-understand{
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-right: 40px solid black;
+  border-bottom: 30px solid transparent;
+  margin-top: 50% !important;
+}
+
 .triangle-define{
   width: 0;
   height: 0;

@@ -28,7 +28,7 @@ const Methodologies = ({methods, methodDescriptions}) => {
     <Container>
       <div className="row">
           {methods.map((meth) => (
-              <MethodCard onClick= {this.onClick} key={meth.id} methodData={meth} /> 
+              <MethodCard key={meth.id} methodData={meth} /> 
           ))}
       </div>
       <div className="row">
