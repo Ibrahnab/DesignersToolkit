@@ -11,9 +11,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
     return(
     <div>
       
-      <Container>
-        <Row><Col>
-        <img className="tinyTripleDiamond" src="tinyTripleDiamond.svg"></img></Col></Row>
+      <Container className="pageContainer">
+        <Row>
+          <Col>
+            <img className="tinyTripleDiamond" src="tinyTripleDiamond.svg"></img>
+          </Col>
+        </Row>
         <Row className="sprintsContainer">
           <Col className="sprintCol">
             <Row>
