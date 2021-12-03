@@ -20,15 +20,22 @@ import { Container } from "@mui/material";
 //   ); 
 
 const Methodologies = ({methods, methodDescriptions}) => {
+  const [showMethodDescription, setShowMethodDescription] = React.useState(false);
+    const onClick = () => setShowMethodDescription(true);
+
   return (
+
     <Container>
-      <div>
-        <Row>
-            {methodDescriptions.map((md) => (
-                <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
-            ))}
-        </Row> 
+      <div className="row" onClick={onClick}>
+          {methods.map((meth) => (
+              <MethodCard onClick= {this.onClick} key={meth.id} methodData={meth} /> 
+          ))}
       </div>
+      <div className="row">
+         {methodDescriptions.map((md) => (
+            <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+        ))}
+      </div> 
     </Container>
   );
 };
@@ -36,6 +43,7 @@ const Methodologies = ({methods, methodDescriptions}) => {
   const mapStateToProps = (state) => {
     return {
       methodDescriptions: state.methodReducer.methodDescriptions,
+      methods: state.methodReducer.methods,
     };
   };
 
