@@ -37,15 +37,36 @@ const HamburgerMenu = ({methods}) => {
               </Row>
               <Row className="firstSearchRow">
                 <Col>
-                  <p className="smallBlackHeader">Amount of time</p>
+                  <p className="smallBlackHeader">Select phases</p>
+                </Col>
+                
+              </Row>
+              <Row>
+                    <Col>
+                      <Form.Check type="checkbox" inline label="Understand" name="group1" />
+                      <Form.Check type="checkbox" inline label="Define" name="group1" />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Form.Check type="checkbox" inline label="Sketch" name="group1" />
+                      <Form.Check type="checkbox" inline label="Decide" name="group1" />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Form.Check type="checkbox" inline label="Prototype" name="group1" />
+                      <Form.Check type="checkbox" inline label="Validate" name="group1" />
+                    </Col>
+                  </Row>
+
+
+              <Row className="firstSearchRow">
+                <Col>
+                <p className="smallBlackHeader">Amount of time</p>
                 </Col>
                 <Col>
                   <SimpleSlider></SimpleSlider>
-                </Col>
-              </Row>
-              <Row className="firstSearchRow">
-                <Col>
-                
                 </Col>
               </Row>
               <Row className="firstSearchRow">

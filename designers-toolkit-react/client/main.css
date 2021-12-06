@@ -803,3 +803,12 @@ a {
   font-size:14px;
   font-weight: 800;
 }
+
+.textWrapper {
+	background-color: #2196F3;
+    width:100px;
+    height:25px;
+    border-radius:0px 30px 30px 0px;
+    margin-left: -10px;
+    
+} 
