@@ -549,15 +549,14 @@ img.logoImg {
   to   { opacity: 1; }
 }
 .methodDescriptionPanel{
-  width: 1200dpi;
+  width: 1253px;
   background-color: white;
-  border-radius: 3px;
-  border-width: 3px;
-  border-color: black;
-  border-style: solid;
+  float: right;
 }
 
 .methodDescriptionImage{
+  width: 310px;
+  height: 310px;
   align-items: center;
 }
 
@@ -573,6 +572,10 @@ img.logoImg {
   font-family: "Montserrat";
   text-align: center;
   margin: 0px !important;
+}
+
+.method-section-methodologies{
+  border: 2px solid black;
 }
 
 .stepCircle{

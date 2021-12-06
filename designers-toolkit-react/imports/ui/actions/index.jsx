@@ -11,6 +11,15 @@ export const addToSprint = (itemID, itemPhase) => {
     }
 }
 
+export const showCurrentMethod = (itemID) =>{
+    return{
+        type: actionTypes.SHOW_CURRENT_METHOD,
+        payload:{
+            id:itemID
+        }
+    }
+}
+
 export const removeFromSprint = (itemID) => {
     return {
         type: actionTypes.REMOVE_FROM_SPRINT,

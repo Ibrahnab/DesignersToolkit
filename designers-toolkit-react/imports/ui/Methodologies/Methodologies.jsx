@@ -7,12 +7,28 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-const Methodologies = ({methods, methodDescriptions}) => {
+const Methodologies = ({methods, currentMethod}) => {
 
   const [selectedPhase, changePhase] = useState("understandLock");
 
+  export const [methodID, setMethodID] = useState(1);
+
+  /*export const adjustPhase = (itemID, value) => {
+    return {
+        type: actionTypes.ADJUST_PHASE,
+        payload: {
+            id: itemID,
+            ph: value
+        }
+    }
+}*/
+
   function filterState(input) {
     return input.replace('Lock', '');
+  }
+
+  function toString(input){
+    return input.toString();
   }
 
   return (
@@ -167,18 +183,22 @@ const Methodologies = ({methods, methodDescriptions}) => {
         </Container>
       </Container>
       <div className="row">
-          {methods.map((meth) => (
-            <div className="col">
-              <MethodCard key={meth.id} methodData={meth} /> 
+        <div className="col method-section-methodologies">
+          <div className="row">
+            {methods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
             </div>
-          ))}
-      </div>
-      <div className="row">
-         {methodDescriptions.map((md) => (
-           <div className="col">
-            <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
-            </div>
-        ))}
+        </div>
+        <div className="col">
+          {currentMethod.map((md) => (
+              <div className="col float-md-right">
+                <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+                </div>
+            ))}
+        </div>
       </div>
 
     </div>)};
@@ -186,7 +206,7 @@ const Methodologies = ({methods, methodDescriptions}) => {
 
   const mapStateToProps = (state) => {
     return {
-      methodDescriptions: state.methodReducer.methodDescriptions,
+      currentMethod: state.methodReducer.currentMethod,
       methods: state.methodReducer.methods,
     };
   };
