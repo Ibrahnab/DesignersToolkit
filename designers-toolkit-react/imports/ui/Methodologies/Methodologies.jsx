@@ -183,8 +183,8 @@ const Methodologies = ({methods, currentMethod}) => {
         </Container>
       </Container>
       <div className="row">
-        <div className="col method-section-methodologies">
-          <div className="row">
+        <div className="col-sm-3 method-section-methodologies">
+          <div className="row justify-content-md-center">
             {methods.map((meth) => (
               <div className="col">
                 <MethodCard key={meth.id} methodData={meth} /> 
@@ -200,7 +200,6 @@ const Methodologies = ({methods, currentMethod}) => {
             ))}
         </div>
       </div>
-
     </div>)};
 
 
