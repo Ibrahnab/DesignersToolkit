@@ -8,12 +8,28 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import TripleDiamondNav from "./TripleDiamondNav"
 
-const Methodologies = ({methods, methodDescriptions}) => {
+const Methodologies = ({methods, currentMethod}) => {
 
   const [selectedPhase, changePhase] = useState("understandLock");
 
+  export const [methodID, setMethodID] = useState(1);
+
+  /*export const adjustPhase = (itemID, value) => {
+    return {
+        type: actionTypes.ADJUST_PHASE,
+        payload: {
+            id: itemID,
+            ph: value
+        }
+    }
+}*/
+
   function filterState(input) {
     return input.replace('Lock', '');
+  }
+
+  function toString(input){
+    return input.toString();
   }
 
   return (
@@ -24,26 +40,29 @@ const Methodologies = ({methods, methodDescriptions}) => {
         {/* ---------------------------------------- */}
       </Container>
       <div className="row">
-          {methods.map((meth) => (
-            <div className="col">
-              <MethodCard key={meth.id} methodData={meth} /> 
+        <div className="col-sm-3 method-section-methodologies">
+          <div className="row justify-content-md-center">
+            {methods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
             </div>
-          ))}
+        </div>
+        <div className="col">
+          {currentMethod.map((md) => (
+              <div className="col float-md-right">
+                <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+                </div>
+            ))}
+        </div>
       </div>
-      <div className="row">
-         {methodDescriptions.map((md) => (
-           <div className="col">
-            <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
-            </div>
-        ))}
-      </div>
-
     </div>)};
 
 
   const mapStateToProps = (state) => {
     return {
-      methodDescriptions: state.methodReducer.methodDescriptions,
+      currentMethod: state.methodReducer.currentMethod,
       methods: state.methodReducer.methods,
     };
   };
