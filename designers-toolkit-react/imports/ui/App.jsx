@@ -6,6 +6,7 @@ import {Dashboard} from './Dashboard/Dashboard';
 import {Introduction} from './Introduction/Introduction';
 import Methodologies from './Methodologies/Methodologies';
 import NavBar from './Shared/NavBar';
+import HamburgerMenu from './Shared/HamburgerMenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function selector(){
@@ -17,6 +18,7 @@ export const App = () => (
     <Router>
       <div className="app">
       <NavBar/>
+      {/* <HamburgerMenu /> */}
       </div>
       <Routes>
         <Route exact path="/" element={<Dashboard/>}/>
