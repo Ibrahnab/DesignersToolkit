@@ -684,3 +684,14 @@ img.logoImg {
   margin-top: 25%;
 }
 
+.suggestion-box{
+  width: 795px !important;
+  height: 510px !important;
+  background-color: #B8D0EB;
+  border: 3px solid black;
+}
+
+.refresh-image{
+  width: 49px;
+  height: 49px;
+}
