@@ -107,7 +107,7 @@ const HamburgerMenu = ({methods}) => {
               <Row><Col><hr></hr></Col></Row>
 
               <Row className="firstSearchRow">
-              {methods.filter(meth => meth.phase.find(ph => ph == search)).map((meth) => (
+              {methods.filter(meth => meth.name == search).map((meth) => (
                 
                 <Col md="auto">
                   <MethodCard key={meth.id} methodData={meth} /> 
