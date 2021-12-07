@@ -46,6 +46,15 @@ export const loadCurrentMethod = (item) => {
     }
 }
 
+export const suggestMethods = (thePhase) =>{
+    return {
+        type: actionTypes.SUGGEST_METHODS,
+        payload: {
+            phase: thePhase
+        }
+    }
+}
+
 
 export const increment = () => {
     return{

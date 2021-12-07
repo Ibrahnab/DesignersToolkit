@@ -20,7 +20,7 @@ const INITIAL_STATE = {
             name: "Journey Map",
             participants: 1,
             time: 60,
-            phase: ["define", "understand"],
+            phase: ["understand"],
             image: "journey_map_img.svg",
             inSprint: false,
             currentPhase: "none"
@@ -182,8 +182,20 @@ const INITIAL_STATE = {
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
             stepsNbr:["1","2","3"]
-        }
-        ],
+        }],
+        suggestedMethods:[{
+            id: "7",
+            name: "Survey",
+            participants: 1,
+            time: 30,
+            phase: ["validate"],
+            image: "survey_img.svg",
+            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal. In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, ultimately leading to a visualization.",
+            steps: ["Start with the user’s first step or entry point into your product experience",
+            "Add each step in the journey until the user’s goal has been reached",
+            "Include descriptions for each step and highlight pain points along the journey"],
+            stepsNbr:["1","2","3"]
+        }],
         currentSprintMethods: [], //id, title, descr, price, img, qty
 };
 
@@ -220,6 +232,17 @@ const methodReducer = (state = INITIAL_STATE, action) => {
                 currentMethod: [{...methoda}]
             }
 
+            case actionTypes.SUGGEST_METHODS:
+                const daMethods = state.methods.find((meth) => (meth.phase.includes(action.payload.phase))
+                )
+                console.log(daMethods);
+
+            return {
+                ...state,
+                suggestedMethods: state.methods.filter((meth) => (meth.phase.includes(action.payload.phase))
+                ),
+            };
+
         case actionTypes.ADJUST_PHASE:
             return {
                 ...state,
@@ -231,7 +254,7 @@ const methodReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 methodDescriptions: action.payload,
-            };
+            }
         default: 
             return state;
     }

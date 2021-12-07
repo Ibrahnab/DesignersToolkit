@@ -3,10 +3,10 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import MethodCard from "../Shared/MethodCard";
-
+import { suggestMethods } from "../actions/index";
 import { connect } from "react-redux";
 
-const CurrentPlan = ({methods, currentSprintMethods}) => {
+const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) => {
 
     return(
     <div>
@@ -26,6 +26,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
             {currentSprintMethods.filter(meth => meth.currentPhase === "understand").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
+            <button onClick={()=>{suggestMethods("understand")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            {suggestedMethods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
           </Col>
           <Col className="sprintCol">
 
@@ -37,7 +43,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
             {currentSprintMethods.filter(meth => meth.currentPhase === "define").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-
+            <button onClick={()=>{suggestMethods("define")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            {suggestedMethods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
           </Col>
           <Col className="sprintCol">
           <Row>
@@ -48,7 +59,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
             {currentSprintMethods.filter(meth => meth.currentPhase === "sketch").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-          
+            <button onClick={()=>{suggestMethods("sketch")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            {suggestedMethods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
           </Col>
           <Col className="sprintCol">
 
@@ -59,6 +75,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
 
             {currentSprintMethods.filter(meth => meth.currentPhase === "decide").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
+            ))}
+            <button onClick={()=>{suggestMethods("decide")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            {suggestedMethods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
             ))}
           
           </Col>
@@ -72,6 +94,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
             {currentSprintMethods.filter(meth => meth.currentPhase === "prototype").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
+            <button onClick={()=>{suggestMethods("prototype")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            {suggestedMethods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
           
           </Col>
           <Col className="sprintCol">
@@ -82,7 +110,12 @@ const CurrentPlan = ({methods, currentSprintMethods}) => {
             {currentSprintMethods.filter(meth => meth.currentPhase === "validate").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-          
+            <button onClick={()=>{suggestMethods("validate")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            {suggestedMethods.map((meth) => (
+              <div className="col">
+                <MethodCard key={meth.id} methodData={meth} /> 
+                </div>
+            ))}
           </Col>
         </Row>
       </Container>
@@ -94,7 +127,14 @@ const mapStateToProps = (state) => {
   return {
     methods: state.methodReducer.methods,
     currentSprintMethods: state.methodReducer.currentSprintMethods,
+    suggestedMethods: state.methodReducer.suggestedMethods,
   };
 };
 
-  export default connect(mapStateToProps)(CurrentPlan);
+const mapDispatchToProps = dispatch => {
+  return {
+      suggestMethods: (id) => dispatch(suggestMethods(id)),
+  };
+};
+
+  export default connect(mapStateToProps,mapDispatchToProps)(CurrentPlan);
