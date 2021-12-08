@@ -28,8 +28,6 @@ const HamburgerMenu = ({methods}) => {
       const updatedCheckedState = checkedState.map((item, index) =>
         index === position ? !item : item
       );
-    
-      console.log(checkedState);
 
       setCheckedState(updatedCheckedState);
 
@@ -59,7 +57,7 @@ const HamburgerMenu = ({methods}) => {
                 <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
                 <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>...</ul>
             </nav> */}
-            <Container>
+            <Container className="firstSearchRow">
               <Row className="firstSearchRow">
                 <Col sm="10" className="d-flex"><h5 className="blackHeader">Search for design methods</h5></Col>
                 <Col sm="1"><img src="crossIcon.svg"></img></Col>
@@ -80,7 +78,7 @@ const HamburgerMenu = ({methods}) => {
                 
               </Row>
               
-              <Row>
+              {/* <Row>
                     <Col>
                       <Form.Check type="checkbox" inline label="Understand" name="group1" checked={checkedState[0]} onChange={() => handleOnChange(0)} />
                       <Form.Check type="checkbox" inline label="Define" name="group1"  checked={checkedState[1]} onChange={() => handleOnChange(1)}/>
@@ -97,8 +95,20 @@ const HamburgerMenu = ({methods}) => {
                       <Form.Check type="checkbox" inline label="Prototype" name="group1"  checked={checkedState[4]} onChange={() => handleOnChange(4)} />
                       <Form.Check type="checkbox" inline label="Validate" name="group1" checked={checkedState[5]} onChange={() => handleOnChange(5)} />
                     </Col>
-                  </Row>
-
+                  </Row> */}
+              <Row className="firstSearchRow">
+                <Col>
+                  <Form.Check type="checkbox" inline label="Understand" name="group1" checked={checkedState[0]} onChange={() => handleOnChange(0)} /> <br />
+                  <Form.Check type="checkbox" inline label="Sketch" name="group1"  checked={checkedState[2]} onChange={() => handleOnChange(2)}/> <br />
+                  <Form.Check type="checkbox" inline label="Prototype" name="group1"  checked={checkedState[4]} onChange={() => handleOnChange(4)} /> <br />
+                </Col>
+                <Col>
+                <Form.Check type="checkbox" inline label="Define" name="group1"  checked={checkedState[1]} onChange={() => handleOnChange(1)}/> <br />
+                <Form.Check type="checkbox" inline label="Decide" name="group1"  checked={checkedState[3]} onChange={() => handleOnChange(3)} /> <br />
+                  <Form.Check type="checkbox" inline label="Validate" name="group1" checked={checkedState[5]} onChange={() => handleOnChange(5)} /> <br />
+                
+                </Col>
+              </Row>
 
               <Row className="firstSearchRow">
                 <Col>
@@ -120,11 +130,12 @@ const HamburgerMenu = ({methods}) => {
               <Row><Col><hr></hr></Col></Row>
 
               <Row className="firstSearchRow">
-              {methods.filter(meth => meth.participants <= participantsState && 
-              meth.time <= timeState &&
-              (meth.phase.find((phase) => selectedPhaseArray.includes(phase)) &&
-              searchValidate(meth.name,search))
-               ).map((meth) => (
+              {methods.filter(meth => 
+                meth.participants <= participantsState &&  //Filter by the amount of particioants selected
+                meth.time <= timeState && //Filter by the applied time
+                (meth.phase.find((phase) => selectedPhaseArray.includes(phase)) && //Filter by selected phases
+                searchValidate(meth.name,search)) //Filter by user search input
+                ).map((meth) => (
                 
                 <Col md="auto">
                   <MethodCard key={meth.id} methodData={meth} /> 
@@ -150,7 +161,6 @@ const SimpleSlider = () => {
   );
 
 };
-
 
 const mapStateToProps = (state) => {
     return {
