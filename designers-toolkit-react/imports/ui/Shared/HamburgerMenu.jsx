@@ -16,17 +16,24 @@ const HamburgerMenu = ({methods}) => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [search, setSearchState] = useState("understand");
-    const [timeState, setTimeState] = useState(50);
-    const [participantsState, setParticipantsState] = useState(1);
+    const [timeState, setTimeState] = useState(60);
+    const [participantsState, setParticipantsState] = useState(3);
     const [checkedState, setCheckedState] = useState(
-      new Array(6).fill(false)
+      new Array(6).fill(true)
     );
+    const phaseArray = ["understand", "define", "sketch", "decide", "prototype", "validate"]
+    const [selectedPhaseArray, setPhaseArray] = useState(["understand", "define", "sketch", "decide", "prototype", "validate"]);
+
     const handleOnChange = (position) => {
       const updatedCheckedState = checkedState.map((item, index) =>
         index === position ? !item : item
       );
     
+      console.log(checkedState);
+
       setCheckedState(updatedCheckedState);
+
+      setPhaseArray(updatedCheckedState.map((value, index) => value ? phaseArray[index] : "none"));
 
     };
 
@@ -55,7 +62,7 @@ const HamburgerMenu = ({methods}) => {
 
               <Row>
                 <Col>
-                  <Form.Control type="text" placeholder="Normal text" onChange={(e)=> setSearchState(e.target.value)} />
+                  <Form.Control type="text" placeholder="Search method name" onChange={(e)=> setSearchState(e.target.value)} />
                 </Col>
               </Row>
 
@@ -70,20 +77,20 @@ const HamburgerMenu = ({methods}) => {
               
               <Row>
                     <Col>
-                      <Form.Check type="checkbox" inline label="Understand" name="group1" checked={checkedState[1]} onChange={() => handleOnChange(1)} />
-                      <Form.Check type="checkbox" inline label="Define" name="group1"  checked={checkedState[2]} onChange={() => handleOnChange(2)}/>
+                      <Form.Check type="checkbox" inline label="Understand" name="group1" checked={checkedState[0]} onChange={() => handleOnChange(0)} />
+                      <Form.Check type="checkbox" inline label="Define" name="group1"  checked={checkedState[1]} onChange={() => handleOnChange(1)}/>
                     </Col>
                   </Row>
                   <Row>
                     <Col>
-                      <Form.Check type="checkbox" inline label="Sketch" name="group1"  checked={checkedState[3]} onChange={() => handleOnChange(3)}/>
-                      <Form.Check type="checkbox" inline label="Decide" name="group1"  checked={checkedState[4]} onChange={() => handleOnChange(4)} />
+                      <Form.Check type="checkbox" inline label="Sketch" name="group1"  checked={checkedState[2]} onChange={() => handleOnChange(2)}/>
+                      <Form.Check type="checkbox" inline label="Decide" name="group1"  checked={checkedState[3]} onChange={() => handleOnChange(3)} />
                     </Col>
                   </Row>
                   <Row>
                     <Col>
-                      <Form.Check type="checkbox" inline label="Prototype" name="group1"  checked={checkedState[5]} onChange={() => handleOnChange(5)} />
-                      <Form.Check type="checkbox" inline label="Validate" name="group1" checked={checkedState[6]} onChange={() => handleOnChange(6)} />
+                      <Form.Check type="checkbox" inline label="Prototype" name="group1"  checked={checkedState[4]} onChange={() => handleOnChange(4)} />
+                      <Form.Check type="checkbox" inline label="Validate" name="group1" checked={checkedState[5]} onChange={() => handleOnChange(5)} />
                     </Col>
                   </Row>
 
@@ -93,7 +100,8 @@ const HamburgerMenu = ({methods}) => {
                 <p className="smallBlackHeader">Amount of time</p>
                 </Col>
                 <Col>
-                  <SimpleSlider></SimpleSlider>
+                  {/* <SimpleSlider></SimpleSlider> */}
+                  <RangeSlider value={timeState} onChange={(e) => setTimeState(e.target.value)}></RangeSlider>
                 </Col>
               </Row>
               <Row className="firstSearchRow">
@@ -107,7 +115,10 @@ const HamburgerMenu = ({methods}) => {
               <Row><Col><hr></hr></Col></Row>
 
               <Row className="firstSearchRow">
-              {methods.filter(meth => meth.name == search).map((meth) => (
+              {methods.filter(meth => meth.participants <= participantsState && 
+              meth.time <= timeState &&
+              (meth.phase.find((phase) => selectedPhaseArray.includes(phase)))
+               ).map((meth) => (
                 
                 <Col md="auto">
                   <MethodCard key={meth.id} methodData={meth} /> 
