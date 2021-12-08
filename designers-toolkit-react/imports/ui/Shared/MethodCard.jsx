@@ -3,13 +3,13 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
-import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint} from "../actions/index";
+import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint, flipViewingMethod} from "../actions/index";
 import {connect} from "react-redux";
 import DropDownMenu from "./DropDownMenu"
 import { Link } from "react-router-dom";
 import {setMethodID} from "../Methodologies/Methodologies"
 
-const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod}) => {
+const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, flipViewingMethod}) => {
 
     const [isActive, setIsActive] = useState(false);
     return (
@@ -17,7 +17,7 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
 <Container className="methodContainer p-0">
         <Row className="justify-content-md-center">
             <Col className="justify-content-md-center d-flex">
-                <img onClick={()=>{showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img>
+                <img onClick={()=>{flipViewingMethod(); showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img>
             </Col>
         </Row>
 
@@ -103,6 +103,7 @@ const mapDispatchToProps = dispatch => {
         adjustPhase: (id, ph) => dispatch(adjustPhase(id, ph)),
         removeFromSprint: (id) => dispatch(removeFromSprint(id)),
         showCurrentMethod:(id) => dispatch(showCurrentMethod(id)),
+        flipViewingMethod: () => dispatch(flipViewingMethod())
     };
 };
 

@@ -7,7 +7,7 @@ import {loadCurrentMethod} from "../actions/index";
 import {connect} from "react-redux";
 
 
-const MethodDescriptionPanel = ({methodDescriptionData}) => {
+const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod}) => {
 
     return (
         <div className="methodDescriptionPanel">
@@ -104,10 +104,17 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                         </div>
                     ))}*/
 
+                    
 const mapDispatchToProps = dispatch => {
     return {
         loadCurrentMethod: (id) => dispatch(loadCurrentMethod(id))
     };
 };
 
-export default connect(null,mapDispatchToProps)(MethodDescriptionPanel);
+const mapStateToProps = (state) => {
+    return {
+      viewingMethod: state.methodReducer.viewingMethod
+    };
+  };
+
+export default connect(mapStateToProps ,mapDispatchToProps)(MethodDescriptionPanel);

@@ -1,6 +1,7 @@
 import * as actionTypes from "../actions/types"
 
 const INITIAL_STATE = {
+    viewingMethod: false,
     currentMethod: [{
         id: "1",
         name: "Journey Map",
@@ -303,6 +304,12 @@ const methodReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 methods: action.payload,
+            }
+
+        case actionTypes.FLIP_VIEWING_METHOD:
+            return {
+                ...state,
+                viewingMethod: !state.viewingMethod
             }
         default: 
             return state;

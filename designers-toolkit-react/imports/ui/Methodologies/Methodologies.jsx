@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import TripleDiamondNav from "./TripleDiamondNav"
 
-const Methodologies = ({methods, currentMethod}) => {
+const Methodologies = ({methods, currentMethod, viewingMethod}) => {
 
   const [selectedPhase, changePhase] = useState("understandLock");
 
@@ -36,18 +36,18 @@ const Methodologies = ({methods, currentMethod}) => {
     <div>
       <Container className="auto pageContainer">
         <TripleDiamondNav />
-
-        {/* ---------------------------------------- */}
       </Container>
+        {/* ---------------------------------------- */}
+      
       <div className="row">
         <div className="col-sm-3 method-section-methodologies">
           <div className="row justify-content-md-center">
             {methods.map((meth) => (
               <div className="col">
                 <MethodCard key={meth.id} methodData={meth} /> 
-                </div>
+              </div>
             ))}
-            </div>
+          </div>
         </div>
         <div className="col">
           {currentMethod.map((md) => (
@@ -57,13 +57,16 @@ const Methodologies = ({methods, currentMethod}) => {
             ))}
         </div>
       </div>
-    </div>)};
+    
+    </div>
+  )};
 
 
   const mapStateToProps = (state) => {
     return {
       currentMethod: state.methodReducer.currentMethod,
       methods: state.methodReducer.methods,
+      viewingMethod: state.methodReducer.viewingMethod
     };
   };
 

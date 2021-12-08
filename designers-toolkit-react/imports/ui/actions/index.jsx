@@ -55,6 +55,12 @@ export const suggestMethods = (thePhase) =>{
     }
 }
 
+export const flipViewingMethod = () => {
+    return {
+        type: actionTypes.FLIP_VIEWING_METHOD,
+    }
+}
+
 
 export const increment = () => {
     return{
