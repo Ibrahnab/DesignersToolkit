@@ -11,7 +11,7 @@ export const Dashboard = () => (
       <Container>
         <Row className='dashboardRowHeader'>
           <Col><RoamMode/></Col>
-          <div className = "dashboardVL"></div>
+            <div className = "dashboardVL"></div>
           <Col md ={{offset:1}}><AccountSide/></Col>
         </Row>
       </Container>

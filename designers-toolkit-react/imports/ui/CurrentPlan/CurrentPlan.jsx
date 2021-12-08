@@ -14,6 +14,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
     const handleClose = () => setShow(false);
 
     const [currentPhase, setCurrentPhase] = useState("");
+    const [wobble, setWobble] = useState("0");
 
     return(
     <div>
@@ -105,18 +106,19 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
         </Row>
       </Container>
     
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}  aria-labelledby="contained-modal-title-vcenter" centered>
         <Container className ="suggestion-box">
-          <div className="row justify-content-center mt-5">
+          <div className="row justify-content-center mt-3">
               {suggestedMethods.map((meth) => (
                   <div className="col-auto">
                   <MethodCard key={meth.id} methodData={meth} /> 
                   </div>
               ))}
           </div>
-          <div className="row justify-content-center mt-4">
+          <div className="row justify-content-center mt-4 mb-3">
             <div className="col-auto">
-                <img className="refresh-image" src="refresh_methods_img.svg" onClick={()=>{suggestMethods(currentPhase)}}></img>
+                <img className="refresh-image" src="refresh_methods_img.svg" onAnimationEnd={() => setWobble(0)} wobble={wobble}  
+                onClick={()=>{suggestMethods(currentPhase), setWobble(1)}}></img>
             </div>
         </div>
       </Container>

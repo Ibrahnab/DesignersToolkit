@@ -146,7 +146,7 @@ const INITIAL_STATE = {
         },
         {
             id: "9",
-            name: "User Experience Mapping",
+            name: "Experience Mapping",
             participants: 2,
             time: 30,
             phase: ["understand"],

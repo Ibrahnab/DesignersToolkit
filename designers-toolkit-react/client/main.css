@@ -685,8 +685,6 @@ img.logoImg {
 }
 
 .suggestion-box{
-  width: 750px !important;
-  height: 450px !important;
   background-color: #B8D0EB;
   border: 3px solid black;
 }
@@ -696,9 +694,28 @@ img.logoImg {
   height: 49px;
 }
 
-.center{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.refresh-image:hover{
+  cursor: pointer;
 }
+
+.refresh-image[wobble="1"]{
+  animation: wobble 1s 1;
+}
+
+/*width: 750px !important;
+  height: 450px !important;*/
+
+  @keyframes wobble {
+    25% {
+      transform: rotate(15deg);
+    }
+    50% {
+      transform: rotate(-30deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
