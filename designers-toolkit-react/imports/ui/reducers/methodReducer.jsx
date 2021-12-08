@@ -36,7 +36,7 @@ const INITIAL_STATE = {
             name: "Usability test",
             participants: 2,
             time: 30,
-            phase: ["define", "prototype"],
+            phase: ["define", "validate"],
             image: "usability_test_img.svg",
             inSprint: false,
             currentPhase: "none",
@@ -84,7 +84,7 @@ const INITIAL_STATE = {
             name: "Heuristic evaluation",
             participants: 1,
             time: 45,
-            phase: ["validate", "sketch"],
+            phase: ["validate"],
             image: "heuristic_evaluation_img.svg",
             inSprint: false,
             currentPhase: "none",
@@ -115,7 +115,7 @@ const INITIAL_STATE = {
             name: "Survey",
             participants: 1,
             time: 30,
-            phase: ["validate"],
+            phase: ["understand","validate"],
             image: "survey_img.svg",
             inSprint: false,
             currentPhase: "none",
@@ -181,21 +181,66 @@ const INITIAL_STATE = {
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
             stepsNbr:["1","2","3"]
-        }
-    ], //id, title, de scr, price, img
-        suggestedMethods:[{
-            id: "7",
-            name: "Survey",
-            participants: 1,
+        },
+        {
+            id: "11",
+            name: "User Journey Mapping",
+            participants: 4,
+            time: 40,
+            phase: ["understand"],
+            image: "user_journey_mapping_img.svg",
+            inSprint: false,
+            currentPhase: "none",
+            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
+            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
+            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
+            " ultimately leading to a visualization.",
+            steps: [
+            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
+            "Only One HMW for each note is advised",
+            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            stepsNbr:["1","2","3"]
+        },
+        {
+            id: "12",
+            name: "Cognitive Walkthrough",
+            participants: 2,
             time: 30,
             phase: ["validate"],
-            image: "survey_img.svg",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal. In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, ultimately leading to a visualization.",
-            steps: ["Start with the user’s first step or entry point into your product experience",
-            "Add each step in the journey until the user’s goal has been reached",
-            "Include descriptions for each step and highlight pain points along the journey"],
+            image: "cognitive_walkthrough_img.svg",
+            inSprint: false,
+            currentPhase: "none",
+            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
+            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
+            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
+            " ultimately leading to a visualization.",
+            steps: [
+            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
+            "Only One HMW for each note is advised",
+            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
             stepsNbr:["1","2","3"]
-        }],
+        },
+        {
+            id: "13",
+            name: "Crazy 8's",
+            participants: 5,
+            time: 30,
+            phase: ["sketch"],
+            image: "crazy_8_img.svg",
+            inSprint: false,
+            currentPhase: "none",
+            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
+            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
+            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
+            " ultimately leading to a visualization.",
+            steps: [
+            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
+            "Only One HMW for each note is advised",
+            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            stepsNbr:["1","2","3"]
+        }
+    ], //id, title, de scr, price, img
+        suggestedMethods:[],
         currentSprintMethods: [], //id, title, descr, price, img, qty
 };
 

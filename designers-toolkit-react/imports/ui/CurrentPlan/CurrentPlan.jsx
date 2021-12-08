@@ -12,7 +12,8 @@ import {SuggestionsBox}  from "./SuggestionsBox";
 const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const [currentPhase, setCurrentPhase] = useState("");
 
     return(
     <div>
@@ -33,7 +34,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             {currentSprintMethods.filter(meth => meth.currentPhase === "understand").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-            <button onClick={()=>{suggestMethods("understand"), setShow(true)}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            <button onClick={()=>{suggestMethods("understand"), setShow(true), setCurrentPhase("understand")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
             
           </Col>
 
@@ -46,7 +47,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             {currentSprintMethods.filter(meth => meth.currentPhase === "define").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-            <button onClick={()=>{suggestMethods("define"), setShow(true)}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            <button onClick={()=>{suggestMethods("define"), setShow(true),setCurrentPhase("define")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
           
           </Col>
 
@@ -59,7 +60,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             {currentSprintMethods.filter(meth => meth.currentPhase === "sketch").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-            <button onClick={()=>{suggestMethods("sketch"), setShow(true)}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            <button onClick={()=>{suggestMethods("sketch"), setShow(true), setCurrentPhase("sketch")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
             
           </Col>
           <Col className="sprintCol">
@@ -72,7 +73,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             {currentSprintMethods.filter(meth => meth.currentPhase === "decide").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-            <button onClick={()=>{suggestMethods("decide"), setShow(true)}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            <button onClick={()=>{suggestMethods("decide"), setShow(true), setCurrentPhase("decide")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
             
           
           </Col>
@@ -86,7 +87,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             {currentSprintMethods.filter(meth => meth.currentPhase === "prototype").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-            <button onClick={()=>{suggestMethods("prototype"), setShow(true)}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            <button onClick={()=>{suggestMethods("prototype"), setShow(true), setCurrentPhase("prototype")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
           
           
           </Col>
@@ -98,7 +99,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             {currentSprintMethods.filter(meth => meth.currentPhase === "validate").map((meth) => (
               <MethodCard key={meth.id} methodData={meth} /> 
             ))}
-            <button onClick={()=>{suggestMethods("validate"), setShow(true)}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
+            <button onClick={()=>{suggestMethods("validate"), setShow(true), setCurrentPhase("validate")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
 
           </Col>
         </Row>
@@ -106,16 +107,16 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
     
       <Modal show={show} onHide={handleClose}>
         <Container className ="suggestion-box">
-          <div className="row">
+          <div className="row justify-content-center mt-5">
               {suggestedMethods.map((meth) => (
-                  <div className="col">
+                  <div className="col-auto">
                   <MethodCard key={meth.id} methodData={meth} /> 
                   </div>
               ))}
           </div>
-          <div className="row">
-            <div className="col">
-                <img className="refresh-image" src="refresh_methods_img.svg"></img>
+          <div className="row justify-content-center mt-4">
+            <div className="col-auto">
+                <img className="refresh-image" src="refresh_methods_img.svg" onClick={()=>{suggestMethods(currentPhase)}}></img>
             </div>
         </div>
       </Container>

@@ -685,8 +685,8 @@ img.logoImg {
 }
 
 .suggestion-box{
-  width: 795px !important;
-  height: 510px !important;
+  width: 750px !important;
+  height: 450px !important;
   background-color: #B8D0EB;
   border: 3px solid black;
 }
@@ -694,4 +694,11 @@ img.logoImg {
 .refresh-image{
   width: 49px;
   height: 49px;
+}
+
+.center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
