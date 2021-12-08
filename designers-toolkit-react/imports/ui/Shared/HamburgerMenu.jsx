@@ -15,7 +15,7 @@ import { FiMenu } from "react-icons/fi"
 const HamburgerMenu = ({methods}) => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const [search, setSearchState] = useState("understand");
+    const [search, setSearchState] = useState("");
     const [timeState, setTimeState] = useState(60);
     const [participantsState, setParticipantsState] = useState(3);
     const [checkedState, setCheckedState] = useState(
@@ -45,7 +45,12 @@ const HamburgerMenu = ({methods}) => {
       const closeMenu = () => {
         setNavbarOpen(false)
       }
+    function searchValidate(methodName,userInput) {
+      const m1 = methodName.toLowerCase();
+      const m2 = userInput.toLowerCase();
 
+      return m1.includes(m2);
+    }
       
 
     return (
@@ -117,7 +122,8 @@ const HamburgerMenu = ({methods}) => {
               <Row className="firstSearchRow">
               {methods.filter(meth => meth.participants <= participantsState && 
               meth.time <= timeState &&
-              (meth.phase.find((phase) => selectedPhaseArray.includes(phase)))
+              (meth.phase.find((phase) => selectedPhaseArray.includes(phase)) &&
+              searchValidate(meth.name,search))
                ).map((meth) => (
                 
                 <Col md="auto">
@@ -125,6 +131,7 @@ const HamburgerMenu = ({methods}) => {
                 </Col>
               ))}
               </Row>
+              <Row className="rowFiller"></Row>
             </Container>
             
         </div>
