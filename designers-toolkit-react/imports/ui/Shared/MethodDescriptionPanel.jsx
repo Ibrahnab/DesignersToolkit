@@ -5,13 +5,19 @@ import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
 import {loadCurrentMethod} from "../actions/index";
 import {connect} from "react-redux";
+import {flipViewingMethod} from "../actions/index";
 
 
-const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod}) => {
+const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewingMethod}) => {
 
     return (
         <div className="methodDescriptionPanel">
             <div className="row justify-content-md-center mt-3">
+                <Col className="d-flex">
+                <div className="backBtn" >
+                    <img src="backBtn.svg" onClick={() => flipViewingMethod()}></img>
+                </div>
+                </Col>
                 <Col md="auto" className="adjust-col-width">
                     <div className="triangle-understand">
                         <div classNmae="row ">
@@ -46,7 +52,7 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod}) => {
 
             <div className="row justify-content-md-center mt-2">
                 <Col md="auto">
-                    <h5 className="methodDescriptionHeader">{methodDescriptionData.name}</h5>
+                    <h3 className="methodDescriptionHeader">{methodDescriptionData.name}</h3>
                 </Col>
             </div>
 
@@ -107,7 +113,8 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod}) => {
                     
 const mapDispatchToProps = dispatch => {
     return {
-        loadCurrentMethod: (id) => dispatch(loadCurrentMethod(id))
+        loadCurrentMethod: (id) => dispatch(loadCurrentMethod(id)),
+        flipViewingMethod: () => dispatch(flipViewingMethod())
     };
 };
 

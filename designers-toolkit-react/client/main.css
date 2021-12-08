@@ -605,6 +605,11 @@ img.logoImg {
   width: 1253px;
   background-color: white;
   float: right;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+   -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+       animation: fadein 1s;
 }
 
 .methodDescriptionImage{
@@ -623,7 +628,7 @@ img.logoImg {
 .methodDescriptionBodyText{
   font-size: 16px;
   font-family: "Montserrat";
-  text-align: center;
+  text-align: left;
   margin: 0px !important;
 }
 
@@ -867,4 +872,12 @@ a {
 
 .rowFiller {
   height:150px;
+}
+
+.backBtn{
+  transition: transform 250ms;
+}
+
+.backBtn:hover {
+  transform: translateX(-10px);
 }

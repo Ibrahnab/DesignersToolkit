@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import TripleDiamondNav from "./TripleDiamondNav"
+import {flipViewingMethod} from "../actions/index";
 
 const Methodologies = ({methods, currentMethod, viewingMethod}) => {
 
@@ -34,10 +35,10 @@ const Methodologies = ({methods, currentMethod, viewingMethod}) => {
 
   return (
     <div>
-      <Container className="auto pageContainer">
+      {/* <Container className="auto pageContainer">
         <TripleDiamondNav />
       </Container>
-        {/* ---------------------------------------- */}
+        
       
       <div className="row">
         <div className="col-sm-3 method-section-methodologies">
@@ -56,7 +57,27 @@ const Methodologies = ({methods, currentMethod, viewingMethod}) => {
                 </div>
             ))}
         </div>
-      </div>
+      </div> */}
+
+      {!viewingMethod && 
+      
+        <Container className="auto pageContainer">
+          <TripleDiamondNav />
+        </Container>
+      
+      }
+
+      {viewingMethod && 
+        <Container>
+          <div className="col">
+            {currentMethod.map((md) => (
+                <div className="col float-md-right">
+                  <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+                  </div>
+              ))}
+          </div>
+        </Container>
+      }
     
     </div>
   )};
