@@ -74,7 +74,6 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
                 (e) => setIsActive(!isActive)}}className="cardBtn">
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button> */}
-            {console.log(phases)};
             <Col className="justify-content-md-center d-flex">
             {!isinPlan &&<button onClick={ 
                 (e) => setIsActive(!isActive)}className="cardBtn">
@@ -88,13 +87,14 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
             
         </Row>
         {isActive && (
-                <div className="dropDownMenu">
+                <div className="row justify-content-md-center dropDownMenu">
                     {methodData.phase.map((phase) => (
+                    <div className="row">
+                        <div className="col-6">
+                            <Form.Check type="checkbox" inline label={phase} onChange={()=> {phases.indexOf(`${phase}`) > -1 ? 
+                            removeThisMethod(phase):addThisMethod(phase)}}/>
 
-                    <div className="col">
-                        <Form.Check type="checkbox" inline label={phase} onChange={()=> {phases.indexOf(`${phase}`) > -1 ? 
-                        removeThisMethod(phase):addThisMethod(phase)}}/>
-
+                        </div>
                     </div>
                     ))}
                 </div>
