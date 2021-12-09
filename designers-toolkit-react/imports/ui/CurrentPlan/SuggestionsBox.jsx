@@ -9,7 +9,7 @@ export const SuggestionsBox = ({suggestMethods, suggestedMethods}) =>(
         <div className="row">
             {suggestedMethods.map((meth) => (
                 <div className="col">
-                <MethodCard key={meth.id} methodData={meth} /> 
+                <MethodCard key={meth.id} methodData={meth} isinPlan={false}/> 
                 </div>
             ))}
         </div>

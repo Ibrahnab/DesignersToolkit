@@ -12,7 +12,8 @@ const INITIAL_STATE = {
         steps: ["Start with the user’s first step or entry point into your product experience",
         "Add each step in the journey until the user’s goal has been reached",
         "Include descriptions for each step and highlight pain points along the journey"],
-        stepsNbr:["1","2","3"]
+        stepsNbr:["1","2","3"],
+        inPhase:[]
     }],
     methods: [
         {
@@ -28,7 +29,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
 
         {
@@ -44,7 +46,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
 
         {
@@ -60,7 +63,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
 
         {
@@ -76,7 +80,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
 
         {
@@ -92,7 +97,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "6",
@@ -107,7 +113,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
 
         {
@@ -123,7 +130,8 @@ const INITIAL_STATE = {
             steps: ["Start with the user’s first step or entry point into your product experience",
             "Add each step in the journey until the user’s goal has been reached",
             "Include descriptions for each step and highlight pain points along the journey"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "8",
@@ -142,7 +150,8 @@ const INITIAL_STATE = {
             "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "9",
@@ -161,7 +170,8 @@ const INITIAL_STATE = {
             "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "10",
@@ -180,7 +190,8 @@ const INITIAL_STATE = {
             "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "11",
@@ -199,7 +210,8 @@ const INITIAL_STATE = {
             "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "12",
@@ -218,7 +230,8 @@ const INITIAL_STATE = {
             "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         },
         {
             id: "13",
@@ -237,7 +250,8 @@ const INITIAL_STATE = {
             "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
             "Only One HMW for each note is advised",
             "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"]
+            stepsNbr:["1","2","3"],
+            inPhase:[]
         }
     ], //id, title, de scr, price, img
         suggestedMethods:[],
@@ -248,10 +262,13 @@ const methodReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case actionTypes.ADD_TO_SPRINT:
             //Get the items data from the methods array
-            const method = state.methods.find((meth) => meth.id === action.payload.id);
-            state.methods.find((meth) => meth.id === action.payload.id);
             //Check if the item is in the sprint already
             // const inSprint = state.sprint.find((method) => method.id === action.payload.id ? true : false)
+            const methodToBeCheck = state.methods.find((meth) => meth.id === action.payload.id);
+            methodToBeCheck.inPhase = methodToBeCheck.inPhase.filter((phase) => phase === action.payload.phase);
+            //console.log(methodToBeCheck);
+
+            /*methodToBeCheck.inPhase.push(action.payload.phase);*/
             return {
                 // ...state,
                 // cart: inSprint ? state.sprint.map(meth => 
@@ -261,13 +278,17 @@ const methodReducer = (state = INITIAL_STATE, action) => {
 
                 
                 ...state,
-                currentSprintMethods: [...state.currentSprintMethods , {...method}]
+                currentSprintMethods: [...state.currentSprintMethods , {...methodToBeCheck}]
 
             }
         case actionTypes.REMOVE_FROM_SPRINT:
+            const phaseMethod = state.currentSprintMethods.find((meth) => meth.id === action.payload.id 
+            && meth.inPhase.indexOf(action.payload.phase) >-1);
+            const thePhases = phaseMethod.inPhase;
+
             return {
                 ...state, 
-                currentSprintMethods: state.currentSprintMethods.filter(item => item.id !== action.payload.id)
+                currentSprintMethods: state.currentSprintMethods.filter((meth) => meth !==phaseMethod)
             };
 
             case actionTypes.SHOW_CURRENT_METHOD:
@@ -293,11 +314,23 @@ const methodReducer = (state = INITIAL_STATE, action) => {
             };
 
         case actionTypes.ADJUST_PHASE:
+            const fazer = state.methods.find( (meth) => meth.id === action.payload.id);
+            fazer.inPhase = [...fazer.inPhase, action.payload.phase];
+
             return {
+                
                 ...state,
-                methods: state.methods.map(item => 
-                    item.id === action.payload.id 
-                    ? {...item, currentPhase: action.payload.ph} : item)
+                methods: state.methods.map((meth) => 
+                    meth.id === action.payload.id 
+                    ? fazer: meth)
+            }
+
+        case actionTypes.REMOVE_PHASE_FROM_METHOD:
+            return{
+                ...state,
+                methods: state.methods.map(meth =>
+                    meth.id === action.payload.id 
+                    ?{...meth, inPhase: meth.inPhase.filter((phase) => phase !== action.payload.phase)} : meth)
             }
         case actionTypes.LOAD_CURRENT_METHOD:
             return {

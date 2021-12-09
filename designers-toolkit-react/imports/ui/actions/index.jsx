@@ -20,21 +20,32 @@ export const showCurrentMethod = (itemID) =>{
     }
 }
 
-export const removeFromSprint = (itemID) => {
+export const removeFromSprint = (itemID, itemPhase) => {
     return {
         type: actionTypes.REMOVE_FROM_SPRINT,
         payload: {
+            phase: itemPhase,
             id: itemID
         }
     }
 }
 
-export const adjustPhase = (itemID, value) => {
+export const adjustPhase = (itemID, itemPhase) => {
     return {
         type: actionTypes.ADJUST_PHASE,
         payload: {
             id: itemID,
-            ph: value
+            phase: itemPhase
+        }
+    }
+}
+
+export const removePhaseFromMethod = (itemID, itemPhase) =>{
+    return {
+        type: actionTypes.REMOVE_PHASE_FROM_METHOD,
+        payload: {
+            id: itemID,
+            phase: itemPhase
         }
     }
 }
