@@ -52,7 +52,7 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
 
             <div className="row justify-content-md-center mt-2">
                 <Col md="auto">
-                    <h3 className="methodDescriptionHeader">{methodDescriptionData.name}</h3>
+                    <h5 className="methodDescriptionHeader">{methodDescriptionData.name}</h5>
                 </Col>
             </div>
 
@@ -64,15 +64,15 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
 
             <div className="row justify-content-md-center mt-3">
                 <Col md="auto">
-                    <img src="participants_big.svg"/>
+                    <img src="personIcon2.svg" className="methodDescriptionIcon"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.participants}</p>
                 </Col>
                 <Col md="auto" className="method-icons-left-margin">
-                    <img src="clock_big.svg"/>
+                    <img src="clockIcon.svg" className="methodDescriptionIcon"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.time}m</p>
                 </Col>
                 <Col md="auto" className="method-icons-left-margin mt-2">
-                    <img src="triplediamond_big.svg"/>
+                    <img src="tripleDiamondIcon2.svg" className="methodDescriptionIcon"/>
                     <div className="row justify-content-md-center">
                         {methodDescriptionData.phase.map((phase) => (
                                 <Col md="auto" className="mt-3">
