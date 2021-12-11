@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -21,6 +21,13 @@ const [burgerState, changeState] = useState(false)
     setSprintCount(count);
   }, [currentSprintMethods, sprintCount])
 
+  function getActiveRoute() {
+    const location = useLocation();
+    console.log(location.pathname); 
+    return location.pathname;
+  }
+
+
   return (
     <div>
 
@@ -31,9 +38,26 @@ const [burgerState, changeState] = useState(false)
           <Row className="alignNavBarText">
           <Col><Link to="/"><img className="logoImg" src='Logo.svg'/></Link></Col>
           {/* <img  class="logo" src="logo.png"/> */}
-            <Col className="d-flex"><NavLink to="/introduction" activeClassName="underline" className="navLink"><h2 className="whiteHeader navText">Introduction</h2><div className="underscore"></div></NavLink></Col>
-            <Col className="d-flex"><NavLink to="/methodologies" activeClassName="underline" className="navLink"><h2 className="whiteHeader navText">Methodologies</h2><div className="underscore"></div></NavLink></Col>
-            <Col className="d-flex"><NavLink to="/currentplan" activeClassName="underline" className="navLink"><h2 className="whiteHeader navText">Sprint Plan {sprintCount}</h2><div className="underscore"></div></NavLink></Col>
+            <Col className="d-flex">
+              <NavLink to="/introduction" activeClassName="underline" className="navLink">
+                <h2 className="whiteHeader navText">Introduction</h2>
+                <div className={ 'underscore' + (getActiveRoute() == "/introduction" ? " activated" : "")}></div>
+              </NavLink>
+            </Col>
+            
+            <Col className="d-flex">
+              <NavLink to="/methodologies" activeClassName="underline" className="navLink">
+                <h2 className="whiteHeader navText">Methodologies</h2>
+                <div className={ 'underscore' + (getActiveRoute() == "/methodologies" ? " activated" : "")}></div>
+              </NavLink>
+            </Col>
+
+            <Col className="d-flex">
+              <NavLink to="/currentplan" activeClassName="underline" className="navLink">
+                <h2 className="whiteHeader navText">Sprint Plan {sprintCount}</h2>
+                <div className={ 'underscore' + (getActiveRoute() == "/currentplan" ? " activated" : "")}></div>
+              </NavLink>
+            </Col>
             <Col ><div className="searchBtn" onClick={()=> changeState(!burgerState)}><img src="searchIcon.svg"></img></div></Col>
           </Row>
         </Container>

@@ -44,10 +44,17 @@ body {
   width:100%;
 }
 
+.underscore.activated{
+  width:100%;
+  background-color: white;
+}
+
 .underline{
   background-color: #85953A;
   color:#85953A;
+  margin-top:100px;
   border-bottom-width:4px;
+  text-decoration: underline;
   border-bottom: 1px solid rgb(255, 255, 255);
 }
 
