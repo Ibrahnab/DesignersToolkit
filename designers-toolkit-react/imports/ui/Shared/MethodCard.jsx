@@ -9,7 +9,7 @@ import DropDownMenu from "./DropDownMenu"
 import { Link, useLocation, NavLink } from "react-router-dom";
 import {setMethodID} from "../Methodologies/Methodologies"
 
-const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, flipViewingMethod}) => {
+const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, flipViewingMethod, viewingMethod}) => {
 
     const [isActive, setIsActive] = useState(false);
 
@@ -23,7 +23,9 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
         <Container className="methodContainer p-0">
         <Row className="justify-content-md-center">
             <Col className="justify-content-md-center d-flex">
-                <NavLink to="/methodologies"><img onClick={()=>{flipViewingMethod(); showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img></NavLink>
+                <NavLink to="/methodologies" className="cardNav p-0">
+                    <img onClick={()=>{{!viewingMethod ? flipViewingMethod(): undefined}; showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img>
+                </NavLink>
             </Col>
         </Row>
 
@@ -103,6 +105,13 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
     
 };
 
+
+const mapStateToProps = (state) => {
+    return {
+      viewingMethod: state.methodReducer.viewingMethod
+    };
+  };
+
 const mapDispatchToProps = dispatch => {
     return {
         addToSprint: (id) => dispatch(addToSprint(id)),
@@ -113,4 +122,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null,mapDispatchToProps)(MethodCard);
+export default connect(mapStateToProps, mapDispatchToProps)(MethodCard);
