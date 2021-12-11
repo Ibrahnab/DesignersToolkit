@@ -11,8 +11,9 @@ import RangeSlider from 'react-bootstrap-range-slider';
 
 import { MdClose } from "react-icons/md"
 import { FiMenu } from "react-icons/fi"
+import { flipHamburger } from "../actions";
 
-const HamburgerMenu = ({methods}) => {
+const HamburgerMenu = ({methods, flipHamburger}) => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [search, setSearchState] = useState("");
@@ -67,7 +68,7 @@ const HamburgerMenu = ({methods}) => {
             <Container className="firstSearchRow">
               <Row className="firstSearchRow">
                 <Col sm="10" className="d-flex"><h5 className="blackHeader">Search for design methods</h5></Col>
-                <Col sm="1"><img src="crossIcon.svg"></img></Col>
+                <Col sm="1"><img className="crossIcon" onClick={() => flipHamburger()} src="crossIcon.svg"></img></Col>
               </Row>
 
               <Row>
@@ -169,11 +170,19 @@ const SimpleSlider = () => {
 
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    flipHamburger: () => dispatch(flipHamburger())
+  }
+  
+}
+
 const mapStateToProps = (state) => {
     return {
       methodDescriptions: state.methodReducer.methodDescriptions,
       methods: state.methodReducer.methods,
+      isHamburgerOpen: state.methodReducer.isHamburgerOpen
     };
   };
 
-export default connect(mapStateToProps)(HamburgerMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(HamburgerMenu);

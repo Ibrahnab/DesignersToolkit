@@ -1,6 +1,7 @@
 import * as actionTypes from "../actions/types"
 
 const INITIAL_STATE = {
+    isHamburgerOpen: false,
     viewingMethod: false,
     currentMethod: [{
         id: "1",
@@ -310,6 +311,11 @@ const methodReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 viewingMethod: !state.viewingMethod
+            }
+        case actionTypes.FLIP_HAMBURGER:
+            return {
+                ...state,
+                isHamburgerOpen: !state.isHamburgerOpen
             }
         default: 
             return state;

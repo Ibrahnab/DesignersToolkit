@@ -58,6 +58,10 @@ body {
   border-bottom: 1px solid rgb(255, 255, 255);
 }
 
+.crossIcon:hover {
+  cursor:pointer;
+}
+
 img.logoImg {  
   display: block;
   max-width:230px;

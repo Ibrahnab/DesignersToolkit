@@ -61,6 +61,11 @@ export const flipViewingMethod = () => {
     }
 }
 
+export const flipHamburger = () => {
+    return {
+        type: actionTypes.FLIP_HAMBURGER,
+    }
+}
 
 export const increment = () => {
     return{

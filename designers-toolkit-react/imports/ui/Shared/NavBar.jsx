@@ -5,9 +5,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { connect } from "react-redux";
 import HamburgerMenu from "./HamburgerMenu"
+import { flipHamburger } from "../actions";
 
 
-const NavBar = ({currentSprintMethods}) => {
+const NavBar = ({currentSprintMethods, isHamburgerOpen, flipHamburger}) => {
 
 const [sprintCount, setSprintCount] = useState(0);
 const [barlock, setBarLock] = useState()
@@ -65,21 +66,28 @@ const [burgerState, changeState] = useState(false)
                 <div className={ 'underscore' + (getActiveRoute() == "/currentplan" ? " activated" : "")}></div>
               </NavLink>
             </Col>
-            <Col ><div className="searchBtn" onClick={()=> changeState(!burgerState)}><img src="searchIcon.svg"></img></div></Col>
+            <Col ><div className="searchBtn" onClick={()=> {changeState(!burgerState); flipHamburger()}}><img src="searchIcon.svg"></img></div></Col>
           </Row>
         </Container>
 
-        {burgerState && <HamburgerMenu tabIndex={0} onBlur={handleBlur} onFocus={handleFocus}></HamburgerMenu>}
+        {isHamburgerOpen && <HamburgerMenu></HamburgerMenu>}
       </div>
     </div>
     
   )
 }; 
 
-const mapStateToProps = (state) => {
-  return{
-    currentSprintMethods: state.methodReducer.currentSprintMethods,
+const mapDispatchToProps = dispatch => {
+  return {
+    flipHamburger: () => dispatch(flipHamburger())
   };
 };
 
-export default connect(mapStateToProps)(NavBar);
+const mapStateToProps = (state) => {
+  return{
+    currentSprintMethods: state.methodReducer.currentSprintMethods,
+    isHamburgerOpen: state.methodReducer.isHamburgerOpen
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
