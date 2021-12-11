@@ -20,7 +20,7 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
                 </Col>
                 <Col md="auto" className="adjust-col-width">
                     <div className="triangle-understand">
-                        <div classNmae="row ">
+                        <div className="row ">
                             <div className="col">
                                 <div className="triangle-smaller-understand"/>
                             </div>

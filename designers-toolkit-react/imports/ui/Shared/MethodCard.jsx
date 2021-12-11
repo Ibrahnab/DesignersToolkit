@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -13,10 +13,33 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
 
     const [isActive, setIsActive] = useState(false);
 
+    const useFocus = () => {
+        const htmlElRef = useRef(null)
+        const setFocus = () => {htmlElRef.current &&  htmlElRef.current.focus()}
+    
+        return [ htmlElRef, setFocus ] 
+    }
+
     function isInMethodologies() {
         const location = useLocation();
         return includes(location.pathname,"Methodologies");
     }
+
+    function blurHandler() {
+        setIsActive(!false);
+    }
+
+    const handleBlur = (e) => {
+        setIsActive(false);
+        console.log("blurred");
+    }
+
+    const handleFocus = (e) => {
+        console.log("focused");
+        setIsActive(true);
+    }
+
+    const [inputRef, setInputFocus] = useFocus();
 
     return (
         <div className="methodCard">
@@ -67,15 +90,15 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button> */}
             <Col className="justify-content-md-center d-flex">
-            <button onClick={ 
-                (e) => setIsActive(!isActive)}className="cardBtn">
+            {/* <button className="cardBtn" onClick={setInputFocus}>  */}
+            <button className="cardBtn" onClick={(e) => {setIsActive(!isActive); setInputFocus}}>
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button>
             </Col>
             
         </Row>
         {isActive && (
-                <div className="dropDownMenu">
+                <div className="dropDownMenu" tabIndex={0} onBlur={handleBlur} onFocus={handleFocus} ref={inputRef}>
 
                     {methodData.phase.map((phase) => (
 

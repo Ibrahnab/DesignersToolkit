@@ -35,7 +35,6 @@ const HamburgerMenu = ({methods}) => {
 
     };
 
-
     const handleToggle = () => {
         setNavbarOpen(prev => !prev)
       }
@@ -50,6 +49,14 @@ const HamburgerMenu = ({methods}) => {
       return m1.includes(m2);
     }
       
+    function blurHandler() {
+        setIsActive(!false);
+    }
+
+    const handleBlur = (e) => {
+        setIsActive(e.target.value);
+        console.log("blurred");
+    }
 
     return (
         <div className="navBar2">

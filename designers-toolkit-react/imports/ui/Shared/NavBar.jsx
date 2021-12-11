@@ -23,11 +23,18 @@ const [burgerState, changeState] = useState(false)
 
   function getActiveRoute() {
     const location = useLocation();
-    console.log(location.pathname); 
     return location.pathname;
   }
 
+  const handleBlur = (e) => {
+    changeState(e.target.value);
+    console.log("blurred");
+  }
 
+  const handleFocus = (e) => {
+    changeState(true);
+    console.log("focused");
+  }
   return (
     <div>
 
@@ -39,21 +46,21 @@ const [burgerState, changeState] = useState(false)
           <Col><Link to="/"><img className="logoImg" src='Logo.svg'/></Link></Col>
           {/* <img  class="logo" src="logo.png"/> */}
             <Col className="d-flex">
-              <NavLink to="/introduction" activeClassName="underline" className="navLink">
+              <NavLink to="/introduction" className="navLink">
                 <h2 className="whiteHeader navText">Introduction</h2>
                 <div className={ 'underscore' + (getActiveRoute() == "/introduction" ? " activated" : "")}></div>
               </NavLink>
             </Col>
             
             <Col className="d-flex">
-              <NavLink to="/methodologies" activeClassName="underline" className="navLink">
+              <NavLink to="/methodologies" className="navLink">
                 <h2 className="whiteHeader navText">Methodologies</h2>
                 <div className={ 'underscore' + (getActiveRoute() == "/methodologies" ? " activated" : "")}></div>
               </NavLink>
             </Col>
 
             <Col className="d-flex">
-              <NavLink to="/currentplan" activeClassName="underline" className="navLink">
+              <NavLink to="/currentplan" className="navLink">
                 <h2 className="whiteHeader navText">Sprint Plan {sprintCount}</h2>
                 <div className={ 'underscore' + (getActiveRoute() == "/currentplan" ? " activated" : "")}></div>
               </NavLink>
@@ -62,7 +69,7 @@ const [burgerState, changeState] = useState(false)
           </Row>
         </Container>
 
-        {burgerState && <HamburgerMenu></HamburgerMenu>}
+        {burgerState && <HamburgerMenu tabIndex={0} onBlur={handleBlur} onFocus={handleFocus}></HamburgerMenu>}
       </div>
     </div>
     
