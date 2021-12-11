@@ -6,18 +6,24 @@ import methodReducer from "../reducers/methodReducer";
 import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint, flipViewingMethod} from "../actions/index";
 import {connect} from "react-redux";
 import DropDownMenu from "./DropDownMenu"
-import { Link } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import {setMethodID} from "../Methodologies/Methodologies"
 
 const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, flipViewingMethod}) => {
 
     const [isActive, setIsActive] = useState(false);
+
+    function isInMethodologies() {
+        const location = useLocation();
+        return includes(location.pathname,"Methodologies");
+    }
+
     return (
         <div className="methodCard">
-<Container className="methodContainer p-0">
+        <Container className="methodContainer p-0">
         <Row className="justify-content-md-center">
             <Col className="justify-content-md-center d-flex">
-                <img onClick={()=>{flipViewingMethod(); showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img>
+                <NavLink to="/methodologies"><img onClick={()=>{flipViewingMethod(); showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img></NavLink>
             </Col>
         </Row>
 
