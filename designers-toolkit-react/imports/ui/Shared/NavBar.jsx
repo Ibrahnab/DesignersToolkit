@@ -43,30 +43,30 @@ const [burgerState, changeState] = useState(false)
 
       <div className="navContainer sticky">
         <Container>
-          <Row className="alignNavBarText">
-          <Col><Link to="/"><img className="logoImg" src='Logo.svg'/></Link></Col>
+          <Row className="alignNavBarText justify-content-md-center">
+          <Col md="auto"><Link to="/"><img className="logoImg" src='Logo.svg'/></Link></Col>
           {/* <img  class="logo" src="logo.png"/> */}
-            <Col className="d-flex">
+            <Col className="d-flex" md="auto">
               <NavLink to="/introduction" className="navLink">
                 <h2 className="whiteHeader navText">Introduction</h2>
                 <div className={ 'underscore' + (getActiveRoute() == "/introduction" ? " activated" : "")}></div>
               </NavLink>
             </Col>
             
-            <Col className="d-flex">
+            <Col className="d-flex" md="auto">
               <NavLink to="/methodologies" className="navLink">
                 <h2 className="whiteHeader navText">Methodologies</h2>
                 <div className={ 'underscore' + (getActiveRoute() == "/methodologies" ? " activated" : "")}></div>
               </NavLink>
             </Col>
 
-            <Col className="d-flex">
+            <Col className="d-flex" md="auto">
               <NavLink to="/currentplan" className="navLink">
                 <h2 className="whiteHeader navText">Sprint Plan {sprintCount}</h2>
                 <div className={ 'underscore' + (getActiveRoute() == "/currentplan" ? " activated" : "")}></div>
               </NavLink>
             </Col>
-            <Col ><div className="searchBtn" onClick={()=> {changeState(!burgerState); flipHamburger()}}><img src="searchIcon.svg"></img></div></Col>
+            <Col className="d-flex" md="auto"><div className="searchBtn" onClick={()=> {changeState(!burgerState); flipHamburger()}}><img src="searchIcon.svg"></img></div></Col>
           </Row>
         </Container>
 

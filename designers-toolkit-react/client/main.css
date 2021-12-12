@@ -903,3 +903,7 @@ a {
   transform: translateX(-10px);
   cursor: pointer;
 }
+
+.searchCol {
+  max-width: 50px;
+}
