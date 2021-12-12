@@ -870,10 +870,19 @@ a {
   100% { left: 0; }
 }
 
+.rangeSlider {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
 .inputNumber {
-  width:100px;
-  height:50px;
+  width:70px;
+  height:30px;
   border-radius: 30px;
+  border-width: 2px;
+  font-family: 'Montserrat';
+  font-weight:300;
+  text-align: center;
 }
 
 .smallBlackHeader {
@@ -906,4 +915,10 @@ a {
 
 .searchCol {
   max-width: 50px;
+}
+
+.phaseCheckbox {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size:13px;
 }
