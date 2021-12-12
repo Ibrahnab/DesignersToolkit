@@ -276,8 +276,9 @@ img.logoImg {
 }
 
 .cardHeader {
-  margin-top:10px;
+  margin-top:5px;
   font-size: 13px;
+  padding-bottom:0px;
   text-align:center;
 }
 
@@ -855,6 +856,10 @@ a {
 .firstSearchRow{
   margin-top: 10px;
   margin-left: 20px;
+}
+
+.hamburgerContainer{
+  margin-left:20px;
 }
 
 @-webkit-keyframes slide {

@@ -65,13 +65,13 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
                 <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
                 <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>...</ul>
             </nav> */}
-            <Container className="firstSearchRow">
-              <Row className="firstSearchRow">
+            <Container className="firstSearchRow hamburgerContainer pl-20" fluid>
+              <Row className="firstSearchRow justify-content-md-center">
                 <Col sm="10" className="d-flex"><h5 className="blackHeader">Search for design methods</h5></Col>
                 <Col sm="1"><img className="crossIcon" onClick={() => flipHamburger()} src="crossIcon.svg"></img></Col>
               </Row>
 
-              <Row>
+              <Row className="justify-content-md-center">
                 <Col>
                   <Form.Control type="text" placeholder="Search method name" onChange={(e)=> setSearchState(e.target.value)} />
                 </Col>
@@ -79,7 +79,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
 
               <Row><Col><hr></hr></Col></Row>
 
-              <Row className="firstSearchRow">
+              <Row className="firstSearchRow justify-content-md-center">
                 <Col>
                   <p className="smallBlackHeader">Select phases</p>
                 </Col>
@@ -104,7 +104,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
                       <Form.Check type="checkbox" inline label="Validate" name="group1" checked={checkedState[5]} onChange={() => handleOnChange(5)} />
                     </Col>
                   </Row> */}
-              <Row className="firstSearchRow">
+              <Row className="firstSearchRow justify-content-md-center">
                 <Col>
                   <Form.Check type="checkbox" inline label="Understand" name="group1" checked={checkedState[0]} onChange={() => handleOnChange(0)} /> <br />
                   <Form.Check type="checkbox" inline label="Sketch" name="group1"  checked={checkedState[2]} onChange={() => handleOnChange(2)}/> <br />
