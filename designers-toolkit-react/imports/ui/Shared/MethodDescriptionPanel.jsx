@@ -11,32 +11,6 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
 
     return (
         <div className="methodDescriptionPanel">
-            <div className="row justify-content-md-center mt-3">
-                <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-understand">
-                        <div classNmae="row ">
-                            <div className="col">
-                                <div className="triangle-smaller-understand"/>
-                            </div>
-                        </div>
-                    </div>
-                </Col>
-                <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-define"></div>
-                </Col>
-                <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-sketch"></div>
-                </Col>
-                <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-decide"></div>
-                </Col>
-                <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-prototype"></div>
-                </Col>
-                <Col md="auto" className="adjust-col-width">
-                    <div className="triangle-validate"></div>
-                </Col>
-            </div>
         
             <div className="row justify-content-md-center mt-4">
                 <Col md="auto">
@@ -78,17 +52,15 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                 </Col>
             </div>
             <div className="row justify-content-md-center">
-                <div className="col-sm-1 ml-3 mt-4">
-                    {methodDescriptionData.stepsNbr.map((nbr) =>(
-                            <div className="col mt-4">
-                                <div className="stepCircle"><p className="step-number-text">{nbr}</p></div> 
-                            </div>
-                            ))}
-                </div>
                 <div className="col-sm-6 md-2">
                     {methodDescriptionData.steps.map((step) =>(
-                        <div className="col mt-5">
+                        <div className="row justify-content-md-center">
+                            <div className="col-sm-2 mt-3">
+                            <div className="stepCircle"><p className="step-number-text">{methodDescriptionData.steps.indexOf(step)+1}</p></div>
+                            </div>
+                            <div className="col mt-3">
                             <p className="method-step-text">{step}</p>
+                            </div>
                         </div>
                         ))}
                 </div>
@@ -111,3 +83,30 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(null,mapDispatchToProps)(MethodDescriptionPanel);
+
+/*<div className="row justify-content-md-center mt-3">
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-understand">
+                        <div classNmae="row ">
+                            <div className="col">
+                                <div className="triangle-smaller-understand"/>
+                            </div>
+                        </div>
+                    </div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-define"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-sketch"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-decide"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-prototype"></div>
+                </Col>
+                <Col md="auto" className="adjust-col-width">
+                    <div className="triangle-validate"></div>
+                </Col>
+            </div>*/
