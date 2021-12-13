@@ -24,17 +24,46 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
     );
     const phaseArray = ["understand", "define", "sketch", "decide", "prototype", "validate"]
     const [selectedPhaseArray, setPhaseArray] = useState(["understand", "define", "sketch", "decide", "prototype", "validate"]);
+    const [allChecked, setAllChecked] = useState(true);
 
     const handleOnChange = (position) => {
       const updatedCheckedState = checkedState.map((item, index) =>
         index === position ? !item : item
       );
+      if(updatedCheckedState.includes(false)){
+        setAllChecked(false);
+      }
+      else{
+        setAllChecked(true);
+      }
 
       setCheckedState(updatedCheckedState);
 
       setPhaseArray(updatedCheckedState.map((value, index) => value ? phaseArray[index] : "none"));
 
     };
+
+    const handleCheckAll = () => {
+      
+      var updatedCheckedState;
+
+      if(checkedState.includes(false)){
+        updatedCheckedState = checkedState.map((item, index) => 
+          true
+        );
+        setAllChecked(!allChecked);
+      }
+      else{
+        updatedCheckedState = checkedState.map((item, index) => 
+          false
+        );
+        setAllChecked(!allChecked);
+      }
+      
+      setCheckedState(updatedCheckedState);
+      setPhaseArray(updatedCheckedState.map((value, index) => value ? phaseArray[index] : "none"));
+      
+    }
 
     const handleToggle = () => {
         setNavbarOpen(prev => !prev)
@@ -91,6 +120,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
                   <Form.Check type="checkbox" inline label="Understand" name="group1" checked={checkedState[0]} onChange={() => handleOnChange(0)} className="phaseCheckbox"/> <br />
                   <Form.Check type="checkbox" inline label="Sketch" name="group1"  checked={checkedState[2]} onChange={() => handleOnChange(2)} className="phaseCheckbox"/> <br />
                   <Form.Check type="checkbox" inline label="Prototype" name="group1"  checked={checkedState[4]} onChange={() => handleOnChange(4)} className="phaseCheckbox" /> <br />
+                  <Form.Check type="checkbox" inline label="Check All" name="all" checked={allChecked} onChange={() => handleCheckAll()} className="phaseCheckbox"/>
                 </Col>
                 <Col>
                 <Form.Check type="checkbox" inline label="Define" name="group1"  checked={checkedState[1]} onChange={() => handleOnChange(1)} className="phaseCheckbox"/> <br />
@@ -114,7 +144,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
                   <p className="smallBlackHeader">Amount of participants</p>
                 </Col>
                 <Col>
-                  <input className="inputNumber" type="number" value={participantsState} onChange={(e) => setParticipantsState(e.target.value)}></input>
+                  <input className="inputNumber" min={1} type="number" value={participantsState} onChange={(e) => setParticipantsState(e.target.value)}></input>
                 </Col>
               </Row>
               <Row><Col><hr></hr></Col></Row>
