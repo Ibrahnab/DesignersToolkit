@@ -1,14 +1,17 @@
-#Designers Toolkit
+# Designer's Toolkit
+This is a web application which UX designers can use to browse deisgn  methodologies and create sprint plans
 
-##Get started
-When you clone the project just run
+## Getting started
+You'll need to run the following commands once you are in the meteor app directory
 
 ```
 meteor npm install
 ```
 
-Afterwards you can run the project by running
+Once that's finished, run
 
 ```
-meteor npm run
+meteor run
 ```
+Then just open up a new browser window and goto 
+http://localhost:3000
