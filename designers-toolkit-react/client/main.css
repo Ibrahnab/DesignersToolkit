@@ -749,7 +749,18 @@ img.logoImg {
 .suggestion-box{
   background-color: #B8D0EB;
   border: 3px solid black;
+  width:700px;
+  text-align:center;
+  margin: 0 auto;
+  margin-left:-100px;
 }
+
+
+.modal-dialog {
+  max-width: none;
+  width:700px;
+}
+
 
 .refresh-image{
   width: 49px;
