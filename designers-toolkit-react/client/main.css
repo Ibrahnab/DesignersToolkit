@@ -84,7 +84,7 @@ img.logoImg {
 }
 
 .dashboardVL{
-  border-left: 3px solid black;
+  border-left: 3px solid rgb(177, 177, 177);
   height: 500px;
   top: 150px;
   position:absolute;
@@ -158,9 +158,13 @@ img.logoImg {
 }
 
 .dashboardStandardText{
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Montserrat';
   align-self: center;
+  text-align: left;
+}
+
+.dashboardStandardText.paragraph{
   text-align: center;
 }
 

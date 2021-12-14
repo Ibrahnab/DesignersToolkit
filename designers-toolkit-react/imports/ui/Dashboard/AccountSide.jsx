@@ -37,7 +37,7 @@ export const AccountSide = () => (
             <div className="dashboardHL"></div>
             <div className="row d-flex justify-content-center flex-nowrap textTopMargin">
                 <Col>
-                    <p className="dashboardStandardText">Don’t have an account? Create a new one here</p>
+                    <p className="dashboardStandardText paragraph">Don’t have an account? Create a new one here</p>
                 </Col>
             </div>
             <div className="row d-flex justify-content-center flex-nowrap">

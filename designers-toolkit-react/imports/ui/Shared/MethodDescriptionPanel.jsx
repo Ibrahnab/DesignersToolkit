@@ -18,7 +18,7 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
                     <img src="backBtn.svg" onClick={() => flipViewingMethod()}></img>
                 </div>
                 </Col>
-                <Col md="auto" className="adjust-col-width">
+                {/* <Col md="auto" className="adjust-col-width">
                     <div className="triangle-understand">
                         <div className="row ">
                             <div className="col">
@@ -41,7 +41,7 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
                 </Col>
                 <Col md="auto" className="adjust-col-width">
                     <div className="triangle-validate"></div>
-                </Col>
+                </Col> */}
             </div>
         
             <div className="row justify-content-md-center mt-4">
