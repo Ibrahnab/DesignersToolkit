@@ -7,8 +7,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import TripleDiamondNav from "./TripleDiamondNav"
+import {flipViewingMethod} from "../actions/index";
 
-const Methodologies = ({methods, currentMethod}) => {
+const Methodologies = ({methods, currentMethod, viewingMethod}) => {
 
   const [selectedPhase, changePhase] = useState("understandLock");
 
@@ -34,20 +35,20 @@ const Methodologies = ({methods, currentMethod}) => {
 
   return (
     <div>
-      <Container className="auto pageContainer">
+      {/* <Container className="auto pageContainer">
         <TripleDiamondNav />
-
-        {/* ---------------------------------------- */}
       </Container>
+        
+      
       <div className="row">
         <div className="col-sm-3 method-section-methodologies">
           <div className="row justify-content-md-center">
             {methods.map((meth) => (
               <div className="col">
                 <MethodCard key={meth.id} methodData={meth} /> 
-                </div>
+              </div>
             ))}
-            </div>
+          </div>
         </div>
         <div className="col">
           {currentMethod.map((md) => (
@@ -56,14 +57,37 @@ const Methodologies = ({methods, currentMethod}) => {
                 </div>
             ))}
         </div>
-      </div>
-    </div>)};
+      </div> */}
+
+      {!viewingMethod && 
+      
+        <Container className="auto pageContainer">
+          <TripleDiamondNav />
+        </Container>
+      
+      }
+
+      {viewingMethod && 
+        <Container>
+          <div className="col">
+            {currentMethod.map((md) => (
+                <div className="col float-md-right">
+                  <MethodDescriptionPanel key={md.id} methodDescriptionData={md} /> 
+                  </div>
+              ))}
+          </div>
+        </Container>
+      }
+    
+    </div>
+  )};
 
 
   const mapStateToProps = (state) => {
     return {
       currentMethod: state.methodReducer.currentMethod,
       methods: state.methodReducer.methods,
+      viewingMethod: state.methodReducer.viewingMethod
     };
   };
 

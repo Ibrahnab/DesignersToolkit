@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
-import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint, removePhaseFromMethod} from "../actions/index";
+import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint, flipViewingMethod} from "../actions/index";
 import {connect} from "react-redux";
-import DropDownMenu from "./DropDownMenu";
-import { Link } from "react-router-dom";
+import DropDownMenu from "./DropDownMenu"
+import { Link, useLocation, NavLink } from "react-router-dom";
 import {setMethodID} from "../Methodologies/Methodologies";
 import Form from "react-bootstrap/Form";
 
-const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, removePhaseFromMethod, isinPlan, underPhase}) => {
+const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, flipViewingMethod, viewingMethod, removePhaseFromMethod, isinPlan, underPhase}) => {
 
     const [isActive, setIsActive] = useState(false);
     var [phases, setPhases] = useState([])
@@ -27,13 +27,44 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
         setPhases(phases= phases.filter((phase) => (phase !== incPhase)));
         //console.log(phases);
     }
+  
+    const [isActive, setIsActive] = useState(false);
 
+    const useFocus = () => {
+        const htmlElRef = useRef(null)
+        const setFocus = () => {htmlElRef.current &&  htmlElRef.current.focus()}
+    
+        return [ htmlElRef, setFocus ] 
+    }
+
+    function isInMethodologies() {
+        const location = useLocation();
+        return includes(location.pathname,"Methodologies");
+    }
+
+    function blurHandler() {
+        setIsActive(!false);
+    }
+
+    const handleBlur = (e) => {
+        setIsActive(false);
+        console.log("blurred");
+    }
+
+    const handleFocus = (e) => {
+        console.log("focused");
+        setIsActive(true);
+    }
+
+    const [inputRef, setInputFocus] = useFocus();
     return (
         <div className="methodCard">
-<Container className="methodContainer p-0">
+        <Container className="methodContainer p-0">
         <Row className="justify-content-md-center">
             <Col className="justify-content-md-center d-flex">
-                <img onClick={()=>{showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img>
+                <NavLink to="/methodologies" className="cardNav p-0">
+                    <img onClick={()=>{{!viewingMethod ? flipViewingMethod(): undefined}; showCurrentMethod(methodData.id)}} className="cardImg" src={methodData.image}></img>
+                </NavLink>
             </Col>
         </Row>
 
@@ -75,8 +106,7 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button> */}
             <Col className="justify-content-md-center d-flex">
-            {!isinPlan &&<button onClick={ 
-                (e) => setIsActive(!isActive)}className="cardBtn">
+            {!isinPlan &&<button className="cardBtn" onClick={(e) => {setIsActive(!isActive); setInputFocus}}>
                 <h5 className="blackHeader cardHeader btnHead">Add</h5>
             </button>}
             {isinPlan &&<button onClick={ 
@@ -87,7 +117,7 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
             
         </Row>
         {isActive && (
-                <div className="row justify-content-md-center dropDownMenu">
+                <div className="dropDownMenu" tabIndex={0} onBlur={handleBlur} onFocus={handleFocus} ref={inputRef}>
                     {methodData.phase.map((phase) => (
                     <div className="row">
                         <div className="col-6">
@@ -106,6 +136,13 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
     
 };
 
+
+const mapStateToProps = (state) => {
+    return {
+      viewingMethod: state.methodReducer.viewingMethod
+    };
+  };
+
 const mapDispatchToProps = dispatch => {
     return {
         addToSprint: (id, itemPhase) => dispatch(addToSprint(id,itemPhase)),
@@ -113,10 +150,7 @@ const mapDispatchToProps = dispatch => {
         removeFromSprint: (id,itemPhase) => dispatch(removeFromSprint(id,itemPhase)),
         showCurrentMethod:(id,itemPhase) => dispatch(showCurrentMethod(id,itemPhase)),
         removePhaseFromMethod:(id,itemPhase) => dispatch(removePhaseFromMethod(id,itemPhase)),
-    };
-};
-
-export default connect(null,mapDispatchToProps)(MethodCard);
+        flipViewingMethod: () => dispatch(flipViewingMethod())
 
 /*<div className={`phaseBtn + ${phase}`}>
                             <p className="whiteHeader phase" 
@@ -132,3 +166,8 @@ export default connect(null,mapDispatchToProps)(MethodCard);
                         }}>remove</p>
                     </div>
                     )}*/
+        
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MethodCard);

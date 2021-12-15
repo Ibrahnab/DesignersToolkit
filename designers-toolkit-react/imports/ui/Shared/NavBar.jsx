@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { connect } from "react-redux";
 import HamburgerMenu from "./HamburgerMenu"
+import { flipHamburger } from "../actions";
 
 
-const NavBar = ({currentSprintMethods}) => {
+const NavBar = ({currentSprintMethods, isHamburgerOpen, flipHamburger}) => {
 
 const [sprintCount, setSprintCount] = useState(0);
 const [barlock, setBarLock] = useState()
@@ -21,6 +22,20 @@ const [burgerState, changeState] = useState(false)
     setSprintCount(count);
   }, [currentSprintMethods, sprintCount])
 
+  function getActiveRoute() {
+    const location = useLocation();
+    return location.pathname;
+  }
+
+  const handleBlur = (e) => {
+    changeState(e.target.value);
+    console.log("blurred");
+  }
+
+  const handleFocus = (e) => {
+    changeState(true);
+    console.log("focused");
+  }
   return (
     <div>
 
@@ -28,27 +43,51 @@ const [burgerState, changeState] = useState(false)
 
       <div className="navContainer sticky">
         <Container>
-          <Row className="alignNavBarText">
-          <Col><Link to="/"><img className="logoImg" src='Logo.svg'/></Link></Col>
+          <Row className="alignNavBarText justify-content-md-center">
+          <Col md="auto"><Link to="/"><img className="logoImg" src='Logo.svg'/></Link></Col>
           {/* <img  class="logo" src="logo.png"/> */}
-            <Col className="d-flex"><NavLink to="/introduction" activeClassName="underline" className="navLink"><h2 className="whiteHeader navText">Introduction</h2><div className="underscore"></div></NavLink></Col>
-            <Col className="d-flex"><NavLink to="/methodologies" activeClassName="underline" className="navLink"><h2 className="whiteHeader navText">Methodologies</h2><div className="underscore"></div></NavLink></Col>
-            <Col className="d-flex"><NavLink to="/currentplan" activeClassName="underline" className="navLink"><h2 className="whiteHeader navText">Sprint Plan {sprintCount}</h2><div className="underscore"></div></NavLink></Col>
-            <Col ><div className="searchBtn" onClick={()=> changeState(!burgerState)}><img src="searchIcon.svg"></img></div></Col>
+            <Col className="d-flex" md="auto">
+              <NavLink to="/introduction" className="navLink">
+                <h2 className="whiteHeader navText">Introduction</h2>
+                <div className={ 'underscore' + (getActiveRoute() == "/introduction" ? " activated" : "")}></div>
+              </NavLink>
+            </Col>
+            
+            <Col className="d-flex" md="auto">
+              <NavLink to="/methodologies" className="navLink">
+                <h2 className="whiteHeader navText">Methodologies</h2>
+                <div className={ 'underscore' + (getActiveRoute() == "/methodologies" ? " activated" : "")}></div>
+              </NavLink>
+            </Col>
+
+            <Col className="d-flex" md="auto">
+              <NavLink to="/currentplan" className="navLink">
+                <h2 className="whiteHeader navText">Sprint Plan {sprintCount}</h2>
+                <div className={ 'underscore' + (getActiveRoute() == "/currentplan" ? " activated" : "")}></div>
+              </NavLink>
+            </Col>
+            <Col className="d-flex" md="auto"><div className="searchBtn" onClick={()=> {changeState(!burgerState); flipHamburger()}}><img src="searchIcon.svg"></img></div></Col>
           </Row>
         </Container>
 
-        {burgerState && <HamburgerMenu></HamburgerMenu>}
+        {isHamburgerOpen && <HamburgerMenu></HamburgerMenu>}
       </div>
     </div>
     
   )
 }; 
 
-const mapStateToProps = (state) => {
-  return{
-    currentSprintMethods: state.methodReducer.currentSprintMethods,
+const mapDispatchToProps = dispatch => {
+  return {
+    flipHamburger: () => dispatch(flipHamburger())
   };
 };
 
-export default connect(mapStateToProps)(NavBar);
+const mapStateToProps = (state) => {
+  return{
+    currentSprintMethods: state.methodReducer.currentSprintMethods,
+    isHamburgerOpen: state.methodReducer.isHamburgerOpen
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

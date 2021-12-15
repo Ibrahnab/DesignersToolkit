@@ -14,6 +14,6 @@ export const PasswordTextField = () => (
       width="240px"
       margin="auto"
     >
-      <TextField id="outlined-basic" label="Password" variant="outlined" />
+      <TextField type="password" id="outlined-basic" label="Password" variant="outlined" />
     </Box>
   ); 

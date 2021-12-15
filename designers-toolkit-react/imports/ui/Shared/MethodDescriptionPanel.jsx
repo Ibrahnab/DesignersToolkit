@@ -5,12 +5,20 @@ import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
 import {loadCurrentMethod} from "../actions/index";
 import {connect} from "react-redux";
+import {flipViewingMethod} from "../actions/index";
 
 
-const MethodDescriptionPanel = ({methodDescriptionData}) => {
+const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewingMethod}) => {
 
     return (
         <div className="methodDescriptionPanel">
+            <div className="row justify-content-md-center mt-3">
+                <Col className="d-flex">
+                <div className="backBtn" >
+                    <img src="backBtn.svg" onClick={() => flipViewingMethod()}></img>
+                </div>
+                </Col>
+            </div>
         
             <div className="row justify-content-md-center mt-4">
                 <Col md="auto">
@@ -32,15 +40,15 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
 
             <div className="row justify-content-md-center mt-3">
                 <Col md="auto">
-                    <img src="participants_big.svg"/>
+                    <img src="personIcon2.svg" className="methodDescriptionIcon"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.participants}</p>
                 </Col>
                 <Col md="auto" className="method-icons-left-margin">
-                    <img src="clock_big.svg"/>
+                    <img src="clockIcon.svg" className="methodDescriptionIcon"/>
                     <p className="blackHeader cardHeader">{methodDescriptionData.time}m</p>
                 </Col>
                 <Col md="auto" className="method-icons-left-margin mt-2">
-                    <img src="triplediamond_big.svg"/>
+                    <img src="tripleDiamondIcon2.svg" className="methodDescriptionIcon"/>
                     <div className="row justify-content-md-center">
                         {methodDescriptionData.phase.map((phase) => (
                                 <Col md="auto" className="mt-3">
@@ -76,13 +84,13 @@ const MethodDescriptionPanel = ({methodDescriptionData}) => {
                         </div>
                     ))}*/
 
+                    
 const mapDispatchToProps = dispatch => {
     return {
-        loadCurrentMethod: (id) => dispatch(loadCurrentMethod(id))
+        loadCurrentMethod: (id) => dispatch(loadCurrentMethod(id)),
+        flipViewingMethod: () => dispatch(flipViewingMethod())
     };
 };
-
-export default connect(null,mapDispatchToProps)(MethodDescriptionPanel);
 
 /*<div className="row justify-content-md-center mt-3">
                 <Col md="auto" className="adjust-col-width">
@@ -110,3 +118,10 @@ export default connect(null,mapDispatchToProps)(MethodDescriptionPanel);
                     <div className="triangle-validate"></div>
                 </Col>
             </div>*/
+const mapStateToProps = (state) => {
+    return {
+      viewingMethod: state.methodReducer.viewingMethod
+    };
+  };
+
+export default connect(mapStateToProps ,mapDispatchToProps)(MethodDescriptionPanel);

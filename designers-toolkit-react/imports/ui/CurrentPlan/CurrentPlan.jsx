@@ -106,22 +106,32 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
         </Row>
       </Container>
     
-      <Modal show={show} onHide={handleClose}  aria-labelledby="contained-modal-title-vcenter" centered>
-        <Container className ="suggestion-box">
-          <div className="row justify-content-center mt-3">
-              {suggestedMethods.map((meth) => (
-                  <div className="col-auto">
-                  <MethodCard key={meth.id} methodData={meth} isinPlan={false}/> 
-                  </div>
-              ))}
-          </div>
-          <div className="row justify-content-center mt-4 mb-3">
-            <div className="col-auto">
-                <img className="refresh-image" src="refresh_methods_img.svg" onAnimationEnd={() => setWobble(0)} wobble={wobble}  
-                onClick={()=>{suggestMethods(currentPhase), setWobble(1)}}></img>
+      <Modal show={show} onHide={handleClose}  aria-labelledby="contained-modal-title-vcenter" centered className="modal w-55 mw-60">
+        <div className="suggestion-box">
+          <Container>
+            <div className="row firstSearchRow">
+              <Col className="col justify-content-md-center" >
+                <h4 className="blackHeader firstSearchRow">Suggested methods for this phase</h4>
+              </Col>
+              {/* <Col className="col justify-content-md-center" sm="1">
+                <img className="crossIcon firstSearchRow" src="crossIcon.svg"></img> 
+              </Col> */}
             </div>
+            <div className="row justify-content-center mt-3">
+                {suggestedMethods.map((meth) => (
+                    <div className="col-auto">
+                    <MethodCard key={meth.id} methodData={meth} isinPlan={false}//> 
+                    </div>
+                ))}
+            </div>
+            <div className="row justify-content-center mt-4 mb-3">
+              <div className="col-auto">
+                  <img className="refresh-image" src="refresh_methods_img.svg" onAnimationEnd={() => setWobble(0)} wobble={wobble}  
+                  onClick={()=>{suggestMethods(currentPhase), setWobble(1)}}></img>
+              </div>
+            </div>
+          </Container>
         </div>
-      </Container>
       </Modal>
     </div>
   ); 

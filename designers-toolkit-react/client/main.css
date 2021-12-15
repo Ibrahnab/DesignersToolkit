@@ -44,11 +44,22 @@ body {
   width:100%;
 }
 
+.underscore.activated{
+  width:100%;
+  background-color: white;
+}
+
 .underline{
   background-color: #85953A;
   color:#85953A;
+  margin-top:100px;
   border-bottom-width:4px;
+  text-decoration: underline;
   border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.crossIcon:hover {
+  cursor:pointer;
 }
 
 img.logoImg {  
@@ -73,7 +84,7 @@ img.logoImg {
 }
 
 .dashboardVL{
-  border-left: 3px solid black;
+  border-left: 3px solid rgb(177, 177, 177);
   height: 500px;
   top: 150px;
   position:absolute;
@@ -147,9 +158,13 @@ img.logoImg {
 }
 
 .dashboardStandardText{
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Montserrat';
   align-self: center;
+  text-align: left;
+}
+
+.dashboardStandardText.paragraph{
   text-align: center;
 }
 
@@ -265,8 +280,9 @@ img.logoImg {
 }
 
 .cardHeader {
-  margin-top:10px;
+  margin-top:5px;
   font-size: 13px;
+  padding-bottom:0px;
   text-align:center;
 }
 
@@ -604,12 +620,22 @@ img.logoImg {
   width: 1253px;
   background-color: white;
   float: right;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+   -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+       animation: fadein 1s;
 }
 
 .methodDescriptionImage{
-  width: 310px;
-  height: 310px;
+  width: 200px;
+  height: 200px;
   align-items: center;
+}
+
+.methodDescriptionIcon{
+  width:50px;
+  height:50px;
 }
 
 .methodDescriptionHeader{
@@ -622,7 +648,7 @@ img.logoImg {
 .methodDescriptionBodyText{
   font-size: 16px;
   font-family: "Montserrat";
-  text-align: center;
+  text-align: left;
   margin: 0px !important;
 }
 
@@ -726,7 +752,18 @@ img.logoImg {
 .suggestion-box{
   background-color: #B8D0EB;
   border: 3px solid black;
+  width:700px;
+  text-align:center;
+  margin: 0 auto;
+  margin-left:-100px;
 }
+
+
+.modal-dialog {
+  max-width: none;
+  width:700px;
+}
+
 
 .refresh-image{
   width: 49px;
@@ -835,6 +872,10 @@ a {
   margin-left: 20px;
 }
 
+.hamburgerContainer{
+  margin-left:20px;
+}
+
 @-webkit-keyframes slide {
   100% { left: 0; }
 }
@@ -843,10 +884,20 @@ a {
   100% { left: 0; }
 }
 
+.rangeSlider {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
 .inputNumber {
-  width:100px;
-  height:50px;
+  width:70px;
+  height:30px;
   border-radius: 30px;
+  border-width: 2px;
+  font-family: 'Montserrat';
+  font-weight:300;
+  font-size: 13px;
+  text-align: center;
 }
 
 .smallBlackHeader {
@@ -866,4 +917,23 @@ a {
 
 .rowFiller {
   height:150px;
+}
+
+.backBtn{
+  transition: transform 250ms;
+}
+
+.backBtn:hover {
+  transform: translateX(-10px);
+  cursor: pointer;
+}
+
+.searchCol {
+  max-width: 50px;
+}
+
+.phaseCheckbox {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size:13px;
 }

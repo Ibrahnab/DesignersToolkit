@@ -66,6 +66,17 @@ export const suggestMethods = (thePhase) =>{
     }
 }
 
+export const flipViewingMethod = () => {
+    return {
+        type: actionTypes.FLIP_VIEWING_METHOD,
+    }
+}
+
+export const flipHamburger = () => {
+    return {
+        type: actionTypes.FLIP_HAMBURGER,
+    }
+}
 
 export const increment = () => {
     return{
