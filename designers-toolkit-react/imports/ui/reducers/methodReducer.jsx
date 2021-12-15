@@ -252,20 +252,15 @@ const INITIAL_STATE = {
         {
             id: "14",
             name: "The Golden Path",
-            participants: 5,
+            participants: 0,
             time: 30,
             phase: ["define"],
             image: "golden_path_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
-            steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            description:"The golden path is used to describe the ideal, non-erroneous path the user takes while using your product or service to fulfill their goal. For example when searching for flight tickets on a website, the golden path would be something like: search for ticket, view ticket details, buy tickets and recieve tickets. The finer details of each step should not be of focus in this method. Being aware of the optimal path will guide the designers in their work.",
+            steps: ["Write down the high-level steps necessary for the user to take in order to reach their goal",
+            "structure them into a linear path. If you wish, you can note down other lower-level steps  onto the path where they occur"],
             stepsNbr:["1","2","3"],
             inPhase:[]
         },
@@ -278,54 +273,41 @@ const INITIAL_STATE = {
             image: "establish_principles_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
-            steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            description:"Defining a set of principles agreed by the team can create a common understanding of what the project values and what the intended outcome is to be.  It can also be used to establish ethical values and accepted behaviour within the team. There are a  varienty of  techniques for doing this, and we encourage you to explore the web. Here we suggest the team to document a team agreement and to define a brand identity.",
+            steps: ["Document a team agreement. The team agreement should describe topics such as aspirations, contact information, goal of the project, individual roles,  etc",
+            "Define a brand identity. The brand identity is how you want to appear to the public eye and more specifically the user. It is dictated by choice of colour, layout, logo, name and communication"],
             stepsNbr:["1","2","3"],
             inPhase:[]
         },
         {
             id: "16",
             name: "Measure Success",
-            participants: 5,
+            participants: 0,
             time: 30,
             phase: ["define"],
             image: "measure_success_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
-            steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            description:"By measuring the success, the design team can better understand what to strive for and when a goal is achieved. Different types of success can be measure. Does the user display the behaviour that is desirable? Does the quantifiable data conform with the expectations?",
+            steps: ["Consider what the main goal of your concept is",
+            "Consider what type of user behaviour indicates the achievement of your goal",
+            "Consider how that behaviour can be measured quantifiably. You will have a clearly defined success metric once these three steps are defined"],
             stepsNbr:["1","2","3"],
             inPhase:[]
         },
         {
             id: "17",
             name: "Mindmapping",
-            participants: 5,
+            participants: 0,
             time: 30,
             phase: ["understand","define"],
             image: "mind_mapping_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
-            steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            description:"A mindmap can be used for organising information in a heirarchical manner. Relationships between pieces is mapped to the source concept. Pieces close to the starting concept are significant ideas, while pieces at the edges of the mind map are  increasingly branched and specific.",
+            steps: ["Start with defining your core concept. Place it at the center of your paper (digital or physical)",
+            "Note down and connect ideas that are related to the core concept",
+            "Branch out from each of the ideas. Do this iteratively for each idea until you are satisfied"],
             stepsNbr:["1","2","3"],
             inPhase:[]
         },
