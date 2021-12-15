@@ -231,11 +231,12 @@ img.logoImg {
 }
 
 .currentplan-add-button{
-  width: 191px;
+  width: 180px;
   height: 60px;
   background-color: #EE6C4D;
   border-radius: 10px;
   border: none;
+  margin-top:10px;
 }
 
 .currentplan-plus-img{
