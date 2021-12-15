@@ -120,7 +120,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             <div className="row justify-content-center mt-3">
                 {suggestedMethods.map((meth) => (
                     <div className="col-auto">
-                    <MethodCard key={meth.id} methodData={meth} isinPlan={false}//> 
+                    <MethodCard key={meth.id} methodData={meth} isinPlan={false}/> 
                     </div>
                 ))}
             </div>

@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import methodReducer from "../reducers/methodReducer";
-import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint, flipViewingMethod} from "../actions/index";
+import {addToSprint, adjustPhase, showCurrentMethod, removeFromSprint, flipViewingMethod, removePhaseFromMethod} from "../actions/index";
 import {connect} from "react-redux";
 import DropDownMenu from "./DropDownMenu"
 import { Link, useLocation, NavLink } from "react-router-dom";
@@ -12,7 +12,6 @@ import Form from "react-bootstrap/Form";
 
 const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, showCurrentMethod, flipViewingMethod, viewingMethod, removePhaseFromMethod, isinPlan, underPhase}) => {
 
-    const [isActive, setIsActive] = useState(false);
     var [phases, setPhases] = useState([])
 
     function addThisMethod(phase){
