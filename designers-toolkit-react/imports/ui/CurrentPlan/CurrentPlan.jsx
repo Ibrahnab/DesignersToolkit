@@ -32,8 +32,8 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
               <Col><div className="circle sprint understand"></div></Col>
               <Col><h5 className="blackHeader">Understand</h5></Col>
             </Row>
-            {currentSprintMethods.filter(meth => meth.currentPhase === "understand").map((meth) => (
-              <MethodCard key={meth.id} methodData={meth} /> 
+            {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="understand") !== undefined).map((meth) => (
+              <MethodCard key={meth.id} methodData={meth} isinPlan={true} underPhase="understand"/> 
             ))}
             <button onClick={()=>{suggestMethods("understand"), setShow(true), setCurrentPhase("understand")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
             
@@ -45,8 +45,8 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
               <Col><h5 className="blackHeader">Define</h5></Col>
             </Row>
 
-            {currentSprintMethods.filter(meth => meth.currentPhase === "define").map((meth) => (
-              <MethodCard key={meth.id} methodData={meth} /> 
+            {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="define") !== undefined).map((meth) => (
+              <MethodCard key={meth.id} methodData={meth} isinPlan={true} underPhase="define"/> 
             ))}
             <button onClick={()=>{suggestMethods("define"), setShow(true),setCurrentPhase("define")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
           
@@ -58,8 +58,8 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
               <Col><h5 className="blackHeader">Sketch</h5></Col>
             </Row>
 
-            {currentSprintMethods.filter(meth => meth.currentPhase === "sketch").map((meth) => (
-              <MethodCard key={meth.id} methodData={meth} /> 
+            {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="sketch") !== undefined).map((meth) => (
+              <MethodCard key={meth.id} methodData={meth} isinPlan={true} underPhase="sketch"/> 
             ))}
             <button onClick={()=>{suggestMethods("sketch"), setShow(true), setCurrentPhase("sketch")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
             
@@ -71,8 +71,8 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
               <Col><h5 className="blackHeader">Decide</h5></Col>
             </Row>
 
-            {currentSprintMethods.filter(meth => meth.currentPhase === "decide").map((meth) => (
-              <MethodCard key={meth.id} methodData={meth} /> 
+            {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="decide") !== undefined).map((meth) => (
+              <MethodCard key={meth.id} methodData={meth} isinPlan={true} underPhase="decide"/> 
             ))}
             <button onClick={()=>{suggestMethods("decide"), setShow(true), setCurrentPhase("decide")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
             
@@ -85,8 +85,8 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
               <Col><h5 className="blackHeader">Prototype</h5></Col>
             </Row>
 
-            {currentSprintMethods.filter(meth => meth.currentPhase === "prototype").map((meth) => (
-              <MethodCard key={meth.id} methodData={meth} /> 
+            {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="prototype") !== undefined).map((meth) => (
+              <MethodCard key={meth.id} methodData={meth} isinPlan={true} underPhase="prototype"/> 
             ))}
             <button onClick={()=>{suggestMethods("prototype"), setShow(true), setCurrentPhase("prototype")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
           
@@ -97,8 +97,8 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
               <Col><div className="circle sprint validate"></div></Col>
               <Col><h5 className="blackHeader">Validate</h5></Col>
             </Row>
-            {currentSprintMethods.filter(meth => meth.currentPhase === "validate").map((meth) => (
-              <MethodCard key={meth.id} methodData={meth} /> 
+            {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="validate") !== undefined).map((meth) => (
+              <MethodCard key={meth.id} methodData={meth} isinPlan={true} underPhase="validate"/> 
             ))}
             <button onClick={()=>{suggestMethods("validate"), setShow(true), setCurrentPhase("validate")}} className="currentplan-add-button"><img className="currentplan-plus-img" src="plus_img.svg"></img></button>
 
@@ -120,7 +120,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
             <div className="row justify-content-center mt-3">
                 {suggestedMethods.map((meth) => (
                     <div className="col-auto">
-                    <MethodCard key={meth.id} methodData={meth} /> 
+                    <MethodCard key={meth.id} methodData={meth} isinPlan={false}//> 
                     </div>
                 ))}
             </div>
