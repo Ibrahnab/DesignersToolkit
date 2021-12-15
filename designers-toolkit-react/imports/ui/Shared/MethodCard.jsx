@@ -76,11 +76,11 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
         <Row md="auto" className="justify-content-md-center fluid">
             <Col  md="auto" className="fluid iconCol">
                 <img className="cardIcon" src="personIcon2.svg"/>
-                <p className="blackHeader cardHeader">{methodData.participants}</p>
+                <p className="blackHeader cardHeader">{methodData.participantRange}</p>
             </Col>
             <Col  md="auto" className="fluid iconCol">
                 <img className="cardIcon" src="clockIcon2.svg"/>
-                <p className="blackHeader cardHeader fluid">{methodData.time}m</p>
+                <p className="blackHeader cardHeader fluid">{methodData.timeRange}</p>
             </Col>
             <Col md ="auto" className="fluid">
                 <Row>

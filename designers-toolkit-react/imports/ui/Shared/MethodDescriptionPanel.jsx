@@ -41,11 +41,11 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
             <div className="row justify-content-md-center mt-3">
                 <Col md="auto">
                     <img src="personIcon2.svg" className="methodDescriptionIcon"/>
-                    <p className="blackHeader cardHeader">{methodDescriptionData.participants}</p>
+                    <p className="blackHeader cardHeader">{methodDescriptionData.participantRange}</p>
                 </Col>
                 <Col md="auto" className="method-icons-left-margin">
                     <img src="clockIcon.svg" className="methodDescriptionIcon"/>
-                    <p className="blackHeader cardHeader">{methodDescriptionData.time}m</p>
+                    <p className="blackHeader cardHeader">{methodDescriptionData.timeRange}</p>
                 </Col>
                 <Col md="auto" className="method-icons-left-margin mt-2">
                     <img src="tripleDiamondIcon2.svg" className="methodDescriptionIcon"/>
