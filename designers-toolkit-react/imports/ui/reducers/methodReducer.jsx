@@ -203,9 +203,9 @@ const INITIAL_STATE = {
             " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
             " ultimately leading to a visualization.",
             steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            "Start with the users entry point to your application and note down the experience",
+            "Keep adding the subsequent steps for the user until the goal is reached",
+            "Write down the pain points for each step in the journey"],
             stepsNbr:["1","2","3"],
             inPhase:[]
         },
@@ -218,14 +218,15 @@ const INITIAL_STATE = {
             image: "cognitive_walkthrough_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
+            description:"A cognitive walkthrough is used to test the usability of a product. This is done" + 
+            " by involving a user who is asked to carry out tasks in the product. The conductor of the" +
+            " cognitive walkthrough will provide tasks and observe the user as they try to complete the tasks. "+
+            " This gives valueable insights on how the product might be improved further. There are two questions to consider in cognitive walkthroughs which are: " +
+            " 'Will the user know what to do at this step' and 'If the user did the right thing, will they know that they did the right thing and are they making progress towards their goal' ",
             steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            "Write down the tasks you want the user to perform in your application",
+            "Create an ideal path (Golden path) which is the optimal path for the user to reach their goal in the task",
+            "Invite participants to test the product as users. As the moderator, you should ask the one question before, during and after each task. "],
             stepsNbr:["1","2","3"],
             inPhase:[]
         },
@@ -238,15 +239,14 @@ const INITIAL_STATE = {
             image: "crazy_8_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
+            description:"Crazy 8 is a rapid ideation method. It is used to brainstorm ideas under time pressure. The ideas are not supposed to be fully reasonable or well thought out. " + 
+            " The main reason behind the time pressure is to get the ball rolling and letting out the craziest ideas. These ideas are drawn on a piece of paper with small notes",
             steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
-            stepsNbr:["1","2","3"],
+            "Take a sheet of paper and fold it four times. When you open it up, you should have a paper that's split in 8 rectangles",
+            "Set a timer for 8 minutes",
+            "For each rectangle, you're going to ideate something by drawing your ideas or writing quick notes on it. This gives you one minute for each idea! So don't think too much about one idea!",
+            "When the time is up, no more writing/drawing is allowed"],
+            stepsNbr:["1","2","3","4"],
             inPhase:[]
         },
         {
