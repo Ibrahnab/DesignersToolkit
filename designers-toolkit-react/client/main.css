@@ -280,10 +280,6 @@ img.logoImg {
   height:30px;
 }
 
-.stupid-col {
-  width: fit-content;
-}
-
 .cardHeader {
   margin-top:5px;
   font-size: 13px;
@@ -838,6 +834,10 @@ a {
   text-decoration: none;
   color: #3fffd2;
   font-weight: bold;
+}
+
+.col-30-size{
+  width: 30px !important;
 }
 
 .menuNav li:first-child {

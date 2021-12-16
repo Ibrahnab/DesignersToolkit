@@ -79,11 +79,15 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
                 <p className="blackHeader cardHeader">{methodData.participantRange}</p>
             </div>
             <div className="col-auto fluid iconCol">
-                <div className="col-auto">
-                    <img className="cardIcon center-block" src="clockIcon2.svg"/>
+                <div className="row justify-content-md-center">
+                    <div className="col-auto">
+                        <img className="cardIcon" src="clockIcon2.svg"/>
+                    </div>
                 </div>
-                <div className="col-auto">
-                    <p className="blackHeader cardHeader fluid">{methodData.timeRange}</p>
+                <div className="row justify-content-md-center">
+                    <div className="col-auto">
+                        <p className="blackHeader cardHeader fluid">{methodData.timeRange}</p>
+                    </div>
                 </div>
             </div>
             <div className="col-auto fluid">
