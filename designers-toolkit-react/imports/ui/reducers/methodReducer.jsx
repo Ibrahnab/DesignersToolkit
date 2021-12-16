@@ -352,14 +352,10 @@ const INITIAL_STATE = {
             image: "solution_sketch_img.svg",
             inSprint: false,
             currentPhase: "none",
-            description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-            " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-            " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-            " ultimately leading to a visualization.",
-            steps: [
-            "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-            "Only One HMW for each note is advised",
-            "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+            description:"Solution sketching allows designers to elaborate on already existing ideas and detail them further. This is a method suitable to use after a session of Crazy 8's where each team member individual fleshes out an idea that they liked. It can also be done by the whole team as a unit.",
+            steps: ["Pick an idea from existing sketches and notes that you like",
+            "Continue sketching on this idea with more detail and by adding additional description, frames and images",
+            "Discuss the outcome with your team. What is missing? Is the current information enough to move on to the next phase?"],
             stepsNbr:["1","2","3"],
             inPhase:[],
             participantRange: "0",
@@ -374,14 +370,12 @@ const INITIAL_STATE = {
                 image: "decision_matrix_img.svg",
                 inSprint: false,
                 currentPhase: "none",
-                description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-                " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-                " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-                " ultimately leading to a visualization.",
-                steps: [
-                "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-                "Only One HMW for each note is advised",
-                "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+                description:"A decision matrix can aid designers in narrowing down options by letting test participants rate alternatives based on specific criteria. It can also be done by the designers themselves, which reduces required time and resources. The criteria are rated internally by the designers based on their importance to the project (weight). This will result in alternatives being numerically valued based on evaluation.",
+                steps: ["Define criteria important to you",
+                "Create a matrix where each row represents an alternative and each column a criterion",
+                "Evaluate the alternatives based on the matrix, or let target users do it if you decided to include them. Depending on how many alternatives, it might be necessary to change participants for each alternative",
+                "Rate the alternatives based on the criterion (set your own score interval)",
+                "Discuss the outcome. Is there a clear winner?"],
                 stepsNbr:["1","2","3"],
                 inPhase:[],
                 participantRange: "0+",
@@ -396,14 +390,11 @@ const INITIAL_STATE = {
                 image: "swot_analysis_img.svg",
                 inSprint: false,
                 currentPhase: "none",
-                description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-                " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-                " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-                " ultimately leading to a visualization.",
-                steps: [
-                "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-                "Only One HMW for each note is advised",
-                "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+                description:"SWOT analysis is a method for strategic planning that helps to identify the good and bad of an individual, organisation, team, etc. By using this method, one can track strengths and weaknesses (internal origin), and opportunities and threats (external origin). It is quite evident that weaknesses and threats are harmful for the intended endeavor, while strengths and opportunities are helpful. It is commonly used to assess business competition and plan projects.",
+                steps: ["Document your strengths. These can be the individual strengths of each team members and the strengths that appear when you work together",
+                "Document your weaknesses. These can be the individual weaknesses of each team members and the weaknesses that appear when you work together",
+                "Document the opportunities. These are external factors, such as high demand",
+                "Document the threats. These too are external, such as tough competition or high production cost due to resource scarcity"],
                 stepsNbr:["1","2","3"],
                 inPhase:[],
                 participantRange: "0",
@@ -418,14 +409,11 @@ const INITIAL_STATE = {
                 image: "storyboard_img.svg",
                 inSprint: false,
                 currentPhase: "none",
-                description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-                " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-                " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-                " ultimately leading to a visualization.",
-                steps: [
-                "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-                "Only One HMW for each note is advised",
-                "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+                description:"A storyboard is a step-by-step illustration of the experience you want to convey. It is a powerful method for telling a story of how a product or service is to be used, from start to finish, or how a user finds it. Storyboarding is quick and one can iteratively improve it until it is ready for display for stakeholders.",
+                steps: ["Decide what you will convey",
+                "Start mapping out the frames. Collaborate with your team. A common method is to create rectangle-shaped frames that display a part of the story",
+                "Focus on the message rather than the looks",
+                "Once you feel you are finished, revise it as a team"],
                 stepsNbr:["1","2","3"],
                 inPhase:[],
                 participantRange: "0",
@@ -440,14 +428,11 @@ const INITIAL_STATE = {
                 image: "wizard_of_oz_img.svg",
                 inSprint: false,
                 currentPhase: "none",
-                description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-                " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-                " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-                " ultimately leading to a visualization.",
-                steps: [
-                "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-                "Only One HMW for each note is advised",
-                "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+                description:"The Wizard of Oz is a UX technique for testing features and details that are not yet implemented in a product or service. Generally, a participant tests a prototype under the guidance of a moderator while members of the team simulate the responses of the prototype. This is often used to test the likability and desire of a function that does not exist yet. It can be especially useful for a feature that is time-consuming to implement.",
+                steps: ["What feature do you intend to simulate? Do so the best way possible",
+                "Include the technique in one of your planned testing sessions",
+                "Conduct the testing. Remember to aim for an authentic experience for the user. If it is possible to make the feature appear real, then do so",
+                "Gather feedback on the feature. After all, that is the purpose of this technique. Ask questions during and after the testing"],
                 stepsNbr:["1","2","3"],
                 inPhase:[],
                 participantRange: "1",
@@ -462,14 +447,9 @@ const INITIAL_STATE = {
                 image: "boot_up_notetaking_img.svg",
                 inSprint: false,
                 currentPhase: "none",
-                description:"A journey map is a visualization of the process that a person goes through in order to accomplish a goal." + 
-                " In its most basic form, journey mapping starts by compiling a series of user actions into a timeline. Next, the timeline" +
-                " is fleshed out with user thoughts and emotions in order to create a narrative. This narrative is condensed and polished, "+
-                " ultimately leading to a visualization.",
-                steps: [
-                "Consider pain points and find a way to document them, preferably on notes. Instead of writing down the issue at hand, reframe it in terms of how you might tackle the problem (How Might We)",
-                "Only One HMW for each note is advised",
-                "This is early into the design sprint, and focus on quantity rather than quality is recommended"],
+                description:"Boot-up notetaking is a method popularised by Google's own Design Sprint and is commonly used after the define phase and is used as preparation for sketching ideas. The goal is to gather all that has been researched and discussed in the previous phases into notes that will serve as inspiration for sketching.",
+                steps: ["Review all that has been discussed in the previous phases. What are the goals and problems?",
+                "Note down ideas you would like to prototype based on the previous point"],
                 stepsNbr:["1","2","3"],
                 inPhase:[],
                 participantRange: "0",

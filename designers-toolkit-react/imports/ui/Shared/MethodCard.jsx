@@ -73,16 +73,20 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
             </Col>
         </Row>
 
-        <Row md="auto" className="justify-content-md-center fluid">
-            <Col  md="auto" className="fluid iconCol">
+        <div className="row justify-content-md-center fluid">
+            <div className="col-auto fluid iconCol">
                 <img className="cardIcon" src="personIcon2.svg"/>
                 <p className="blackHeader cardHeader">{methodData.participantRange}</p>
-            </Col>
-            <Col  md="auto" className="fluid iconCol">
-                <img className="cardIcon" src="clockIcon2.svg"/>
-                <p className="blackHeader cardHeader fluid">{methodData.timeRange}</p>
-            </Col>
-            <Col md ="auto" className="fluid">
+            </div>
+            <div className="col-auto fluid iconCol">
+                <div className="col-auto">
+                    <img className="cardIcon center-block" src="clockIcon2.svg"/>
+                </div>
+                <div className="col-auto">
+                    <p className="blackHeader cardHeader fluid">{methodData.timeRange}</p>
+                </div>
+            </div>
+            <div className="col-auto fluid">
                 <Row>
                     <Col md="auto" className="iconCol fluid">
                         <img className="cardIcon" src="tripleDiamondIcon2.svg"/>
@@ -97,8 +101,8 @@ const MethodCard = ({methodData, addToSprint, adjustPhase, removeFromSprint, sho
                     ))}
                 </Row>
                     
-            </Col>
-        </Row>
+            </div>
+        </div>
         <Row className="justify-content-md-center">
             {/* <button onClick={()=>{()=>addToSprint(methodData.id); 
                 (e) => setIsActive(!isActive)}}className="cardBtn">

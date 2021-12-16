@@ -280,6 +280,10 @@ img.logoImg {
   height:30px;
 }
 
+.stupid-col {
+  width: fit-content;
+}
+
 .cardHeader {
   margin-top:5px;
   font-size: 13px;
