@@ -11,7 +11,7 @@ export const Introduction = () => (
   <Container className="pageContainer">
     
     <div className="sectionContainer start">
-      <img src="introMethods.svg"/>
+      <img className="cardInfo" src="introMethods.svg"/>
     </div>
 
     <div className="sectionContainer">
@@ -29,7 +29,7 @@ export const Introduction = () => (
     <div className="sectionContainer">
       <h3 className="purpleHeader">The triple diamond design process</h3>
 
-      <img src="TripleDiamondImg.svg"/>
+      <img className="cardInfo" src="TripleDiamondImg.svg"/>
 
       <p>This tool adapts the triple diamond design process which is made up of
         six different phases as seen in the figure above. When starting up a 
@@ -46,12 +46,12 @@ export const Introduction = () => (
     <div className="sectionContainer">
       <h3 className="purpleHeader">Design methodologies</h3>
       <Row>
-        <Col><img src="JourneyMapImg.svg"/></Col>
-        <Col>
+        <Col><img className="cardInfo" src="cardinfo.svg"/></Col>
+        {/* <Col>
         <p>The different design methodologies are represented with these cards.
           They show the name, amount of participants required, time to execute 
           and phase in which they can take place. </p>
-        </Col>
+        </Col> */}
       </Row>
     </div>
     
