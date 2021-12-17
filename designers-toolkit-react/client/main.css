@@ -128,7 +128,13 @@ img.logoImg {
 
 .sprintPlanImg{
   max-width: 100%;
+  height:auto;
   
+}
+
+.cardInfo {
+  max-width: 100%;
+  height:auto;
 }
 
 .size{
