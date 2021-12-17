@@ -144,7 +144,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
                   <p className="smallBlackHeader">Amount of participants</p>
                 </Col>
                 <Col>
-                  <input className="inputNumber" min={1} type="number" value={participantsState} onChange={(e) => setParticipantsState(e.target.value)}></input>
+                  <input className="inputNumber" min={0} type="number" value={participantsState} onChange={(e) => setParticipantsState(e.target.value)}></input>
                 </Col>
               </Row>
               <Row><Col><hr></hr></Col></Row>
