@@ -106,8 +106,7 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                     <h3 className="blackHeader">Phase 4</h3>
                     <h5 className="purpleHeader">DECIDE</h5>
                     <p>In this phase you decide on the concept you will prototype and refine. This can be done by the team or by outside help 
-                      (target users). 
-  
+                      (target users). Choose between a variety of different methods to ensure the best possible outcome.
                     </p>
                 </div>
                 }
