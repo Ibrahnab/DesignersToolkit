@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import data from "../Shared/CardData";
 import MethodCard from "../Shared/MethodCard";
-import MethodDescriptionPanel from "../Shared/MethodDescriptionPanel";
+import MethodDescriptionPanel from "../Methodologies/MethodDescriptionPanel";
 import {connect} from "react-redux"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

@@ -55,7 +55,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
           <Col className="sprintCol">
           <Row>
               <Col><div className="circle sprint sketch"></div></Col>
-              <Col><h5 className="blackHeader">Sketch</h5></Col>
+              <Col><h5 className="blackHeader">Ideate</h5></Col>
             </Row>
 
             {currentSprintMethods.filter(meth => meth.inPhase.find((phaze) => phaze ==="sketch") !== undefined).map((meth) => (

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import data from "../Shared/CardData";
 import MethodCard from "../Shared/MethodCard";
-import MethodDescriptionPanel from "../Shared/MethodDescriptionPanel";
+import MethodDescriptionPanel from "./MethodDescriptionPanel";
 import {connect} from "react-redux"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -36,7 +36,7 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
               
               <Col md="auto" className="fluid triangleBtn d-flex p-0 justify-content-around p-0">
               <div onClick={() => changePhase("sketchLock")} className={`triangleLeft sketchTriangle ${selectedPhase}`}>
-                  <p className="whiteHeader">Phase 3 Sketch
+                  <p className="whiteHeader">Phase 3 .Ideate  
                   </p>
                 </div>
               </Col>
@@ -94,14 +94,14 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                 {selectedPhase == "sketchLock" && 
                   <div>
                     <h3 className="blackHeader">Phase 3</h3>
-                    <h5 className="purpleHeader">SKETCH</h5>
-                    <p>In the Sketch phase, the Design Sprint team generates
+                    <h5 className="purpleHeader">IDEATE</h5>
+                    <p>In the Ideation phase, the Design Sprint team generates
                        and shares a broad range of ideas as individuals.
                         You will start by looking for inspiration, such as
                          solutions in alternative spaces. Then, each Design Sprint 
                          participant will individually generate ideas for consideration.
                           From there, the team will narrow down ideas as group to
-                           a single, well-articulated Solution Sketch per person.</p>
+                           a single, well-articulated Idea per person.</p>
                   </div>
                 }
   
