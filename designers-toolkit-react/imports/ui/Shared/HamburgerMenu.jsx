@@ -17,7 +17,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [search, setSearchState] = useState("");
-    const [timeState, setTimeState] = useState(60);
+    const [timeState, setTimeState] = useState(120);
     const [participantsState, setParticipantsState] = useState(5);
     const [checkedState, setCheckedState] = useState(
       new Array(6).fill(true)
@@ -132,11 +132,11 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
 
               <Row className="firstSearchRow">
                 <Col>
-                <p className="smallBlackHeader">Amount of time</p>
+                <p className="smallBlackHeader">Amount of time (m)</p>
                 </Col>
                 <Col>
                   {/* <SimpleSlider></SimpleSlider> */}
-                  <RangeSlider min={10} className="rangeSlider" value={timeState} onChange={(e) => setTimeState(e.target.value)}></RangeSlider>
+                  <RangeSlider min={10} max={120} className="rangeSlider" value={timeState} onChange={(e) => setTimeState(e.target.value)}></RangeSlider>
                 </Col>
               </Row>
               <Row className="firstSearchRow">
@@ -144,7 +144,7 @@ const HamburgerMenu = ({methods, flipHamburger}) => {
                   <p className="smallBlackHeader">Amount of participants</p>
                 </Col>
                 <Col>
-                  <input className="inputNumber" min={1} type="number" value={participantsState} onChange={(e) => setParticipantsState(e.target.value)}></input>
+                  <input className="inputNumber" min={0} type="number" value={participantsState} onChange={(e) => setParticipantsState(e.target.value)}></input>
                 </Col>
               </Row>
               <Row><Col><hr></hr></Col></Row>
