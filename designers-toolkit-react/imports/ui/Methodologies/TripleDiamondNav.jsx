@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import data from "../Shared/CardData";
 import MethodCard from "../Shared/MethodCard";
-import MethodDescriptionPanel from "../Shared/MethodDescriptionPanel";
+import MethodDescriptionPanel from "./MethodDescriptionPanel";
 import {connect} from "react-redux"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -36,7 +36,7 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
               
               <Col md="auto" className="fluid triangleBtn d-flex p-0 justify-content-around p-0">
               <div onClick={() => changePhase("sketchLock")} className={`triangleLeft sketchTriangle ${selectedPhase}`}>
-                  <p className="whiteHeader">Phase 3 Sketch
+                  <p className="whiteHeader">Phase 3 .Ideate  
                   </p>
                 </div>
               </Col>
@@ -71,10 +71,12 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                   <div>
                     <h3 className="blackHeader">Phase 1</h3>
                     <h5 className="purpleHeader">UNDERSTAND</h5>
-                    <p>In the Understand phase, you will create a shared knowledge base
-                       across all participants. Using the Lightning Talk method, knowledge
-                        experts across the business are invited to articulate the problem 
-                        space from business, user, competitor, and technological angles.</p>
+                    <p>In the Understand phase, the designer will aim to gather knowledge of requirements from the stakeholders. Focus lies on
+                      acquiring data that will help you define your problem and goal in the Define phase. Study the user. Examine products/services that tackle
+                      the issue that you are working with. Invite stakeholders to discuss opportunities and boundries. Users, business and people generally affected
+                      by the issue should be given time to share their perspective. You want to understand the stakeholders deeply, so that when you move 
+                      into the next phase you have a clear image of how to define all that is understood.
+                    </p>
                   </div>
                 }
   
@@ -82,11 +84,8 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                   <div>
                     <h3 className="blackHeader">Phase 2</h3>
                     <h5 className="purpleHeader">DEFINE</h5>
-                    <p>In the Define phase, the team evaluates everything they 
-                      learned in the Understand phase to establish focus. This 
-                      is done by defining specific context and desired outcomes 
-                      of potential solutions. The phase concludes by choosing a 
-                      specific focus for your Sprint, as well as goals, success metrics, and signals.
+                    <p>In the Define phase the you will contextualise the data gathered from the previous phase. You define goals and outcomes of your project,
+                       and how to create the optimal solution to your project. 
                     </p>
                   </div>
                 }
@@ -94,14 +93,11 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                 {selectedPhase == "sketchLock" && 
                   <div>
                     <h3 className="blackHeader">Phase 3</h3>
-                    <h5 className="purpleHeader">SKETCH</h5>
-                    <p>In the Sketch phase, the Design Sprint team generates
-                       and shares a broad range of ideas as individuals.
-                        You will start by looking for inspiration, such as
-                         solutions in alternative spaces. Then, each Design Sprint 
-                         participant will individually generate ideas for consideration.
-                          From there, the team will narrow down ideas as group to
-                           a single, well-articulated Solution Sketch per person.</p>
+                    <h5 className="purpleHeader">IDEATE</h5>
+                    <p>In the Ideation phase, you will ideate possible solutions. Take inspiration from products/services that try to tackle your problem. Here
+                      the focus lies on proposing many, often crazy ideas rather than few, detailed ones. Think outside the box and discuss with the team how
+                      ideas can be improved. 
+                    </p>
                   </div>
                 }
   
@@ -109,11 +105,8 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                   <div>
                     <h3 className="blackHeader">Phase 4</h3>
                     <h5 className="purpleHeader">DECIDE</h5>
-                    <p>In the Decide phase, the Design Sprint team finalizes
-                       the direction or concept to be prototyped. Each participant 
-                       will share their Solution Sketch, and the team will find
-                        consensus on a single idea through decision-making exercises.
-                         The final direction will aim to address the Design Sprint focus.
+                    <p>In this phase you decide on the concept you will prototype and refine. This can be done by the team or by outside help 
+                      (target users). 
   
                     </p>
                 </div>
@@ -123,11 +116,9 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                   <div>
                     <h3 className="blackHeader">Phase 5</h3>
                     <h5 className="purpleHeader">PROTOTYPE</h5>
-                    <p> In the Prototype phase, the Design Sprint team will work 
-                      together to create a prototype of your concept. This is when 
-                      many decisions are made around what exactly the concept is
-                       and includes. You will aim to create a prototype that is
-                        just real enough to validate, and you will do it really fast!</p>
+                    <p> In the Prototype phase, you bring your concept to life. The detail and work put into it can vary, depending on 
+                      available time. However, it is important to create a real enough prototype so that it can be validated. 
+                    </p>
                   </div>
                 }
   
@@ -135,13 +126,10 @@ const TripleDiamondNav = ({methods, methodDescriptions}) => {
                   <div>
                     <h3 className="blackHeader">Phase 6</h3>
                     <h5 className="purpleHeader">VALIDATE</h5>
-                    <p>In the Validate phase, the Design Sprint team will put
-                       your concept in front of users - this is your moment of 
-                       truth! You will gather feedback from users who interact
-                        with your prototype, and if relevant, you will conduct 
-                        stakeholder and technical feasibility reviews. You’ll 
-                        end your Sprint with a validated concept– or an invalidated 
-                        concept to improve on. Either way, you’ve made progress.</p>
+                    <p>In the Validate phase, the goal is to evaluate your prototype with the help of target users.
+                      Gather feedback and note the necessary improvements. Share your progress with other stakeholders, such as the product owner(s)
+                      and check the feasibility with the development team.
+                    </p>
                   </div>
                 }
               </Col>
