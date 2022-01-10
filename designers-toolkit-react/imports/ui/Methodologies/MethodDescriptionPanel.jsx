@@ -63,7 +63,7 @@ const MethodDescriptionPanel = ({methodDescriptionData, viewingMethod, flipViewi
                     </div>
                 </Col>
             </div>
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-md-center mb-3">
                 <div className="col-sm-6 md-2">
                     {methodDescriptionData.steps.map((step) =>(
                         <div className="row justify-content-md-center">
