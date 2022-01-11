@@ -80,7 +80,7 @@ export const Introduction = () => (
       <Link to="/methodologies" className="">
 
       <Button className="purpleBtn">
-        <h5 className="whiteHeader">Begin exploring</h5>
+        <h6 className="whiteHeader">Begin exploring</h6>
       </Button>
       </Link>
       </Col>
