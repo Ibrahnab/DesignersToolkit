@@ -106,7 +106,7 @@ const CurrentPlan = ({currentSprintMethods, suggestedMethods, suggestMethods}) =
         </Row>
       </Container>
     
-      <Modal show={show} onHide={handleClose}  aria-labelledby="contained-modal-title-vcenter" centered className="modal w-55 mw-60">
+      <Modal show={show} onHide={handleClose}  aria-labelledby="contained-modal-title-vcenter" centered>
         <div className="suggestion-box">
           <Container>
             <div className="row firstSearchRow">

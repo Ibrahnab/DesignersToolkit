@@ -145,6 +145,14 @@ img.logoImg {
   border: none;
   align-items: center;
   width:200px;
+  transition-duration: 300ms;
+}
+
+.purpleBtn:hover{
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05);
+  transition-duration: 300ms;
 }
 
 .dashboardHL{
@@ -208,10 +216,15 @@ img.logoImg {
   height: 85px;
   background-color: #8C3EC9;
   border-radius: 40px;
+  transition-duration: 300ms;
 }
 
 .dashboardStartButton:hover{
-  background-color: #834DAE ;
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05);
+  transition-duration: 300ms;
+  
 }
 
 .dashboardCardImage{
@@ -225,14 +238,29 @@ img.logoImg {
   background-color: #EE6C4D;
   border-radius: 40px;
   border: none;
+  transition-duration: 300ms;
 }
 
+.dashboardSignInButton:hover{
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05);
+  transition-duration: 300ms;
+}
 .dashboardCreateAccountButton{
   width: 285px;
   height: 51px;
   background-color: #68259D;
   border-radius: 40px;
   border: none;
+  transition-duration: 300ms;
+}
+
+.dashboardCreateAccountButton:hover{
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05);
+  transition-duration: 300ms;
 }
 
 .currentplan-add-button{
@@ -242,6 +270,14 @@ img.logoImg {
   border-radius: 10px;
   border: none;
   margin-top:10px;
+  transition-duration: 300ms;
+}
+
+.currentplan-add-button:hover{
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05);
+  transition-duration: 300ms;
 }
 
 .currentplan-plus-img{
@@ -395,12 +431,12 @@ img.logoImg {
 
 .phaseBtn:hover {
 
-    -webkit-filter: brightness(70%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 
@@ -764,20 +800,19 @@ img.logoImg {
   margin-left:-100px;
 }
 
-
-.modal-dialog {
-  max-width: none;
-  width:700px;
-}
-
-
 .refresh-image{
   width: 49px;
   height: 49px;
+  transition-duration: 300ms;
 }
 
 .refresh-image:hover{
   cursor: pointer;
+  transform:scale(1.05,1.05);
+  -webkit-transform:scale(1.05,1.05);
+  -moz-transform:scale(1.05,1.05);
+  transition-duration: 300ms;
+  
 }
 
 .refresh-image[wobble="1"]{
