@@ -68,7 +68,7 @@ export const Introduction = () => (
     </div>
     <Row>
       <Col><div className="sectionContainer">
-      <img className="sprintPlanImg size"src="planImg.svg"/>
+      <img className="sprintPlanImg"src="planImg.png"/>
     </div></Col>
     </Row>
     

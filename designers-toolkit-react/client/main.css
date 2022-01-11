@@ -137,11 +137,6 @@ img.logoImg {
   height:auto;
 }
 
-.size{
-  width:600px;
-  height:300px;
-}
-
 .purpleBtn{
   background-color:#68259D;
   border-radius: 301px;
@@ -218,6 +213,11 @@ img.logoImg {
 
 .dashboardStartButton:hover{
   background-color: #834DAE ;
+}
+
+.dashboardCardImage{
+  width: 300px;
+  height: 300px;
 }
 
 .dashboardSignInButton{
